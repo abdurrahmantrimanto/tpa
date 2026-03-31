@@ -24,6 +24,7 @@ function doGet(e) {
     else if (action === 'getLog')       result = getLog(e.parameter.id);
     else if (action === 'saveLog')      result = saveLog(e.parameter);
     else if (action === 'redeemHadiah') result = redeemHadiah(e.parameter);
+    else if (action === 'getLogHariIni') result = getLogHariIni(e.parameter.tanggal);
     else result = { success: false, error: 'Unknown action: ' + action };
   } catch (err) {
     result = { success: false, error: err.message };
@@ -83,6 +84,18 @@ function getLog(santriId) {
     }));
 
   return { success: true, log };
+}
+
+function getLogHariIni(tanggal) {
+  const ss    = SpreadsheetApp.openById(SHEET_ID);
+  const sheet = ss.getSheetByName(SHEET_LOG);
+  const data  = sheet.getDataRange().getValues();
+  const count = data.slice(1).filter(row => {
+    if (!row[1]) return false;
+    const tgl = Utilities.formatDate(new Date(row[1]), 'Asia/Jakarta', 'yyyy-MM-dd');
+    return tgl === tanggal;
+  }).length;
+  return { success: true, count };
 }
 
 function buildDetail(row) {

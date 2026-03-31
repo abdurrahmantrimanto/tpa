@@ -511,6 +511,41 @@
   .config-banner strong { color: #5c4200; }
   .config-banner a { color: var(--green-deep); font-weight: 700; }
   .config-banner code { background: #ffe082; padding: 1px 5px; border-radius: 4px; font-size: 11px; font-family: monospace; }
+
+  /* ── Searchable Select ── */
+  .select-search-wrap { position: relative; }
+  .select-search-input {
+    width: 100%; border: 1.5px solid #e0ede8;
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+    font-family: inherit; font-size: 14px;
+    color: var(--text-dark); background: var(--cream);
+    outline: none; transition: border-color .2s;
+    cursor: pointer;
+  }
+  .select-search-input:focus { border-color: var(--green-bright); background: white; }
+  .select-search-dropdown {
+    position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+    background: white; border: 1.5px solid var(--green-bright);
+    border-radius: var(--radius-sm); z-index: 500;
+    max-height: 240px; overflow: hidden;
+    box-shadow: 0 8px 24px rgba(10,92,58,0.15);
+    display: none; flex-direction: column;
+  }
+  .select-search-dropdown.open { display: flex; }
+  .select-search-filter {
+    padding: 8px 10px; border: none; border-bottom: 1px solid #e0ede8;
+    font-family: inherit; font-size: 13px; outline: none;
+    background: #f5faf7; flex-shrink: 0;
+  }
+  .select-search-list { overflow-y: auto; flex: 1; }
+  .select-search-option {
+    padding: 10px 12px; font-size: 13px; cursor: pointer;
+    color: var(--text-dark); transition: background .1s;
+  }
+  .select-search-option:hover, .select-search-option.highlighted { background: var(--green-light); }
+  .select-search-option.selected-opt { font-weight: 700; color: var(--green-deep); }
+  .select-search-empty { padding: 12px; font-size: 13px; color: var(--text-light); text-align: center; }
 </style>
 </head>
 <body>
@@ -527,7 +562,7 @@ const CONFIG = {
   GURU_PASSWORD: '1234',
 
   // Nama-nama guru
-  GURU: ['Mas', 'Bu Endah'],
+  GURU: ['Mas Maman', 'Bu Endah'],
 
   // Daftar hadiah (nama, ikon, harga bintang)
   HADIAH: [
@@ -604,9 +639,12 @@ const CONFIG = {
 
 <!-- ══════════════════════════════════ PAGE: INPUT ══════════════════════════════════ -->
 <div class="page" id="page-input">
-  <div class="page-header">
-    <div class="page-header-title">✏️ Input Progres</div>
-    <div class="page-header-sub">Catat kegiatan mengaji harian santri</div>
+  <div class="page-header" style="display:flex;justify-content:space-between;align-items:center">
+    <div>
+      <div class="page-header-title">✏️ Input Progres</div>
+      <div class="page-header-sub" id="subPengajar">Catat kegiatan mengaji harian santri</div>
+    </div>
+    <button onclick="logoutGuru()" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;border-radius:20px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer;">Ganti →</button>
   </div>
 
   <!-- Login gate for guru -->
@@ -614,8 +652,15 @@ const CONFIG = {
     <div class="form-card" style="text-align:center">
       <div style="font-size:48px;margin-bottom:12px">🔐</div>
       <div style="font-size:16px;font-weight:700;color:var(--text-dark);margin-bottom:6px">Akses Guru</div>
-      <div style="font-size:13px;color:var(--text-light);margin-bottom:16px">Masukkan password untuk melanjutkan</div>
-      <div class="form-group">
+      <div style="font-size:13px;color:var(--text-light);margin-bottom:16px">Pilih pengajar & masukkan password</div>
+      <div class="form-group" style="text-align:left">
+        <label>Nama Pengajar</label>
+        <select id="loginPengajar">
+          <option value="">— Pilih Pengajar —</option>
+        </select>
+      </div>
+      <div class="form-group" style="text-align:left">
+        <label>Password</label>
         <input type="number" id="guruPwd" placeholder="Masukkan password..." style="text-align:center;font-size:20px;letter-spacing:8px">
       </div>
       <button class="btn-submit" onclick="loginGuru()" style="margin-top:4px">Masuk →</button>
@@ -628,15 +673,17 @@ const CONFIG = {
         <div class="form-section-title">👤 Data Santri</div>
         <div class="form-group">
           <label>Nama Santri</label>
-          <select id="f_santri">
-            <option value="">— Pilih Santri —</option>
-          </select>
+          <div class="select-search-wrap" id="wrap_santri">
+            <input class="select-search-input" id="f_santri_display" placeholder="— Pilih Santri —" readonly onclick="toggleSelectSearch('santri')">
+            <input type="hidden" id="f_santri">
+            <div class="select-search-dropdown" id="drop_santri">
+              <input class="select-search-filter" placeholder="🔍 Ketik nama santri..." oninput="filterSelectSearch('santri', this.value)" id="filter_santri">
+              <div class="select-search-list" id="list_santri"></div>
+            </div>
+          </div>
         </div>
         <div class="form-group">
-          <label>Pengajar</label>
-          <select id="f_pengajar">
-            <option value="">— Pilih Pengajar —</option>
-          </select>
+          <input type="hidden" id="f_pengajar">
         </div>
       </div>
 
@@ -669,123 +716,14 @@ const CONFIG = {
         <div class="conditional-fields" id="fieldsQuran">
           <div class="form-group">
             <label>Nama Surah</label>
-            <select id="f_surah">
-              <option value="">— Pilih Surah —</option>
-              <option value="Al-Fatihah">1. Al-Fatihah</option>
-              <option value="Al-Baqarah">2. Al-Baqarah</option>
-              <option value="Ali 'Imran">3. Ali 'Imran</option>
-              <option value="An-Nisa">4. An-Nisa</option>
-              <option value="Al-Ma'idah">5. Al-Ma'idah</option>
-              <option value="Al-An'am">6. Al-An'am</option>
-              <option value="Al-A'raf">7. Al-A'raf</option>
-              <option value="Al-Anfal">8. Al-Anfal</option>
-              <option value="At-Tawbah">9. At-Tawbah</option>
-              <option value="Yunus">10. Yunus</option>
-              <option value="Hud">11. Hud</option>
-              <option value="Yusuf">12. Yusuf</option>
-              <option value="Ar-Ra'd">13. Ar-Ra'd</option>
-              <option value="Ibrahim">14. Ibrahim</option>
-              <option value="Al-Hijr">15. Al-Hijr</option>
-              <option value="An-Nahl">16. An-Nahl</option>
-              <option value="Al-Isra">17. Al-Isra</option>
-              <option value="Al-Kahf">18. Al-Kahf</option>
-              <option value="Maryam">19. Maryam</option>
-              <option value="Ta-Ha">20. Ta-Ha</option>
-              <option value="Al-Anbiya">21. Al-Anbiya</option>
-              <option value="Al-Hajj">22. Al-Hajj</option>
-              <option value="Al-Mu'minun">23. Al-Mu'minun</option>
-              <option value="An-Nur">24. An-Nur</option>
-              <option value="Al-Furqan">25. Al-Furqan</option>
-              <option value="Ash-Shu'ara">26. Ash-Shu'ara</option>
-              <option value="An-Naml">27. An-Naml</option>
-              <option value="Al-Qasas">28. Al-Qasas</option>
-              <option value="Al-'Ankabut">29. Al-'Ankabut</option>
-              <option value="Ar-Rum">30. Ar-Rum</option>
-              <option value="Luqman">31. Luqman</option>
-              <option value="As-Sajdah">32. As-Sajdah</option>
-              <option value="Al-Ahzab">33. Al-Ahzab</option>
-              <option value="Saba">34. Saba</option>
-              <option value="Fatir">35. Fatir</option>
-              <option value="Ya-Sin">36. Ya-Sin</option>
-              <option value="As-Saffat">37. As-Saffat</option>
-              <option value="Sad">38. Sad</option>
-              <option value="Az-Zumar">39. Az-Zumar</option>
-              <option value="Ghafir">40. Ghafir</option>
-              <option value="Fussilat">41. Fussilat</option>
-              <option value="Ash-Shura">42. Ash-Shura</option>
-              <option value="Az-Zukhruf">43. Az-Zukhruf</option>
-              <option value="Ad-Dukhan">44. Ad-Dukhan</option>
-              <option value="Al-Jathiyah">45. Al-Jathiyah</option>
-              <option value="Al-Ahqaf">46. Al-Ahqaf</option>
-              <option value="Muhammad">47. Muhammad</option>
-              <option value="Al-Fath">48. Al-Fath</option>
-              <option value="Al-Hujurat">49. Al-Hujurat</option>
-              <option value="Qaf">50. Qaf</option>
-              <option value="Adh-Dhariyat">51. Adh-Dhariyat</option>
-              <option value="At-Tur">52. At-Tur</option>
-              <option value="An-Najm">53. An-Najm</option>
-              <option value="Al-Qamar">54. Al-Qamar</option>
-              <option value="Ar-Rahman">55. Ar-Rahman</option>
-              <option value="Al-Waqi'ah">56. Al-Waqi'ah</option>
-              <option value="Al-Hadid">57. Al-Hadid</option>
-              <option value="Al-Mujadila">58. Al-Mujadila</option>
-              <option value="Al-Hashr">59. Al-Hashr</option>
-              <option value="Al-Mumtahanah">60. Al-Mumtahanah</option>
-              <option value="As-Saf">61. As-Saf</option>
-              <option value="Al-Jumu'ah">62. Al-Jumu'ah</option>
-              <option value="Al-Munafiqun">63. Al-Munafiqun</option>
-              <option value="At-Taghabun">64. At-Taghabun</option>
-              <option value="At-Talaq">65. At-Talaq</option>
-              <option value="At-Tahrim">66. At-Tahrim</option>
-              <option value="Al-Mulk">67. Al-Mulk</option>
-              <option value="Al-Qalam">68. Al-Qalam</option>
-              <option value="Al-Haqqah">69. Al-Haqqah</option>
-              <option value="Al-Ma'arij">70. Al-Ma'arij</option>
-              <option value="Nuh">71. Nuh</option>
-              <option value="Al-Jinn">72. Al-Jinn</option>
-              <option value="Al-Muzzammil">73. Al-Muzzammil</option>
-              <option value="Al-Muddaththir">74. Al-Muddaththir</option>
-              <option value="Al-Qiyamah">75. Al-Qiyamah</option>
-              <option value="Al-Insan">76. Al-Insan</option>
-              <option value="Al-Mursalat">77. Al-Mursalat</option>
-              <option value="An-Naba">78. An-Naba</option>
-              <option value="An-Nazi'at">79. An-Nazi'at</option>
-              <option value="Abasa">80. Abasa</option>
-              <option value="At-Takwir">81. At-Takwir</option>
-              <option value="Al-Infitar">82. Al-Infitar</option>
-              <option value="Al-Mutaffifin">83. Al-Mutaffifin</option>
-              <option value="Al-Inshiqaq">84. Al-Inshiqaq</option>
-              <option value="Al-Buruj">85. Al-Buruj</option>
-              <option value="At-Tariq">86. At-Tariq</option>
-              <option value="Al-A'la">87. Al-A'la</option>
-              <option value="Al-Ghashiyah">88. Al-Ghashiyah</option>
-              <option value="Al-Fajr">89. Al-Fajr</option>
-              <option value="Al-Balad">90. Al-Balad</option>
-              <option value="Ash-Shams">91. Ash-Shams</option>
-              <option value="Al-Layl">92. Al-Layl</option>
-              <option value="Ad-Duha">93. Ad-Duha</option>
-              <option value="Ash-Sharh">94. Ash-Sharh</option>
-              <option value="At-Tin">95. At-Tin</option>
-              <option value="Al-'Alaq">96. Al-'Alaq</option>
-              <option value="Al-Qadr">97. Al-Qadr</option>
-              <option value="Al-Bayyinah">98. Al-Bayyinah</option>
-              <option value="Az-Zalzalah">99. Az-Zalzalah</option>
-              <option value="Al-'Adiyat">100. Al-'Adiyat</option>
-              <option value="Al-Qari'ah">101. Al-Qari'ah</option>
-              <option value="At-Takathur">102. At-Takathur</option>
-              <option value="Al-'Asr">103. Al-'Asr</option>
-              <option value="Al-Humazah">104. Al-Humazah</option>
-              <option value="Al-Fil">105. Al-Fil</option>
-              <option value="Quraysh">106. Quraysh</option>
-              <option value="Al-Ma'un">107. Al-Ma'un</option>
-              <option value="Al-Kawthar">108. Al-Kawthar</option>
-              <option value="Al-Kafirun">109. Al-Kafirun</option>
-              <option value="An-Nasr">110. An-Nasr</option>
-              <option value="Al-Masad">111. Al-Masad</option>
-              <option value="Al-Ikhlas">112. Al-Ikhlas</option>
-              <option value="Al-Falaq">113. Al-Falaq</option>
-              <option value="An-Nas">114. An-Nas</option>
-            </select>
+            <div class="select-search-wrap" id="wrap_surah">
+              <input class="select-search-input" id="f_surah_display" placeholder="— Pilih Surah —" readonly onclick="toggleSelectSearch('surah')">
+              <input type="hidden" id="f_surah">
+              <div class="select-search-dropdown" id="drop_surah">
+                <input class="select-search-filter" placeholder="🔍 Ketik nama surah..." oninput="filterSelectSearch('surah', this.value)" id="filter_surah">
+                <div class="select-search-list" id="list_surah"></div>
+              </div>
+            </div>
           </div>
           <div class="form-group">
             <label>Ayat (Dari)</label>
@@ -913,6 +851,134 @@ const CONFIG = {
 
 <!-- ══════════════════════════════════ JAVASCRIPT ══════════════════════════════════ -->
 <script>
+// ── Searchable Select System ──
+const SELECT_DATA = {
+  santri: { options: [], selected: null },
+  surah:  { options: [], selected: null },
+};
+
+const SURAH_LIST = [
+  {v:'Al-Fatihah',l:'1. Al-Fatihah'},{v:'Al-Baqarah',l:'2. Al-Baqarah'},
+  {v:"Ali 'Imran",l:"3. Ali 'Imran"},{v:'An-Nisa',l:'4. An-Nisa'},
+  {v:"Al-Ma'idah",l:"5. Al-Ma'idah"},{v:"Al-An'am",l:"6. Al-An'am"},
+  {v:"Al-A'raf",l:"7. Al-A'raf"},{v:'Al-Anfal',l:'8. Al-Anfal'},
+  {v:'At-Tawbah',l:'9. At-Tawbah'},{v:'Yunus',l:'10. Yunus'},
+  {v:'Hud',l:'11. Hud'},{v:'Yusuf',l:'12. Yusuf'},
+  {v:"Ar-Ra'd",l:"13. Ar-Ra'd"},{v:'Ibrahim',l:'14. Ibrahim'},
+  {v:'Al-Hijr',l:'15. Al-Hijr'},{v:'An-Nahl',l:'16. An-Nahl'},
+  {v:'Al-Isra',l:'17. Al-Isra'},{v:'Al-Kahf',l:'18. Al-Kahf'},
+  {v:'Maryam',l:'19. Maryam'},{v:'Ta-Ha',l:'20. Ta-Ha'},
+  {v:'Al-Anbiya',l:'21. Al-Anbiya'},{v:'Al-Hajj',l:'22. Al-Hajj'},
+  {v:"Al-Mu'minun",l:"23. Al-Mu'minun"},{v:'An-Nur',l:'24. An-Nur'},
+  {v:'Al-Furqan',l:'25. Al-Furqan'},{v:"Ash-Shu'ara",l:"26. Ash-Shu'ara"},
+  {v:'An-Naml',l:'27. An-Naml'},{v:'Al-Qasas',l:'28. Al-Qasas'},
+  {v:"Al-'Ankabut",l:"29. Al-'Ankabut"},{v:'Ar-Rum',l:'30. Ar-Rum'},
+  {v:'Luqman',l:'31. Luqman'},{v:'As-Sajdah',l:'32. As-Sajdah'},
+  {v:'Al-Ahzab',l:'33. Al-Ahzab'},{v:'Saba',l:'34. Saba'},
+  {v:'Fatir',l:'35. Fatir'},{v:'Ya-Sin',l:'36. Ya-Sin'},
+  {v:'As-Saffat',l:'37. As-Saffat'},{v:'Sad',l:'38. Sad'},
+  {v:'Az-Zumar',l:'39. Az-Zumar'},{v:'Ghafir',l:'40. Ghafir'},
+  {v:'Fussilat',l:'41. Fussilat'},{v:'Ash-Shura',l:'42. Ash-Shura'},
+  {v:'Az-Zukhruf',l:'43. Az-Zukhruf'},{v:'Ad-Dukhan',l:'44. Ad-Dukhan'},
+  {v:'Al-Jathiyah',l:'45. Al-Jathiyah'},{v:'Al-Ahqaf',l:'46. Al-Ahqaf'},
+  {v:'Muhammad',l:'47. Muhammad'},{v:'Al-Fath',l:'48. Al-Fath'},
+  {v:'Al-Hujurat',l:'49. Al-Hujurat'},{v:'Qaf',l:'50. Qaf'},
+  {v:'Adh-Dhariyat',l:'51. Adh-Dhariyat'},{v:'At-Tur',l:'52. At-Tur'},
+  {v:'An-Najm',l:'53. An-Najm'},{v:'Al-Qamar',l:'54. Al-Qamar'},
+  {v:'Ar-Rahman',l:'55. Ar-Rahman'},{v:"Al-Waqi'ah",l:"56. Al-Waqi'ah"},
+  {v:'Al-Hadid',l:'57. Al-Hadid'},{v:'Al-Mujadila',l:'58. Al-Mujadila'},
+  {v:'Al-Hashr',l:'59. Al-Hashr'},{v:'Al-Mumtahanah',l:'60. Al-Mumtahanah'},
+  {v:'As-Saf',l:'61. As-Saf'},{v:"Al-Jumu'ah",l:"62. Al-Jumu'ah"},
+  {v:'Al-Munafiqun',l:'63. Al-Munafiqun'},{v:'At-Taghabun',l:'64. At-Taghabun'},
+  {v:'At-Talaq',l:'65. At-Talaq'},{v:'At-Tahrim',l:'66. At-Tahrim'},
+  {v:'Al-Mulk',l:'67. Al-Mulk'},{v:'Al-Qalam',l:'68. Al-Qalam'},
+  {v:'Al-Haqqah',l:'69. Al-Haqqah'},{v:"Al-Ma'arij",l:"70. Al-Ma'arij"},
+  {v:'Nuh',l:'71. Nuh'},{v:'Al-Jinn',l:'72. Al-Jinn'},
+  {v:'Al-Muzzammil',l:'73. Al-Muzzammil'},{v:'Al-Muddaththir',l:'74. Al-Muddaththir'},
+  {v:'Al-Qiyamah',l:'75. Al-Qiyamah'},{v:'Al-Insan',l:'76. Al-Insan'},
+  {v:'Al-Mursalat',l:'77. Al-Mursalat'},{v:'An-Naba',l:'78. An-Naba'},
+  {v:"An-Nazi'at",l:"79. An-Nazi'at"},{v:'Abasa',l:'80. Abasa'},
+  {v:'At-Takwir',l:'81. At-Takwir'},{v:'Al-Infitar',l:'82. Al-Infitar'},
+  {v:'Al-Mutaffifin',l:'83. Al-Mutaffifin'},{v:'Al-Inshiqaq',l:'84. Al-Inshiqaq'},
+  {v:'Al-Buruj',l:'85. Al-Buruj'},{v:'At-Tariq',l:'86. At-Tariq'},
+  {v:"Al-A'la",l:"87. Al-A'la"},{v:'Al-Ghashiyah',l:'88. Al-Ghashiyah'},
+  {v:'Al-Fajr',l:'89. Al-Fajr'},{v:'Al-Balad',l:'90. Al-Balad'},
+  {v:'Ash-Shams',l:'91. Ash-Shams'},{v:'Al-Layl',l:'92. Al-Layl'},
+  {v:'Ad-Duha',l:'93. Ad-Duha'},{v:'Ash-Sharh',l:'94. Ash-Sharh'},
+  {v:'At-Tin',l:'95. At-Tin'},{v:"Al-'Alaq",l:"96. Al-'Alaq"},
+  {v:'Al-Qadr',l:'97. Al-Qadr'},{v:'Al-Bayyinah',l:'98. Al-Bayyinah'},
+  {v:'Az-Zalzalah',l:'99. Az-Zalzalah'},{v:"Al-'Adiyat",l:"100. Al-'Adiyat"},
+  {v:"Al-Qari'ah",l:"101. Al-Qari'ah"},{v:'At-Takathur',l:'102. At-Takathur'},
+  {v:"Al-'Asr",l:"103. Al-'Asr"},{v:'Al-Humazah',l:'104. Al-Humazah'},
+  {v:'Al-Fil',l:'105. Al-Fil'},{v:'Quraysh',l:'106. Quraysh'},
+  {v:"Al-Ma'un",l:"107. Al-Ma'un"},{v:'Al-Kawthar',l:'108. Al-Kawthar'},
+  {v:'Al-Kafirun',l:'109. Al-Kafirun'},{v:'An-Nasr',l:'110. An-Nasr'},
+  {v:'Al-Masad',l:'111. Al-Masad'},{v:'Al-Ikhlas',l:'112. Al-Ikhlas'},
+  {v:'Al-Falaq',l:'113. Al-Falaq'},{v:'An-Nas',l:'114. An-Nas'},
+];
+
+function initSearchableSelects() {
+  // Init surah (data statis)
+  SELECT_DATA.surah.options = SURAH_LIST;
+  renderSelectList('surah', SURAH_LIST);
+
+  // Santri diinit setelah data loaded (lihat populateSantriDropdowns)
+  // Tutup dropdown kalau klik di luar
+  document.addEventListener('click', e => {
+    ['santri','surah'].forEach(key => {
+      const wrap = document.getElementById('wrap_' + key);
+      if (wrap && !wrap.contains(e.target)) closeSelectSearch(key);
+    });
+  });
+}
+
+function renderSelectList(key, options) {
+  const list = document.getElementById('list_' + key);
+  if (!list) return;
+  if (!options.length) {
+    list.innerHTML = '<div class="select-search-empty">Tidak ditemukan</div>';
+    return;
+  }
+  list.innerHTML = options.map(o =>
+    `<div class="select-search-option ${SELECT_DATA[key].selected?.v === o.v ? 'selected-opt' : ''}"
+      onclick="chooseSelectOption('${key}', '${o.v.replace(/'/g,"\\'")}', '${o.l.replace(/'/g,"\\'")}')">
+      ${o.l}
+    </div>`
+  ).join('');
+}
+
+function toggleSelectSearch(key) {
+  const drop = document.getElementById('drop_' + key);
+  const isOpen = drop.classList.contains('open');
+  // Tutup semua dulu
+  ['santri','surah'].forEach(k => closeSelectSearch(k));
+  if (!isOpen) {
+    drop.classList.add('open');
+    const filterEl = document.getElementById('filter_' + key);
+    if (filterEl) { filterEl.value = ''; filterEl.focus(); }
+    renderSelectList(key, SELECT_DATA[key].options);
+  }
+}
+
+function closeSelectSearch(key) {
+  const drop = document.getElementById('drop_' + key);
+  if (drop) drop.classList.remove('open');
+}
+
+function filterSelectSearch(key, query) {
+  const q = query.toLowerCase();
+  const filtered = SELECT_DATA[key].options.filter(o => o.l.toLowerCase().includes(q));
+  renderSelectList(key, filtered);
+}
+
+function chooseSelectOption(key, value, label) {
+  SELECT_DATA[key].selected = { v: value, l: label };
+  document.getElementById('f_' + key).value = value;
+  document.getElementById('f_' + key + '_display').value = label;
+  closeSelectSearch(key);
+  renderSelectList(key, SELECT_DATA[key].options);
+}
+
 // ── State ──
 let allSantri = [];
 let currentSantri = null;
@@ -953,6 +1019,7 @@ document.addEventListener('DOMContentLoaded', () => {
   buildHadiahGrid();
   populateGuruDropdown();
   setupGuruPwdEnter();
+  initSearchableSelects();
 });
 
 function setDate() {
@@ -971,7 +1038,13 @@ function loadSampleData() {
 // ── API Calls ──
 async function apiCall(action, data = {}) {
   const params = new URLSearchParams({ action, ...data });
-  const res = await fetch(CONFIG.APPS_SCRIPT_URL + '?' + params);
+  // Apps Script tidak mendukung CORS secara langsung — gunakan no-cors
+  // Untuk GET request kita ambil responsenya langsung
+  const res = await fetch(CONFIG.APPS_SCRIPT_URL + '?' + params, {
+    method: 'GET',
+    redirect: 'follow',
+  });
+  if (!res.ok) throw new Error('HTTP ' + res.status);
   return res.json();
 }
 
@@ -1054,7 +1127,27 @@ function getJenjangEmoji(kelas) {
 function updateStats(list) {
   document.getElementById('statSantri').textContent = list.length;
   document.getElementById('statBintang').textContent = list.reduce((a, s) => a + (s.saldo || 0), 0);
-  document.getElementById('statHariIni').textContent = '—';
+  // Hitung dari Log_Ngaji hari ini (akan diupdate setelah log dimuat)
+  countNgajiHariIni();
+}
+
+async function countNgajiHariIni() {
+  if (!isConfigured) {
+    document.getElementById('statHariIni').textContent = SAMPLE_LOG.length;
+    return;
+  }
+  try {
+    // Gunakan timezone WIB (Asia/Jakarta) agar cocok dengan tanggal di Google Sheets
+    const today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Jakarta' });
+    const data = await apiCall('getLogHariIni', { tanggal: today });
+    if (data.success) {
+      document.getElementById('statHariIni').textContent = data.count;
+    } else {
+      document.getElementById('statHariIni').textContent = '—';
+    }
+  } catch(e) {
+    document.getElementById('statHariIni').textContent = '—';
+  }
 }
 
 function filterCards() {
@@ -1146,12 +1239,18 @@ function renderLog(logs) {
 
 // ── Guru Login ──
 function loginGuru() {
+  const pengajar = document.getElementById('loginPengajar').value;
   const pwd = document.getElementById('guruPwd').value;
+  if (!pengajar) { showToast('Pilih nama pengajar dulu!', 'error'); return; }
   if (pwd === CONFIG.GURU_PASSWORD || CONFIG.GURU_PASSWORD === '') {
     guruLoggedIn = true;
+    // Simpan ke localStorage agar tidak login ulang
+    localStorage.setItem('tpa_pengajar', pengajar);
+    document.getElementById('f_pengajar').value = pengajar;
     document.getElementById('guruLoginGate').style.display = 'none';
     document.getElementById('guruFormArea').style.display = 'block';
-    showToast('Selamat datang, Guru! ✨', 'success');
+    showToast('Selamat datang, ' + pengajar + '! ✨', 'success');
+    document.getElementById('subPengajar').textContent = 'Login sebagai: ' + pengajar;
   } else {
     showToast('Password salah. Coba lagi.', 'error');
     document.getElementById('guruPwd').value = '';
@@ -1162,19 +1261,41 @@ function setupGuruPwdEnter() {
   document.getElementById('guruPwd').addEventListener('keydown', e => { if (e.key === 'Enter') loginGuru(); });
 }
 
-// ── Form ──
-function populateGuruDropdown() {
-  const sel = document.getElementById('f_pengajar');
-  CONFIG.GURU.forEach(g => sel.innerHTML += `<option>${g}</option>`);
+function logoutGuru() {
+  localStorage.removeItem('tpa_pengajar');
+  guruLoggedIn = false;
+  document.getElementById('f_pengajar').value = '';
+  document.getElementById('guruPwd').value = '';
+  document.getElementById('loginPengajar').value = '';
+  document.getElementById('guruLoginGate').style.display = 'block';
+  document.getElementById('guruFormArea').style.display = 'none';
+  showToast('Berhasil logout.', '');
 }
 
+// ── Form ──
+function populateGuruDropdown() {
+  // Isi dropdown login
+  const loginSel = document.getElementById('loginPengajar');
+  CONFIG.GURU.forEach(g => loginSel.innerHTML += `<option value="${g}">${g}</option>`);
+
+  // Cek localStorage — kalau sudah pernah login, langsung masuk
+  const saved = localStorage.getItem('tpa_pengajar');
+  if (saved && CONFIG.GURU.includes(saved)) {
+    guruLoggedIn = true;
+    document.getElementById('f_pengajar').value = saved;
+    document.getElementById('guruLoginGate').style.display = 'none';
+    document.getElementById('guruFormArea').style.display = 'block';
+  }
+}
 function populateSantriDropdowns() {
-  const sels = ['f_santri', 'h_santri'];
-  sels.forEach(id => {
-    const sel = document.getElementById(id);
-    sel.innerHTML = '<option value="">— Pilih Santri —</option>';
-    allSantri.forEach(s => sel.innerHTML += `<option value="${s.id}">${s.nama}</option>`);
-  });
+  // h_santri (halaman hadiah) tetap pakai select biasa
+  const hSel = document.getElementById('h_santri');
+  hSel.innerHTML = '<option value="">— Pilih Santri —</option>';
+  allSantri.forEach(s => hSel.innerHTML += `<option value="${s.id}">${s.nama}</option>`);
+
+  // f_santri (form input) pakai searchable select
+  SELECT_DATA.santri.options = allSantri.map(s => ({ v: s.id, l: s.nama }));
+  renderSelectList('santri', SELECT_DATA.santri.options);
 }
 
 function selectKategori(kat) {
@@ -1215,7 +1336,7 @@ async function submitForm() {
     ayat_sampai: document.getElementById('f_ayat_sampai').value,
     nilai,
     keterangan,
-    tambah_bintang: nilai === 'A+' ? '1' : '0',
+    tambah_bintang: (nilai === 'A+' || nilai === 'A++') ? '1' : '0',
   };
 
   const btn = document.getElementById('btnSubmit');
@@ -1224,8 +1345,10 @@ async function submitForm() {
 
   if (!isConfigured) {
     await new Promise(r => setTimeout(r, 800));
-    if (nilai === 'A+' && santri) {
+    // Fix C: A++ juga dapat bintang di mode demo
+    if ((nilai === 'A+' || nilai === 'A++') && santri) {
       santri.saldo++; santri.total++;
+      updateStats(allSantri);
       renderCards(allSantri);
     }
     showToast('✅ Data disimpan! (mode demo)', 'success');
@@ -1238,12 +1361,25 @@ async function submitForm() {
   try {
     const res = await apiCall('saveLog', formData);
     if (res.success) {
+      // Fix B: Optimistic update langsung — jangan tunggu loadSantriData
+      if (formData.tambah_bintang === '1' && santri) {
+        santri.saldo = (santri.saldo || 0) + 1;
+        santri.total = (santri.total || 0) + 1;
+        // Update modal jika sedang dibuka untuk santri yang sama
+        if (currentSantri?.id === santri.id) {
+          document.getElementById('modalSaldo').textContent = santri.saldo;
+          document.getElementById('modalTotal').textContent = santri.total;
+        }
+      }
+      renderCards(allSantri);
+      updateStats(allSantri);
       showToast('✅ Berhasil disimpan!', 'success');
       resetForm();
+      // Refresh data from server (background) untuk sinkronisasi
       loadSantriData();
     } else throw new Error(res.error);
   } catch (e) {
-    showToast('❌ Gagal menyimpan. Coba lagi.', 'error');
+    showToast('❌ Gagal menyimpan: ' + (e.message || 'Coba lagi.'), 'error');
   } finally {
     btn.disabled = false;
     btn.textContent = '✅ Simpan Catatan Mengaji';
@@ -1251,8 +1387,17 @@ async function submitForm() {
 }
 
 function resetForm() {
-  ['f_santri','f_pengajar','f_nilai','f_level','f_halaman','f_surah','f_ayat_dari','f_ayat_sampai','f_keterangan'].forEach(id => {
-    document.getElementById(id).value = '';
+  // Reset semua field kecuali f_pengajar (diisi ulang dari session)
+  ['f_santri','f_nilai','f_level','f_halaman','f_surah','f_ayat_dari','f_ayat_sampai','f_keterangan'].forEach(id =>
+    document.getElementById(id).value = ''
+  );
+  // Pulihkan f_pengajar dari sesi yang masih aktif
+  document.getElementById('f_pengajar').value = localStorage.getItem('tpa_pengajar') || '';
+  // Reset searchable selects
+  ['santri','surah'].forEach(key => {
+    SELECT_DATA[key].selected = null;
+    const disp = document.getElementById('f_' + key + '_display');
+    if (disp) disp.value = '';
   });
   selectedKategori = '';
   document.querySelectorAll('.radio-btn').forEach(b => b.classList.remove('selected'));
