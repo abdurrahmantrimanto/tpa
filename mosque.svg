@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1aad6e"/>
+      <stop offset="100%" stop-color="#0a7a44"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)" rx="110"/>
+  <!-- Moon -->
+  <path d="M160,100 C100,100 80,180 120,220 C80,180 120,100 160,100 Z" fill="#f1c40f" transform="rotate(-30 140 160)"/>
+  
+  <path d="M190,130 A60,60 0 1,0 250,190 A80,80 0 0,1 190,130" fill="#f1c40f"/>
+  
+  <!-- Central Dome -->
+  <path d="M256,190 C160,280 160,320 160,380 L352,380 C352,320 352,280 256,190 Z" fill="#ffffff"/>
+  <path d="M256,150 L256,190" stroke="#f1c40f" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Left Minaret -->
+  <path d="M100,240 L130,240 L130,380 L100,380 Z" fill="#e0ede8"/>
+  <path d="M90,240 L140,240 L115,200 Z" fill="#ffffff"/>
+  <path d="M115,180 L115,200" stroke="#f1c40f" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Right Minaret -->
+  <path d="M382,240 L412,240 L412,380 L382,380 Z" fill="#e0ede8"/>
+  <path d="M372,240 L422,240 L397,200 Z" fill="#ffffff"/>
+  <path d="M397,180 L397,200" stroke="#f1c40f" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Door -->
+  <path d="M226,380 L226,320 A30,30 0 0,1 286,320 L286,380 Z" fill="#1aad6e"/>
+</svg>
