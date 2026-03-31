@@ -1049,17 +1049,37 @@ async function apiCall(action, data = {}) {
 }
 
 async function loadSantriData() {
+  // 1. Tampilkan data dari localStorage lebih dulu (agar cepat)
+  const cachedData = localStorage.getItem('tpa_santri_data');
+  if (cachedData) {
+    try {
+      allSantri = JSON.parse(cachedData);
+      renderCards(allSantri);
+      updateStats(allSantri);
+      populateSantriDropdowns();
+    } catch (e) {
+      console.error('Gagal membaca cache:', e);
+    }
+  }
+
+  // 2. Ambil data asli dari server secara asinkron
   try {
     const data = await apiCall('getSantri');
     if (data.success) {
       allSantri = data.santri;
+      localStorage.setItem('tpa_santri_data', JSON.stringify(allSantri));
       renderCards(allSantri);
       updateStats(allSantri);
       populateSantriDropdowns();
     } else throw new Error(data.error);
   } catch (e) {
-    showToast('Gagal memuat data. Menggunakan data contoh.', 'error');
-    loadSampleData();
+    if (!cachedData) {
+      showToast('Gagal memuat data. Menggunakan data contoh.', 'error');
+      loadSampleData();
+    } else {
+      // Jika error server tapi punya cache, tetap jalan tapi kasih tahu
+      console.error('Gagal memuat data terbaru, menggunakan cache offline.');
+    }
   }
 }
 
