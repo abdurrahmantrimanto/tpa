@@ -243,6 +243,13 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 20%;
+    }
+
+    /* Penyesuaian khusus jika menggunakan foto dari DiceBear dsb agar tidak kacau/terpotong */
+    .card-photo-wrap img[src*="dicebear.com"] {
+      object-fit: contain;
+      padding: 8px;
     }
 
     .card-photo-placeholder {
@@ -1316,6 +1323,7 @@
               <option value="A++">A++ (Istimewa)</option>
               <option value="A+">A+ (Sangat Bagus) ⭐ +1 Bintang</option>
               <option value="A">A (Bagus)</option>
+              <option value="A-">A- (Bagus Kurang Sedikit)</option>
               <option value="B+">B+ (Cukup Bagus)</option>
               <option value="B">B (Cukup)</option>
               <option value="B-">B- (Perlu Latihan)</option>
@@ -1688,7 +1696,7 @@
       grid.innerHTML = list.map(s => {
         const emoji = getJenjangEmoji(s.kelas);
         const photoHtml = s.foto
-          ? `<img src="${s.foto}" alt="${s.nama}" onerror="this.parentElement.innerHTML='<div class=\\"card-photo-placeholder\\">${emoji}</div>'">`
+          ? `<img src="${s.foto}" alt="${s.nama}" onerror="this.outerHTML='<div class=&quot;card-photo-placeholder&quot;>${emoji}</div>'">`
           : `<div class="card-photo-placeholder">${emoji}</div>`;
         const progress = Math.min(100, (s.saldo / 20) * 100);
         return `
@@ -1781,7 +1789,9 @@
         photoEl.innerHTML = '';
         photoEl.style.cssText = 'overflow:hidden;padding:0;';
         const img = document.createElement('img');
-        img.src = s.foto; img.style.cssText = 'width:100%;height:100%;object-fit:cover;';
+        img.src = s.foto;
+        const isAvatar = s.foto.includes('dicebear.com');
+        img.style.cssText = `width:100%;height:100%;object-fit:${isAvatar ? 'contain' : 'cover'};${isAvatar ? 'padding:6px;background:var(--cream);' : ''}`;
         img.onerror = () => { photoEl.textContent = emoji; photoEl.style.cssText = ''; };
         photoEl.appendChild(img);
       } else {
