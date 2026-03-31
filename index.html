@@ -379,6 +379,209 @@
       display: none;
     }
 
+    /* ── Dashboard (Leaderboard) & Chart ── */
+    .chart-container {
+      background: white;
+      border-radius: var(--radius-sm);
+      margin: 0 16px 16px;
+      padding: 16px 16px 10px;
+      box-shadow: var(--shadow-soft);
+      overflow-x: auto;
+      position: relative;
+      scroll-behavior: smooth;
+    }
+
+    .chart-container::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .chart-container::-webkit-scrollbar-thumb {
+      background: #d4f0e4;
+      border-radius: 4px;
+    }
+
+    .chart-wrapper {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      height: 130px;
+      min-width: max-content;
+      padding-bottom: 24px;
+      position: relative;
+      margin-top: 15px;
+    }
+
+    .chart-bar-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      width: 32px;
+      height: 100%;
+      position: relative;
+    }
+
+    .chart-bar {
+      width: 100%;
+      background: linear-gradient(to top, var(--green-deep), var(--green-bright));
+      border-radius: 4px 4px 0 0;
+      min-height: 4px;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(26, 173, 110, 0.2);
+    }
+
+    .chart-bar-value {
+      position: absolute;
+      top: -18px;
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--text-dark);
+      width: 100%;
+      text-align: center;
+    }
+
+    .chart-label {
+      position: absolute;
+      bottom: -22px;
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--text-light);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .chart-max-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      border-top: 1px dashed #e0ede8;
+      z-index: 0;
+    }
+
+    .lb-summary {
+      display: flex;
+      gap: 12px;
+      padding: 16px 16px 8px;
+    }
+
+    .lb-box {
+      flex: 1;
+      background: white;
+      border-radius: var(--radius-sm);
+      padding: 14px 12px;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+      border: 1.5px solid #e0ede8;
+    }
+
+    .lb-box-num {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--green-deep);
+    }
+
+    .lb-box-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-light);
+      text-transform: uppercase;
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .lb-list {
+      padding: 8px 16px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .lb-item {
+      display: flex;
+      align-items: center;
+      background: white;
+      padding: 12px 14px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      cursor: pointer;
+      transition: transform 0.1s;
+      border: 1.5px solid transparent;
+    }
+
+    .lb-item:active {
+      transform: scale(0.97);
+    }
+
+    .lb-rank {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 14px;
+      background: #e0ede8;
+      color: var(--text-mid);
+      flex-shrink: 0;
+    }
+
+    .lb-item:nth-child(1) {
+      border-color: rgba(255, 215, 0, 0.5);
+    }
+
+    .lb-item:nth-child(1) .lb-rank {
+      background: gold;
+      color: #8b6508;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
+    }
+
+    .lb-item:nth-child(2) .lb-rank {
+      background: silver;
+      color: #555;
+      font-size: 15px;
+    }
+
+    .lb-item:nth-child(3) .lb-rank {
+      background: #cd7f32;
+      color: white;
+      font-size: 14px;
+    }
+
+    .lb-info {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .lb-name {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text-dark);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .lb-kelas {
+      font-size: 11px;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
+    .lb-score {
+      background: var(--gold-light);
+      color: var(--gold);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 800;
+      display: inline-block;
+    }
+
     .page.active {
       display: block;
     }
@@ -659,9 +862,17 @@
     }
 
     @keyframes pulse {
-      0% { opacity: 0.7; }
-      50% { opacity: 1; }
-      100% { opacity: 0.7; }
+      0% {
+        opacity: 0.7;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0.7;
+      }
     }
 
     .nilai-A\+ {
@@ -1143,7 +1354,10 @@
   <script>
     const CONFIG = {
       // Paste URL Apps Script Anda di sini setelah deploy
-      APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbyBR03ThDNiL6BlkDs6gkusuCkKAxZjrYrTVgCOQBpaKbJROOIktjGW8aq2Yd5ATQdneA/exec',
+      // PRODUCTION
+      APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbygxqC4WJMZoUOvlW-o-dFT652V37a0g3klk24ctRZ1-DC__v6r4RP34l1TKcBCv8impw/exec',
+      // DEVELOPMENT
+      // APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbz6eMSi8HuwlRclNfPTP9LIP43pqYEuIx6BiQkDw9u0Ro-9GDsYuKeRSYOjHVKCjoE/exec',
 
       // Password sederhana untuk akses Guru (bisa kosongkan untuk no-auth)
       GURU_PASSWORD: '1234',
@@ -1397,6 +1611,39 @@
       </div>
     </div>
   </div>
+  <!-- ══════════════════════════════════ PAGE: DASHBOARD ══════════════════════════════════ -->
+  <div class="page" id="page-dashboard">
+    <div class="page-header">
+      <div class="page-header-title">📊 Papan Peringkat</div>
+      <div class="page-header-sub">Pantau jumlah bintang seluruh santri</div>
+    </div>
+
+    <div class="section-title">Kehadiran Santri (30 Hari)</div>
+    <div class="chart-container" id="chartContainer">
+      <div class="empty-state">
+        <div class="spinner"></div>
+        <div class="empty-state-text">Memuat grafik...</div>
+      </div>
+    </div>
+
+    <div class="lb-summary">
+      <div class="lb-box">
+        <div class="lb-box-num" id="dashTotSantri">0</div>
+        <div class="lb-box-label">Santri Aktif</div>
+      </div>
+      <div class="lb-box">
+        <div class="lb-box-num" id="dashTotBintang">0</div>
+        <div class="lb-box-label">Total Bintang</div>
+      </div>
+    </div>
+
+    <div class="section-title" style="padding-top:8px">Peringkat Teratas (Leaderboard)</div>
+    <div class="lb-list" id="lbList">
+      <div class="empty-state">
+        <div class="empty-state-text">Belum ada data</div>
+      </div>
+    </div>
+  </div>
 
   <!-- ══════════════════════════════════ BOTTOM NAV ══════════════════════════════════ -->
   <nav class="bottom-nav">
@@ -1408,6 +1655,9 @@
     </div>
     <div class="nav-item" onclick="showPage('hadiah')" id="nav-hadiah">
       <span class="nav-icon">🎁</span>Hadiah
+    </div>
+    <div class="nav-item" onclick="showPage('dashboard')" id="nav-dashboard">
+      <span class="nav-icon">📊</span>Peringkat
     </div>
   </nav>
 
@@ -1695,10 +1945,10 @@
         try {
           renderLog(JSON.parse(cachedLog)); // Tampilkan seketika
           // Tambahkan indikator sedang sync di atas riwayat
-          document.getElementById('modalLog').insertAdjacentHTML('afterbegin', 
+          document.getElementById('modalLog').insertAdjacentHTML('afterbegin',
             `<div class="sync-indicator">⏳ Mensinkronkan data terbaru...</div>`
           );
-        } catch (e) {}
+        } catch (e) { }
       } else {
         document.getElementById('modalLog').innerHTML = `<div class="loading-wrap"><div class="spinner"></div><div class="loading-text">Memuat riwayat...</div></div>`;
       }
@@ -1724,6 +1974,61 @@
       document.getElementById('page-' + name).classList.add('active');
       document.getElementById('nav-' + name).classList.add('active');
       window.scrollTo(0, 0);
+
+      // Otomatis muat statistik bulan bila membuka tab peringkat
+      if (name === 'dashboard' && !chartLoaded && isConfigured) {
+        loadStatistikBulan();
+      }
+    }
+
+    let chartLoaded = false;
+    async function loadStatistikBulan() {
+      // Gunakan cache jika ada agar tampil instan
+      const cached = localStorage.getItem('tpa_chart_30d');
+      if (cached) {
+        try { renderBarChart(JSON.parse(cached)); chartLoaded = true; } catch (e) { }
+      }
+
+      try {
+        const res = await apiCall('getStatistikBulanIni');
+        if (res.success) {
+          localStorage.setItem('tpa_chart_30d', JSON.stringify(res.data));
+          renderBarChart(res.data);
+          chartLoaded = true;
+        }
+      } catch (e) {
+        if (!cached) {
+          document.getElementById('chartContainer').innerHTML = '<div class="empty-state" style="padding: 20px 0"><div class="empty-state-text">Gagal memuat grafik. Cek konfigurasi.</div></div>';
+        }
+      }
+    }
+
+    function renderBarChart(data) {
+      const container = document.getElementById('chartContainer');
+      if (!data || !data.length) {
+        container.innerHTML = '<div class="empty-state" style="padding: 20px 0"><div class="empty-state-text">Belum ada progres ngaji bulan ini.</div></div>';
+        return;
+      }
+
+      const maxCount = Math.max(...data.map(d => d.count), 1);
+
+      const html = `<div class="chart-wrapper">
+        <div class="chart-max-line"></div>
+        ${data.map(d => {
+        const heightPct = Math.min(100, Math.max(5, (d.count / maxCount) * 100));
+        return `
+          <div class="chart-bar-group">
+            <div class="chart-bar" style="height: ${heightPct}%; animation: slideUp 0.5s ease-out">
+              <div class="chart-bar-value">${d.count}</div>
+            </div>
+            <div class="chart-label">${d.label}</div>
+          </div>`;
+      }).join('')}
+      </div>`;
+
+      container.innerHTML = html;
+      // Otomatis scroll ke kanan (tanggal terbaru)
+      setTimeout(() => container.scrollLeft = container.scrollWidth, 50);
     }
 
     // ── Render Cards ──
@@ -1769,6 +2074,31 @@
       document.getElementById('statBintang').textContent = list.reduce((a, s) => a + (s.saldo || 0), 0);
       // Hitung dari Log_Ngaji hari ini (akan diupdate setelah log dimuat)
       countNgajiHariIni();
+      renderDashboard(list);
+    }
+
+    function renderDashboard(list) {
+      document.getElementById('dashTotSantri').textContent = list.length;
+      document.getElementById('dashTotBintang').textContent = list.reduce((a, s) => a + (s.saldo || 0), 0);
+
+      const sorted = [...list].sort((a, b) => (b.saldo || 0) - (a.saldo || 0));
+      const html = sorted.map((s, i) => {
+        let rankStr = i + 1;
+        if (i === 0) rankStr = '👑';
+        return `
+    <div class="lb-item" onclick="openModal('${s.id}')">
+      <div class="lb-rank">${rankStr}</div>
+      <div class="lb-info">
+        <div class="lb-name">${s.nama}</div>
+        <div class="lb-kelas">${s.kelas}</div>
+      </div>
+      <div>
+        <div class="lb-score">⭐ ${s.saldo || 0}</div>
+      </div>
+    </div>`;
+      }).join('');
+
+      document.getElementById('lbList').innerHTML = html || '<div class="empty-state"><div class="empty-state-text">Belum ada data santri</div></div>';
     }
 
     let isFetchingHariIni = false;
@@ -2055,7 +2385,7 @@
                 keterangan: formData.keterangan || ''
               });
               localStorage.setItem(cacheKeyLog, JSON.stringify(parsedLog));
-            } catch (e) {}
+            } catch (e) { }
           }
 
           renderCards(allSantri);

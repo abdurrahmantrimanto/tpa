@@ -25,6 +25,7 @@ function doGet(e) {
     else if (action === 'saveLog')      result = saveLog(e.parameter);
     else if (action === 'redeemHadiah') result = redeemHadiah(e.parameter);
     else if (action === 'getLogHariIni') result = getLogHariIni(e.parameter.tanggal);
+    else if (action === 'getStatistikBulanIni') result = getStatistikBulanIni();
     else result = { success: false, error: 'Unknown action: ' + action };
   } catch (err) {
     result = { success: false, error: err.message };
@@ -96,6 +97,44 @@ function getLogHariIni(tanggal) {
     return tgl === tanggal;
   }).length;
   return { success: true, count };
+}
+
+function getStatistikBulanIni() {
+  const ss    = SpreadsheetApp.openById(SHEET_ID);
+  const sheet = ss.getSheetByName(SHEET_LOG);
+  const data  = sheet.getDataRange().getValues();
+  const rows = data.slice(1);
+  const countByDate = {};
+  
+  const today = new Date();
+  today.setHours(23, 59, 59, 999);
+  const thirtyDaysAgo = new Date();
+  thirtyDaysAgo.setDate(today.getDate() - 29);
+  thirtyDaysAgo.setHours(0, 0, 0, 0);
+
+  rows.forEach(row => {
+    if (!row[1]) return;
+    const dateObj = new Date(row[1]);
+    if (dateObj.getTime() < thirtyDaysAgo.getTime() || dateObj.getTime() > today.getTime()) return;
+    
+    // Ambil tanggal dengan format DD/MM biar ringkas di chart
+    const labelTgl = Utilities.formatDate(dateObj, 'Asia/Jakarta', 'dd/MM');
+    // Jika butuh sorting pastikan formatnya bisa disort
+    const tglSort = Utilities.formatDate(dateObj, 'Asia/Jakarta', 'yyyy-MM-dd');
+    const key = tglSort + '|' + labelTgl;
+    
+    if (!countByDate[key]) countByDate[key] = 0;
+    countByDate[key]++;
+  });
+
+  const resultData = Object.keys(countByDate).map(key => {
+    const parts = key.split('|');
+    return { dateSort: parts[0], label: parts[1], count: countByDate[key] };
+  });
+
+  resultData.sort((a, b) => new Date(a.dateSort) - new Date(b.dateSort));
+
+  return { success: true, data: resultData };
 }
 
 function buildDetail(row) {
