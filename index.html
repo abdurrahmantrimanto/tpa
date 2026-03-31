@@ -644,6 +644,26 @@
       color: var(--gold);
     }
 
+    .sync-indicator {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--green-deep);
+      text-align: center;
+      margin-bottom: 12px;
+      padding: 6px 12px;
+      background: var(--green-light);
+      border-radius: 8px;
+      display: inline-block;
+      width: 100%;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.7; }
+      50% { opacity: 1; }
+      100% { opacity: 0.7; }
+    }
+
     .nilai-A\+ {
       background: var(--green-light);
       color: var(--green-deep);
@@ -1668,12 +1688,32 @@
         renderLog(SAMPLE_LOG);
         return;
       }
+
+      const cacheKey = 'tpa_log_' + santriId;
+      const cachedLog = localStorage.getItem(cacheKey);
+      if (cachedLog) {
+        try {
+          renderLog(JSON.parse(cachedLog)); // Tampilkan seketika
+          // Tambahkan indikator sedang sync di atas riwayat
+          document.getElementById('modalLog').insertAdjacentHTML('afterbegin', 
+            `<div class="sync-indicator">⏳ Mensinkronkan data terbaru...</div>`
+          );
+        } catch (e) {}
+      } else {
+        document.getElementById('modalLog').innerHTML = `<div class="loading-wrap"><div class="spinner"></div><div class="loading-text">Memuat riwayat...</div></div>`;
+      }
+
       try {
         const data = await apiCall('getLog', { id: santriId });
-        if (data.success) renderLog(data.log);
-        else throw new Error();
+        if (data.success) {
+          localStorage.setItem(cacheKey, JSON.stringify(data.log));
+          // Hanya re-render ulang jika sedang melihat santri yang sama untuk mencegah masalah navigasi
+          if (currentSantri && currentSantri.id === santriId) {
+            renderLog(data.log);
+          }
+        }
       } catch (e) {
-        renderLog(SAMPLE_LOG);
+        if (!cachedLog) renderLog(SAMPLE_LOG);
       }
     }
 
@@ -1817,7 +1857,7 @@
       }
       if (s.saldo > 15) starsEl.innerHTML += `<span style="font-size:12px;color:var(--text-light)">+${s.saldo - 15} lagi</span>`;
 
-      document.getElementById('modalLog').innerHTML = `<div class="loading-wrap"><div class="spinner"></div><div class="loading-text">Memuat riwayat...</div></div>`;
+      // Menunggu loadLog (animasi loading dipindah ke dalam loadLog jika belum ada cache)
       document.getElementById('modalOverlay').classList.add('open');
       document.body.style.overflow = 'hidden';
 
@@ -1999,6 +2039,24 @@
           let currentStat = parseInt(currentStatStr && currentStatStr !== '—' ? currentStatStr : '0', 10) || 0;
           document.getElementById('statHariIni').textContent = currentStat + 1;
           localStorage.setItem('tpa_stat_hari_ini', currentStat + 1);
+
+          // Optimistic update Log History di localStorage
+          const cacheKeyLog = 'tpa_log_' + formData.id;
+          let cachedLogStr = localStorage.getItem(cacheKeyLog);
+          if (cachedLogStr) {
+            try {
+              let parsedLog = JSON.parse(cachedLogStr);
+              parsedLog.unshift({
+                tanggal: new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Jakarta' }),
+                kategori: formData.kategori,
+                detail: formData.kategori === 'Al-Quran' ? `${formData.surah} ${formData.ayat_dari}-${formData.ayat_sampai}` : `${formData.level} Hal. ${formData.halaman}`,
+                nilai: formData.nilai,
+                pengajar: formData.pengajar,
+                keterangan: formData.keterangan || ''
+              });
+              localStorage.setItem(cacheKeyLog, JSON.stringify(parsedLog));
+            } catch (e) {}
+          }
 
           renderCards(allSantri);
           updateStats(allSantri);
