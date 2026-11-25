@@ -1,9 +1,10 @@
-const CACHE_NAME = 'tpa-huda-v3';
+const CACHE_NAME = 'tpa-huda-v4';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './manifest.json',
-  './mosque.svg'
+  './mosque.svg',
+  './bank-soal.json'
 ];
 
 self.addEventListener('install', event => {
