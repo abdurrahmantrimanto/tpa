@@ -1,0 +1,2538 @@
+{
+  "version": 1,
+  "total": 315,
+  "jenjangList": [
+    "TK",
+    "SD",
+    "SMP"
+  ],
+  "kategoriList": [
+    "Sambung Ayat",
+    "Huruf & Tajwid",
+    "Doa Harian",
+    "Kisah Nabi & Islam",
+    "Kartu Kejutan"
+  ],
+  "soal": [
+    {
+      "id": "TK-SA-001",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Bacakan ayat pertama Surah Al-Fatihah (Basmalah) dengan jelas!",
+      "jawaban": "Bismillaahir-rahmaanir-rahiim.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-SA-002",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Al-Fatihah ini: 'Alhamdulillaahi rabbil 'aalamiin...'",
+      "jawaban": "Ar-rahmaanir-rahiim.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-SA-003",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Al-Fatihah ini: 'Maaliki yaumid-diin...'",
+      "jawaban": "Iyyaaka na'budu wa iyyaaka nasta'iin.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-SA-004",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Al-Fatihah ini: 'Ihdinash-shiraathal mustaqiim...'",
+      "jawaban": "Shiraathalladziina an'amta 'alaihim ghairil maghdhuubi 'alaihim waladh-dhaalliin.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-SA-005",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Al-Ikhlas: 'Qul huwallaahu ahad...'",
+      "jawaban": "Allaahush-shamad.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-SA-006",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Al-Ikhlas ini: 'Lam yalid wa lam yuulad...'",
+      "jawaban": "Wa lam yakul-lahuu kufuwan ahad.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-SA-007",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Bacakan Surah Al-Ikhlas dari ayat 1 sampai 4 secara lengkap!",
+      "jawaban": "Qul huwallaahu ahad. Allaahush-shamad. Lam yalid wa lam yuulad. Wa lam yakul-lahuu kufuwan ahad.",
+      "bintang": 2
+    },
+    {
+      "id": "TK-SA-008",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah An-Nas: 'Qul a'uudzu birabbin-naas...'",
+      "jawaban": "Malikin-naas.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-SA-009",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah An-Nas ini: 'Malikin-naas, Ilaahin-naas...'",
+      "jawaban": "Min syarril waswaasil khannaas.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-SA-010",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat terakhir Surah An-Nas: 'Alladzii yuwaswisu fii shuduurin-naas...'",
+      "jawaban": "Minal jinnati wan-naas.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-SA-011",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Al-Falaq: 'Qul a'uudzu birabbil falaq...'",
+      "jawaban": "Min syarri maa khalaq.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-SA-012",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Al-Falaq ini: 'Wa min syarri ghaasiqin idzaa waqab...'",
+      "jawaban": "Wa min syarrin-naffaatsaati fil 'uqad.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-SA-013",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat terakhir Surah Al-Falaq: 'Wa min syarrin-naffaatsaati fil 'uqad...'",
+      "jawaban": "Wa min syarri haasidin idzaa hasad.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-SA-014",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Al-Kautsar: 'Innaa a'thainaakal kautsar...'",
+      "jawaban": "Fashalli lirabbika wanhar.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-SA-015",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat terakhir Surah Al-Kautsar: 'Fashalli lirabbika wanhar...'",
+      "jawaban": "Inna syaani'aka huwal abtar.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-SA-016",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Al-'Asr: 'Wal 'ashr...'",
+      "jawaban": "Innal insaana lafii khusr.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-SA-017",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat terakhir Surah Al-'Asr: 'Innal insaana lafii khusr...'",
+      "jawaban": "Illalladziina aamanuu wa 'amilush-shaalihaati wa tawaashau bil-haqqi wa tawaashau bish-shabr.",
+      "bintang": 2
+    },
+    {
+      "id": "TK-SA-018",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah An-Nasr: 'Idzaa jaa'a nashrullaahi wal fath...'",
+      "jawaban": "Wa ra'aitan-naasa yadkhuluuna fii diinillaahi afwaajaa.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-SA-019",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat terakhir Surah An-Nasr: 'Wa ra'aitan-naasa yadkhuluuna fii diinillaahi afwaajaa...'",
+      "jawaban": "Fasabbih bihamdi rabbika wastaghfirh, innahuu kaana tawwaabaa.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-SA-020",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Al-Lahab (Al-Masad): 'Tabbat yadaa abii lahabiw wa tabb...'",
+      "jawaban": "Maa aghnaa 'anhu maaluhuu wa maa kasab.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-SA-021",
+      "jenjang": "TK",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Potongan ayat 'Malikin-naas, Ilaahin-naas' terdapat di dalam surah apa?",
+      "jawaban": "Surah An-Nas.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-001",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apakah nama huruf Hijaiyah yang paling pertama?",
+      "jawaban": "Huruf Alif (ا).",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-002",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Huruf Ba (ب) memiliki berapa titik dan di mana letak titiknya?",
+      "jawaban": "1 titik di bagian bawah.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-003",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Huruf Ta (ت) memiliki berapa titik dan di mana letaknya?",
+      "jawaban": "2 titik di bagian atas.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-004",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Huruf Tsa (ث) yang bentuknya seperti perahu memiliki berapa titik di atasnya?",
+      "jawaban": "3 titik di atas.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-005",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Di antara huruf Jim (ج), Ha (ح), dan Kha (خ), huruf manakah yang tidak punya titik sama sekali?",
+      "jawaban": "Huruf Ha (ح).",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-006",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Di mana letak titik pada huruf Jim (ج)? Di tengah/perut atau di atas kepala?",
+      "jawaban": "Di tengah / di dalam perutnya.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-007",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Huruf Kha (خ) memiliki 1 titik di bagian mana?",
+      "jawaban": "Di bagian atas kepala.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-008",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apa perbedaan bentuk antara huruf Dal (د) dan Dzal (ذ)?",
+      "jawaban": "Dal tidak punya titik, sedangkan Dzal punya 1 titik di atas.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-009",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Setelah huruf Ra (ر), huruf apakah yang bentuknya sama persis tetapi memakai 1 titik di atas?",
+      "jawaban": "Huruf Zai / Za (ز).",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-010",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Huruf Syin (ش) memiliki berapa titik di atas giginya?",
+      "jawaban": "3 titik di atas.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-011",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Tanda baca garis miring di ATAS huruf Hijaiyah disebut harakat apa?",
+      "jawaban": "Harakat Fathah (bunyi 'a' / 'o').",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-012",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Tanda baca garis miring di BAWAH huruf Hijaiyah disebut harakat apa?",
+      "jawaban": "Harakat Kasrah (bunyi 'i').",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-013",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Tanda baca yang bentuknya seperti angka 9 kecil atau koma di atas huruf disebut harakat apa?",
+      "jawaban": "Harakat Dhammah (bunyi 'u').",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-014",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Jika huruf Ba (ب) diberi harakat Fathah, Kasrah, lalu Dhammah, bagaimana bunyi bacanya?",
+      "jawaban": "Ba - Bi - Bu.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-015",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Jika huruf Mim (م) diberi harakat Fathah, Kasrah, lalu Dhammah, bagaimana bunyi bacanya?",
+      "jawaban": "Ma - Mi - Mu.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-016",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Jika huruf Sin (س) diberi harakat Fathah-tain (dua garis di atas: سً), bagaimana bunyi bacanya?",
+      "jawaban": "San.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-017",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Jika huruf Ta (ت) diberi harakat Kasrah-tain (dua garis di bawah: تٍ), bagaimana bunyi bacanya?",
+      "jawaban": "Tin.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-018",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Jika huruf Ba (ب) diberi harakat Dhammah-tain (بٌ), bagaimana bunyi bacanya?",
+      "jawaban": "Bun.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-019",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Huruf Nun (ن) yang berbentuk seperti mangkuk memiliki berapa titik di atasnya?",
+      "jawaban": "1 titik di atas.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-020",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apakah nama huruf Hijaiyah yang paling terakhir?",
+      "jawaban": "Huruf Ya (ي).",
+      "bintang": 1
+    },
+    {
+      "id": "TK-HT-021",
+      "jenjang": "TK",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Tanda bulat kecil di atas huruf yang menandakan huruf itu mati disebut tanda apa?",
+      "jawaban": "Tanda Sukun.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-001",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa sebelum makan!",
+      "jawaban": "Allaahumma baarik lanaa fiimaa razaqtanaa wa qinaa 'adzaaban-naar (atau membaca Bismillaah).",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-002",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa sesudah makan!",
+      "jawaban": "Alhamdulillaahilladzii ath'amanaa wa saqaanaa wa ja'alanaa مسلمين (muslimiin).",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-003",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa sebelum tidur!",
+      "jawaban": "Bismikallaahumma ahyaa wa bismika amuut.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-004",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa bangun tidur!",
+      "jawaban": "Alhamdulillaahilladzii ahyaanaa ba'da maa amaatanaa wa ilaihin-nusyuur.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-005",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa untuk kedua orang tua (ayah dan ibu)!",
+      "jawaban": "Rabbighfir lii wa liwaalidayya warhamhumaa kamaa rabbayaanii shaghiiraa.",
+      "bintang": 2
+    },
+    {
+      "id": "TK-DH-006",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa singkat sebelum belajar agar diberi ilmu!",
+      "jawaban": "Rabbi zidnii 'ilman warzuqnii fahman.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-007",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Saat masuk ke kamar mandi/WC, kaki mana yang didahulukan dan apa doanya?",
+      "jawaban": "Kaki kiri. Doanya: Allaahumma innii a'uudzubika minal khubutsi wal khabaa'its.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-008",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Saat keluar dari kamar mandi/WC, kaki mana yang didahulukan dan apa bacaannya?",
+      "jawaban": "Kaki kanan. Bacaannya: Ghufraanaka (Alhamdulillaahilladzii adzhaba 'annil adzaa wa 'aafaanii).",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-009",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Apa yang kita ucapkan ketika kita lupa membaca doa di awal makan?",
+      "jawaban": "Bismillaahi awwalahuu wa aakhirahuu.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-010",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Apa yang wajib kita ucapkan ketika kita bersin?",
+      "jawaban": "Alhamdulillaah.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-011",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Jika teman kita bersin dan mengucap 'Alhamdulillah', apa yang kita ucapkan untuk mendoakannya?",
+      "jawaban": "Yarhamukallaah.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-012",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bagaimana jawaban salam jika ada yang mengucapkan 'Assalamu'alaikum'?",
+      "jawaban": "Wa'alaikumussalaam warahmatullaahi wabarakaatuh.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-013",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Saat masuk ke dalam masjid, kaki sebelah mana yang harus melangkah lebih dulu?",
+      "jawaban": "Kaki kanan.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-014",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Tangan sebelah manakah yang baik digunakan saat makan dan minum?",
+      "jawaban": "Tangan kanan.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-015",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bagaimana bunyi kalimat Hamdalah dan kapan kita mengucapkannya?",
+      "jawaban": "'Alhamdulillaah', diucapkan saat bersyukur atau selesai melakukan sesuatu.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-016",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bagaimana bunyi kalimat Takbir?",
+      "jawaban": "Allaahu Akbar (Allah Maha Besar).",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-017",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bagaimana bunyi kalimat Istighfar saat kita meminta maaf/ampun kepada Allah?",
+      "jawaban": "Astaghfirullaahal 'azhiim.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-018",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bagaimana bunyi kalimat Tasbih ketika kita melihat ciptaan Allah yang indah?",
+      "jawaban": "Subhaanallaah (atau Maasyaa Allaah).",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-019",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa pendek saat turun hujan!",
+      "jawaban": "Allaahumma shayyiban naafi'an.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-020",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa keluar rumah!",
+      "jawaban": "Bismillaahi tawakkaltu 'alallaah, laa haula wa laa quwwata illaa billaah.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-DH-021",
+      "jenjang": "TK",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa bercermin!",
+      "jawaban": "Allaahumma kamaa hassanta khalqii fahassin khuluqii.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-001",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Ada berapa jumlah Rukun Islam?",
+      "jawaban": "Ada 5.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-002",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Apakah Rukun Islam yang pertama?",
+      "jawaban": "Mengucapkan dua kalimat Syahadat.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-003",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Apakah Rukun Islam yang kedua?",
+      "jawaban": "Mendirikan shalat.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-004",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Ada berapa jumlah Rukun Iman?",
+      "jawaban": "Ada 6.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-005",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Apakah Rukun Iman yang pertama?",
+      "jawaban": "Iman kepada Allah SWT.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-006",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Berapa kali umat Islam wajib melaksanakan shalat dalam sehari semalam?",
+      "jawaban": "5 kali (Subuh, Dzuhur, Ashar, Maghrib, Isya).",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-007",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Ada berapa rakaat shalat Subuh?",
+      "jawaban": "2 rakaat.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-008",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Ada berapa rakaat shalat Maghrib?",
+      "jawaban": "3 rakaat.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-009",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Siapakah nama manusia dan Nabi yang pertama kali diciptakan Allah?",
+      "jawaban": "Nabi Adam 'alaihissalam.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-010",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Siapakah nama Nabi dan Rasul terakhir umat Islam?",
+      "jawaban": "Nabi Muhammad shallallahu 'alaihi wa sallam.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-011",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Siapakah nama ayah dan ibu dari Nabi Muhammad SAW?",
+      "jawaban": "Ayahnya bernama Abdullah dan ibunya bernama Aminah.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-012",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Siapakah Nabi yang diperintahkan Allah untuk membuat kapal yang sangat besar?",
+      "jawaban": "Nabi Nuh 'alaihissalam.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-013",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Siapakah Nabi yang pernah ditelan oleh ikan paus besar di laut lalu berdoa di dalam perut ikan?",
+      "jawaban": "Nabi Yunus 'alaihissalam.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-014",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Siapakah Nabi yang tetap selamat dan tidak terbakar saat dilempar ke dalam api oleh Raja Namrud?",
+      "jawaban": "Nabi Ibrahim 'alaihissalam.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-015",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Apakah nama kitab suci umat Islam yang kita baca saat mengaji?",
+      "jawaban": "Kitab Suci Al-Qur'an.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-016",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Siapakah nama malaikat yang bertugas menyampaikan wahyu dari Allah kepada para Nabi?",
+      "jawaban": "Malaikat Jibril.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-017",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Pada bulan apakah umat Islam melaksanakan ibadah puasa selama satu bulan penuh?",
+      "jawaban": "Bulan Ramadhan.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-018",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Apakah nama bangunan suci di kota Makkah yang menjadi kiblat arah shalat umat Islam?",
+      "jawaban": "Ka'bah (di Masjidil Haram).",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-019",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Apa yang wajib kita lakukan sebelum shalat supaya badan kita bersih dan suci?",
+      "jawaban": "Berwudhu.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-020",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Di kota manakah Nabi Muhammad SAW dilahirkan?",
+      "jawaban": "Di kota Makkah.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KN-021",
+      "jenjang": "TK",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Hari raya umat Islam setelah selesai berpuasa di bulan Ramadhan disebut Hari Raya apa?",
+      "jawaban": "Hari Raya Idul Fitri.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KK-001",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Berdiri tegak, praktikkan gerakan Takbiratul Ihram sambil mengucapkan 'Allahu Akbar' dengan mantap!",
+      "jawaban": "Santri berdiri dan mempraktikkan Takbiratul Ihram dengan benar.",
+      "bintang": 2
+    },
+    {
+      "id": "TK-KK-002",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Ucapkan salam lengkap 'Assalamu'alaikum warahmatullahi wabarakatuh' sambil tersenyum ramah ke seluruh teman kelas!",
+      "jawaban": "Santri mengucapkan salam lengkap dengan sopan dan ceria.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KK-003",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 5 huruf Hijaiyah pertama secara berurutan dengan suara lantang!",
+      "jawaban": "Alif, Ba, Ta, Tsa, Jim.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KK-004",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Praktikkan urutan membasuh tangan, berkumur, membasuh wajah, dan kepala seperti sedang berwudhu!",
+      "jawaban": "Santri memperagakan gerakan dasar berwudhu dengan urutan yang rapi.",
+      "bintang": 2
+    },
+    {
+      "id": "TK-KK-005",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Ajak semua teman di kelas untuk membaca Shalawat Nabi bersama-sama ('Allahumma shalli 'alaa sayyidinaa Muhammad')!",
+      "jawaban": "Santri memimpin teman-teman membaca shalawat Nabi.",
+      "bintang": 2
+    },
+    {
+      "id": "TK-KK-006",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 5 waktu shalat wajib dari pagi sampai malam secara berurutan!",
+      "jawaban": "Subuh, Dzuhur, Ashar, Maghrib, Isya.",
+      "bintang": 2
+    },
+    {
+      "id": "TK-KK-007",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Pilih 1 teman di sebelahmu, lalu bacakan Surah Al-Kautsar berdua dengan kompak!",
+      "jawaban": "Santri dan temannya membaca Surah Al-Kautsar bersama-sama.",
+      "bintang": 2
+    },
+    {
+      "id": "TK-KK-008",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Praktikkan adab berdoa yang baik: angkat kedua tangan, kepala agak menunduk, dan ucapkan 'Aamiin ya Rabbal 'aalamiin'!",
+      "jawaban": "Santri mempraktikkan sikap berdoa yang sopan dan khusyuk.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KK-009",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 3 perbuatan baik yang bisa kamu lakukan untuk membantu ayah dan ibu di rumah!",
+      "jawaban": "Contoh: Merapikan mainan, mendoakan orang tua, bicara sopan, membantu menyapu.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KK-010",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Nyanyikan atau sebutkan lagu Rukun Islam (atau sebutkan 5 Rukun Islam) bersama-sama!",
+      "jawaban": "Syahadat, Shalat, Zakat, Puasa, Haji bagi yang mampu.",
+      "bintang": 2
+    },
+    {
+      "id": "TK-KK-011",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Bacakan 2 kalimat Syahadat dengan suara jelas dibantu oleh guru!",
+      "jawaban": "Asyhadu an laa ilaaha illallaah, wa asyhadu anna Muhammadar-rasuulullaah.",
+      "bintang": 2
+    },
+    {
+      "id": "TK-KK-012",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Praktikkan gerakan ruku' yang benar dalam shalat (punggung rata dan tangan memegang lutut)!",
+      "jawaban": "Santri memperagakan posisi ruku' dengan rapi.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KK-013",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Tunjukkan dengan jari tanganmu: berapa jumlah rakaat shalat Subuh, Maghrib, dan Isya?",
+      "jawaban": "Subuh 2 jari, Maghrib 3 jari, Isya 4 jari.",
+      "bintang": 2
+    },
+    {
+      "id": "TK-KK-014",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 3 ciptaan Allah yang ada di langit!",
+      "jawaban": "Contoh: Matahari, bulan, bintang, awan.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KK-015",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 3 nama Nabi yang kamu ketahui!",
+      "jawaban": "Contoh: Nabi Adam, Nabi Nuh, Nabi Ibrahim, Nabi Musa, Nabi Muhammad SAW.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KK-016",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Ucapkan Tasbih (Subhanallah), Tahmid (Alhamdulillah), dan Takbir (Allahu Akbar) masing-masing 3 kali!",
+      "jawaban": "Santri mengucapkan Subhanallah 3x, Alhamdulillah 3x, Allahu Akbar 3x.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KK-017",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Praktikkan adab minum yang diajarkan Rasulullah SAW (duduk, pakai tangan kanan, baca Bismillah, selesai baca Alhamdulillah)!",
+      "jawaban": "Santri memperagakan adab minum sambil duduk dengan tangan kanan.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KK-018",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Bacakan surah pendek favoritmu yang paling kamu hafal di depan kelas!",
+      "jawaban": "Santri membacakan 1 surah pendek pilihannya dengan lancar.",
+      "bintang": 2
+    },
+    {
+      "id": "TK-KK-019",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Gambar di udara bentuk huruf Alif, Ba, dan Mim menggunakan jari telunjukmu!",
+      "jawaban": "Santri menggambar bentuk huruf Alif, Ba, dan Mim di udara.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KK-020",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Ucapkan terima kasih ('Jazakumullahu khairan') kepada guru mengaji yang sudah mengajar hari ini!",
+      "jawaban": "Santri mengucapkan 'Jazakumullahu khairan' dengan sopan kepada pengajar.",
+      "bintang": 1
+    },
+    {
+      "id": "TK-KK-021",
+      "jenjang": "TK",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Pimpin teman-teman membaca doa sebelum belajar ('Rabbi zidnii 'ilman warzuqnii fahman')!",
+      "jawaban": "Santri memimpin doa sebelum belajar dengan suara lantang.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-SA-001",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Al-Ma'un ini: 'Ara'aitalladzii yukadzzibu bid-diin...'",
+      "jawaban": "Fadzaalikalladzii yadu''ul yatiim.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-002",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Al-Ma'un ini: 'Fawailul-lilmushalliin...'",
+      "jawaban": "Alladziina hum 'an shalaatihim saahuun.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-003",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Quraisy ini: 'Li'iilaafi quraisy, Iilaafihim rihlatasy-syitaa'i wash-shaif...'",
+      "jawaban": "Falya'buduu rabba haadzal bait.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-004",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Al-Fil: 'Alam tara kaifa fa'ala rabbuka bi-ashhaabil fiil...'",
+      "jawaban": "Alam yaj'al kaidahum fii tadhliil.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-005",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Al-Fil ini: 'Wa arsala 'alaihim thairan abaabiil...'",
+      "jawaban": "Tarmiihim bihijaaratim-min sijjiil.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-006",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Al-Humazah: 'Wailul-likulli humazatil-lumazah...'",
+      "jawaban": "Alladzii jama'a maalaw-wa 'addadah.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-007",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Al-Humazah ini: 'Kallaa layumbadzanna fil huthamah...'",
+      "jawaban": "Wa maa adraaka mal huthamah. Naarullaahil muuqadah.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-008",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah At-Takatsur: 'Alhaakumut-takaatsur...'",
+      "jawaban": "Hattaa zurtumul maqaabir.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-009",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat terakhir Surah At-Takatsur: 'Tsumma latarawunnahaa 'ainal yaqiin...'",
+      "jawaban": "Tsumma latus'alunna yauma'idzin 'anin-na'iim.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-010",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Al-Qari'ah ini: 'Yauma yakuunun-naasu kal-faraasyil mabtsuuts...'",
+      "jawaban": "Wa takuunul jibaalu kal-'ihnil manfuusy.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-011",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Al-'Adiyat: 'Wal 'aadiyaati dhabhaa...'",
+      "jawaban": "Fal-muuriyaati qadhaa.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-012",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Az-Zalzalah: 'Idzaa zulzilatil ardhu zilzaalahaa...'",
+      "jawaban": "Wa akhrajatil ardhu atsqaalahaa.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-013",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Az-Zalzalah ini: 'Famay-ya'mal mitsqaala dzarratin khairay-yarah...'",
+      "jawaban": "Wa may-ya'mal mitsqaala dzarratin syarray-yarah.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-014",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Al-Qadr: 'Innaa anzalnaahu fii lailatil qadr...'",
+      "jawaban": "Wa maa adraaka maa lailatul qadr. Lailatul qadri khairum-min alfi syahr.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-015",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah At-Tin: 'Wat-tiini waz-zaituun, Wa thuuri siiniin...'",
+      "jawaban": "Wa haadzal baladil amiin.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-016",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat terakhir Surah At-Tin: 'Alaisallaahu bi-ahkamil haakimiin' — sebelumnya bunyi ayat ke-7 adalah?",
+      "jawaban": "Famaa yukadzzibuka ba'du bid-diin.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-017",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Al-Insyirah (Asy-Syarh) ini: 'Fa'inna ma'al 'usri yusraa...'",
+      "jawaban": "Inna ma'al 'usri yusraa. Fa'idzaa faraghta fanshab. Wa ilaa rabbika farghab.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-018",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Ad-Dhuha: 'Wadh-dhuhaa, Wal-laili idzaa sajaa...'",
+      "jawaban": "Maa wadda'aka rabbuka wa maa qalaa.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-019",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Al-Kafirun ini: 'Laa a'budu maa ta'buduun...'",
+      "jawaban": "Wa laa antum 'aabiduuna maa a'bud.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-SA-020",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan awal Ayat Kursi (QS Al-Baqarah: 255): 'Allaahu laa ilaaha illaa huwal hayyul qayyuum...'",
+      "jawaban": "Laa ta'khudzuhuu sinatuw-wa laa naum...",
+      "bintang": 2
+    },
+    {
+      "id": "SD-SA-021",
+      "jenjang": "SD",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Potongan ayat 'Laqad khalaqnal insaana fii ahsani taqwiim' terdapat di dalam surah apa dan ayat ke berapa?",
+      "jawaban": "Surah At-Tin ayat ke-4.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-001",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Sebutkan 5 hukum bacaan apabila Nun Sukun (نْ) atau Tanwin bertemu dengan huruf Hijaiyah!",
+      "jawaban": "Idzhar Halqi, Idgham Bighunnah, Idgham Bilaghunnah, Iqlab, dan Ikhfa Haqiqi.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-HT-002",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Sebutkan 6 huruf Idzhar Halqi (tenggorokan)!",
+      "jawaban": "Hamzah (ء), Ha (هـ), 'Ain (ع), Ha (ح), Ghain (غ), Kha (خ).",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-003",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Bagaimana cara membaca hukum Idzhar Halqi?",
+      "jawaban": "Dibaca jelas dan terang tanpa mendengung.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-004",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Sebutkan 4 huruf Idgham Bighunnah (yang biasa disingkat 'Yanmu')!",
+      "jawaban": "Ya (ي), Nun (ن), Mim (م), dan Wawu (و).",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-005",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Sebutkan 2 huruf Idgham Bilaghunnah!",
+      "jawaban": "Lam (ل) dan Ra (ر).",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-006",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Huruf apakah yang menjadi huruf Iqlab, dan bagaimana cara membacanya?",
+      "jawaban": "Huruf Ba (ب). Cara membacanya: bunyi Nun Sukun/Tanwin dilebur/diubah menjadi bunyi Mim (م) disertai dengung.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-007",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Ada berapa jumlah huruf Ikhfa Haqiqi, dan bagaimana cara membacanya?",
+      "jawaban": "Ada 15 huruf. Cara membacanya: samar-samar antara jelas dan masuk ke huruf berikutnya disertai dengung 2 harakat.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-008",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Sebutkan 5 huruf Qalqalah (yang biasa disingkat 'Baju Di Toko' / 'Quthbu Jadin')!",
+      "jawaban": "Ba (ب), Jim (ج), Dal (د), Tha (ط), dan Qaf (ق).",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-009",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apa perbedaan antara Qalqalah Sughra dan Qalqalah Kubra?",
+      "jawaban": "Qalqalah Sughra hurufnya mati asli di tengah kata (pantulan ringan), sedangkan Qalqalah Kubra mati karena waqaf/berhenti di akhir ayat (pantulan kuat).",
+      "bintang": 2
+    },
+    {
+      "id": "SD-HT-010",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apabila huruf Nun atau Mim memiliki tanda Tasydid (نّ / مّ), apa nama hukum bacaannya?",
+      "jawaban": "Ghunnah (Ghunnah Musyaddadah), dibaca mendengung 2 harakat.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-011",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Sebutkan 3 hukum bacaan Mim Sukun (مْ)!",
+      "jawaban": "Ikhfa Syafawi, Idgham Mimi (Mutamatsilain), dan Idzhar Syafawi.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-012",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Kapan terjadi hukum bacaan Ikhfa Syafawi?",
+      "jawaban": "Apabila Mim Sukun (مْ) bertemu dengan huruf Ba (ب).",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-013",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Kapan terjadi hukum bacaan Idgham Mimi (Idgham Mutamatsilain)?",
+      "jawaban": "Apabila Mim Sukun (مْ) bertemu dengan huruf Mim (م).",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-014",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Sebutkan 3 huruf Mad Thabi'i beserta syarat harakat sebelumnya!",
+      "jawaban": "Alif setelah Fathah, Ya Sukun setelah Kasrah, dan Wawu Sukun setelah Dhammah (dibaca panjang 2 harakat).",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-015",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apa perbedaan cara membaca Alif Lam Qamariyah dan Alif Lam Syamsiyah?",
+      "jawaban": "Alif Lam Qamariyah huruf Lam-nya dibaca jelas (sukun), sedangkan Alif Lam Syamsiyah huruf Lam-nya tidak dibaca dan melebur (bertasydid) ke huruf sesudahnya.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-016",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Pada kata 'Al-Hamdulillaah' (الْحَمْدُ), termasuk Alif Lam Qamariyah atau Alif Lam Syamsiyah?",
+      "jawaban": "Alif Lam Qamariyah (karena bertemu huruf Ha).",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-017",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Pada kata 'Ar-Rahmaan' (الرَّحْمٰنِ), termasuk Alif Lam Qamariyah atau Alif Lam Syamsiyah?",
+      "jawaban": "Alif Lam Syamsiyah (karena bertemu huruf Ra yang bertasydid).",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-018",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Pada kalimat 'Min syarri' (مِنْ شَرِّ) di Surah Al-Falaq, Nun Sukun bertemu huruf Syin (ش). Apa hukum tajwidnya?",
+      "jawaban": "Ikhfa Haqiqi.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-019",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Pada akhir ayat 'Qul huwallaahu ahad' (أَحَدٌ), huruf Dal di akhir ayat dibaca memantul. Apa nama hukum tajwidnya?",
+      "jawaban": "Qalqalah Kubra.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-020",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Pada kalimat 'Kufuwan ahad' (كُفُوًا أَحَدٌ), Fathah-tain bertemu huruf Hamzah/Alif. Apa nama hukum tajwidnya?",
+      "jawaban": "Idzhar Halqi.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-HT-021",
+      "jenjang": "SD",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Pada kalimat 'Lam yalid' (لَمْ يَلِدْ), Mim Sukun bertemu huruf Ya dan Dal berharakat sukun di tengah ayat. Sebutkan hukum keduanya!",
+      "jawaban": "Mim Sukun bertemu Ya = Idzhar Syafawi; Dal sukun = Qalqalah Sughra.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-DH-001",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa masuk masjid!",
+      "jawaban": "Allaahummaghfir lii dzunuubii waftah lii abwaaba rahmatik.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-DH-002",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa keluar masjid!",
+      "jawaban": "Allaahummaghfir lii dzunuubii waftah lii abwaaba fadhlik.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-DH-003",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa kebaikan dunia dan akhirat (Doa Sapu Jagat)!",
+      "jawaban": "Rabbanaa aatinaa fid-dunyaa hasanataw-wa fil aakhirati hasanataw-wa qinaa 'adzaaban-naar.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-DH-004",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa naik kendaraan darat!",
+      "jawaban": "Subhaanalladzii sakhkhara lanaa haadzaa wa maa kunnaa lahuu muqriniin, wa innaa ilaa rabbinaa lamunqalibuun.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-DH-005",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa berbuka puasa yang diajarkan Rasulullah SAW!",
+      "jawaban": "Dzahabadh-zhama'u wabtallatil 'uruuqu wa tsabatal ajru insyaa Allaah (atau Allaahumma laka shumtu wa 'alaa rizqika afthartu).",
+      "bintang": 1
+    },
+    {
+      "id": "SD-DH-006",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa setelah selesai berwudhu!",
+      "jawaban": "Asyhadu an laa ilaaha illallaahu wahdahuu laa syariika lah, wa asyhadu anna Muhammadan 'abduhuu wa rasuuluh. Allaahummaj'alnii minat-tawwaabiina waj'alnii minal mutathahhiriin.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-DH-007",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Apa bacaan yang kita ucapkan ketika sedang ruku' dalam shalat?",
+      "jawaban": "Subhaana rabbiyal 'azhiimi wa bihamdih (3x).",
+      "bintang": 1
+    },
+    {
+      "id": "SD-DH-008",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Apa bacaan ketika bangkit dari ruku' (I'tidal)?",
+      "jawaban": "Sami'allaahu liman hamidah. Rabbanaa lakal hamdu mil'us-samaawaati wa mil'ul ardhi wa mil'u maa syi'ta min syai'in ba'du.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-DH-009",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Apa bacaan ketika sedang sujud dalam shalat?",
+      "jawaban": "Subhaana rabbiyal a'laa wa bihamdih (3x).",
+      "bintang": 1
+    },
+    {
+      "id": "SD-DH-010",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Sebutkan bacaan doa ketika duduk di antara dua sujud!",
+      "jawaban": "Rabbighfir lii warhamnii wajburnii warfa'nii warzuqnii wahdinii wa 'aafinii wa'fu 'annii.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-DH-011",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Jika muadzin mengumandangkan 'Hayya 'alash-shalaah' dan 'Hayya 'alal falaah', apa jawaban yang kita ucapkan?",
+      "jawaban": "Laa haula wa laa quwwata illaa billaah.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-DH-012",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa ketika memakai pakaian baru atau berpakaian!",
+      "jawaban": "Alhamdulillaahilladzii kasaanii haadzaa wa razaqaniihi min ghairi haulim-minnii wa laa quwwah.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-DH-013",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa ketika menjenguk teman atau saudara yang sedang sakit!",
+      "jawaban": "Laa ba'sa thahuurun insyaa Allaah (atau As'alullaahal 'azhiima rabbal 'arsyil 'azhiimi ay-yasyfiyak).",
+      "bintang": 1
+    },
+    {
+      "id": "SD-DH-014",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa penutup majelis (Kaffaratul Majlis) yang biasa dibaca selesai mengaji!",
+      "jawaban": "Subhaanakallaahumma wa bihamdika asyhadu an laa ilaaha illaa anta astaghfiruka wa atuubu ilaik.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-DH-015",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Setelah shalat fardhu, kita dianjurkan berdzikir membaca Subhanallah, Alhamdulillah, dan Allahu Akbar masing-masing berapa kali?",
+      "jawaban": "Masing-masing 33 kali.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-DH-016",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Apa arti dari doa 'Rabbi zidnii 'ilman warzuqnii fahman'?",
+      "jawaban": "Ya Tuhanku, tambahkanlah ilmu kepadaku dan berikanlah aku pemahaman yang baik.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-DH-017",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Apa kalimat yang kita ucapkan ketika mendengar kabar musibah atau orang meninggal dunia?",
+      "jawaban": "Innaa lillaahi wa innaa ilaihi raaji'uun (Kalimat Tarji').",
+      "bintang": 1
+    },
+    {
+      "id": "SD-DH-018",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Ketika berjanji akan melakukan sesuatu di masa depan/besok, kalimat apa yang harus kita ucapkan?",
+      "jawaban": "Insyaa Allaah (Jika Allah menghendaki).",
+      "bintang": 1
+    },
+    {
+      "id": "SD-DH-019",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa setelah mendengar adzan!",
+      "jawaban": "Allaahumma rabba haadzihid-da'watit-taammah, wash-shalaatil qaa'imah, aati Muhammadanil wasiilata wal fadhiilah, wab'atshu maqaamam-mahmuudanil-ladzii wa'adtah.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-DH-020",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Apa doa yang dibaca ketika angin bertiup kencang?",
+      "jawaban": "Allaahumma innii as'aluka khairahaa wa a'uudzubika min syarrihaa.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-DH-021",
+      "jenjang": "SD",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Apa doa singkat ketika kita melihat petir atau mendengar suara guruh?",
+      "jawaban": "Subhaanalladzii yusabbihur-ra'du bihamdihii wal malaa'ikatu min khiifatih.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KN-001",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Sebutkan 6 Rukun Iman secara berurutan!",
+      "jawaban": "1. Iman kepada Allah, 2. Malaikat, 3. Kitab-kitab, 4. Rasul-rasul, 5. Hari Kiamat, 6. Qadha dan Qadar.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KN-002",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Sebutkan 10 nama Malaikat yang wajib diketahui!",
+      "jawaban": "Jibril, Mikail, Israfil, Izrail, Munkar, Nakir, Raqib, Atid, Malik, Ridwan.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KN-003",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Apa tugas Malaikat Mikail dan Malaikat Israfil?",
+      "jawaban": "Malaikat Mikail bertugas membagikan rezeki/mengatur hujan, sedangkan Malaikat Israfil bertugas meniup sangkakala.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KN-004",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Apa tugas Malaikat Raqib dan Malaikat Atid?",
+      "jawaban": "Malaikat Raqib mencatat amal baik, sedangkan Malaikat Atid mencatat amal buruk.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KN-005",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Sebutkan 4 kitab suci Allah beserta nama Nabi yang menerimanya!",
+      "jawaban": "Taurat (Nabi Musa), Zabur (Nabi Daud), Injil (Nabi Isa), Al-Qur'an (Nabi Muhammad SAW).",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KN-006",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Siapakah 5 Rasul yang mendapat gelar 'Ulul Azmi' (memiliki ketabahan luar biasa)?",
+      "jawaban": "Nabi Nuh, Nabi Ibrahim, Nabi Musa, Nabi Isa, dan Nabi Muhammad SAW.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KN-007",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Sebutkan 4 sifat wajib bagi Rasul beserta artinya!",
+      "jawaban": "Shiddiq (Jujur/Benar), Amanah (Dapat dipercaya), Tabligh (Menyampaikan), Fathanah (Cerdas).",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KN-008",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Sebutkan 4 sahabat utama Nabi yang bergelar Khulafaur Rasyidin secara berurutan!",
+      "jawaban": "Abu Bakar Ash-Shiddiq, Umar bin Khattab, Utsman bin Affan, dan Ali bin Abi Thalib.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KN-009",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Apa mukjizat Nabi Musa AS ketika dikejar oleh pasukan Raja Fir'aun di tepi Laut Merah?",
+      "jawaban": "Tongkatnya dapat membelah Laut Merah atas izin Allah SWT.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KN-010",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Siapakah Nabi yang diberi mukjizat bisa berbicara dengan hewan dan memimpin tentara manusia, jin, serta burung?",
+      "jawaban": "Nabi Sulaiman 'alaihissalam.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KN-011",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Mata air apakah yang memancar di dekat kaki Nabi Ismail AS saat masih bayi di padang pasir Makkah?",
+      "jawaban": "Air Zamzam.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KN-012",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Siapakah nama kakek dan paman yang merawat Nabi Muhammad SAW setelah ibunya wafat?",
+      "jawaban": "Kakeknya bernama Abdul Muthalib dan pamannya bernama Abu Thalib.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KN-013",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Mengapa tahun kelahiran Nabi Muhammad SAW disebut sebagai 'Tahun Gajah'?",
+      "jawaban": "Karena pada tahun itu pasukan bergajah yang dipimpin Raja Abrahah menyerang Ka'bah lalu dihancurkan oleh burung Ababil.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KN-014",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Apakah arti gelar 'Al-Amin' yang diberikan penduduk Makkah kepada Nabi Muhammad SAW?",
+      "jawaban": "Orang yang sangat jujur dan dapat dipercaya.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KN-015",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Di manakah Nabi Muhammad SAW menerima wahyu pertama, dan surah apakah yang pertama kali turun?",
+      "jawaban": "Di Gua Hira, wahyu pertama adalah Surah Al-'Alaq ayat 1-5.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KN-016",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Siapakah nama sahabat Nabi yang pertama kali mengumandangkan adzan dalam sejarah Islam?",
+      "jawaban": "Bilal bin Rabah radhiyallahu 'anhu.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KN-017",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Ada berapa jumlah Nabi dan Rasul yang wajib kita ketahui namanya di dalam Al-Qur'an?",
+      "jawaban": "25 Nabi dan Rasul.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KN-018",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Siapakah Nabi yang terkenal sangat sabar ketika diuji Allah dengan penyakit kulit selama bertahun-tahun?",
+      "jawaban": "Nabi Ayyub 'alaihissalam.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KN-019",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Siapakah Nabi yang diberi mukjizat suara sangat merdu dan dapat melunakkan besi dengan tangannya?",
+      "jawaban": "Nabi Daud 'alaihissalam.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KN-020",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Kisah pengorbanan Nabi Ibrahim AS dan putranya Nabi Ismail AS diperingati umat Islam setiap tanggal 10 Dzulhijjah sebagai Hari Raya apa?",
+      "jawaban": "Hari Raya Idul Adha (Hari Raya Kurban).",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KN-021",
+      "jenjang": "SD",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Berapa jumlah total rakaat shalat fardhu 5 waktu jika dijumlahkan dalam sehari semalam?",
+      "jawaban": "17 rakaat (Subuh 2 + Dzuhur 4 + Ashar 4 + Maghrib 3 + Isya 4).",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KK-001",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Tantangan Cepat 15 Detik! Sebutkan 5 huruf Qalqalah beserta 1 contoh katanya di Al-Qur'an!",
+      "jawaban": "Huruf: Ba, Jim, Dal, Tha, Qaf. Contoh: Ahad, Falaq, Hablum, Waqab, Muhith.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KK-002",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Tantangan Duet! Pilih 1 temanmu di kelas dan bacakan Surah Al-Ma'un ayat 1-7 secara bergantian (sambung-menyambung)!",
+      "jawaban": "Santri dan temannya berhasil membaca Surah Al-Ma'un ayat 1-7 secara bergantian.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KK-003",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 10 nama Nabi secara berurutan mulai dari Nabi Adam AS!",
+      "jawaban": "Adam, Idris, Nuh, Hud, Shalih, Ibrahim, Luth, Ismail, Ishaq, Ya'qub.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KK-004",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Praktikkan bacaan dan gerakan duduk di antara dua sujud dengan benar dan tartil!",
+      "jawaban": "Rabbighfir lii warhamnii wajburnii warfa'nii warzuqnii wahdinii wa 'aafinii wa'fu 'annii.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KK-005",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 6 rukun wudhu secara berurutan dari niat sampai tertib!",
+      "jawaban": "1. Niat, 2. Membasuh wajah, 3. Membasuh kedua tangan sampai siku, 4. Mengusap sebagian kepala, 5. Membasuh kedua kaki sampai mata kaki, 6. Tertib.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KK-006",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Cari dan sebutkan 2 hukum tajwid yang ada pada ayat 'Innaa a'thainaakal kautsar'!",
+      "jawaban": "1. 'Innaa' = Ghunnah (Nun bertasydid) & Mad Jaiz/Thabi'i, 2. 'Al-Kautsar' = Alif Lam Qamariyah / Mad Lin.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KK-007",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Bacakan Ayat Kursi (QS Al-Baqarah: 255) dengan suara lantang dan lancar!",
+      "jawaban": "Santri membacakan Ayat Kursi dari awal hingga akhir dengan lancar.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KK-008",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 5 hal yang dapat membatalkan wudhu!",
+      "jawaban": "1. Keluar sesuatu dari dua jalan (buang air/kentut), 2. Tidur nyenyak, 3. Hilang akal, 4. Bersentuhan kulit laki-laki & perempuan bukan mahram, 5. Menyentuh kemaluan dengan telapak tangan.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KK-009",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Pimpin seluruh teman di kelas membaca Doa Sapu Jagat beserta artinya!",
+      "jawaban": "Rabbanaa aatinaa fid-dunyaa hasanah... (Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, serta lindungilah kami dari siksa neraka).",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KK-010",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Tebak Cepat! Sebutkan nama surah di Juz 30 yang artinya 'Segumpal Darah', 'Malam Kemuliaan', dan 'Guncangan'!",
+      "jawaban": "Al-'Alaq (Segumpal Darah), Al-Qadr (Malam Kemuliaan), Az-Zalzalah (Guncangan).",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KK-011",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Kumandangkan lafal Iqamah dari awal sampai akhir dengan suara yang jelas!",
+      "jawaban": "Allahu Akbar Allahu Akbar, Asyhadu an laa ilaaha illallaah... Qad qaamatish-shalaah (2x), Allahu Akbar Allahu Akbar, Laa ilaaha illallaah.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KK-012",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 4 hal yang membatalkan puasa di bulan Ramadhan!",
+      "jawaban": "Makan dan minum dengan sengaja, muntah dengan sengaja, hilang akal/gila, keluar darah haid/nifas.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KK-013",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Bacakan Surah Al-Kafirun ayat 1 sampai 6 tanpa tertukar ayatnya!",
+      "jawaban": "Santri membaca Surah Al-Kafirun ayat 1-6 dengan tepat tanpa tertukar.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KK-014",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Ceritakan secara singkat (dalam 3 kalimat) kisah pasukan bergajah Raja Abrahah yang menyerbu Ka'bah!",
+      "jawaban": "Raja Abrahah ingin menghancurkan Ka'bah dengan pasukan gajah. Allah mengirim burung Ababil yang membawa batu panas dari neraka (Sijjil). Pasukan Abrahah hancur seperti daun yang dimakan ulat.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KK-015",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 5 Asmaul Husna (nama-nama Allah yang indah) beserta artinya!",
+      "jawaban": "Contoh: Ar-Rahman (Maha Pengasih), Ar-Rahim (Maha Penyayang), Al-Malik (Maha Merajai), Al-Quddus (Maha Suci), As-Salam (Maha Memberi Kesejahteraan).",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KK-016",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 3 adab yang harus kita jaga ketika sedang membaca Al-Qur'an!",
+      "jawaban": "Contoh: Berwudhu (suci), menghadap kiblat/duduk sopan, membaca Ta'awudz & Basmalah, membaca dengan tartil dan tidak bercanda.",
+      "bintang": 1
+    },
+    {
+      "id": "SD-KK-017",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Tebak Nama Surah! Surah apakah yang artinya 'Kuda Perang yang Berlari Kencang' dan 'Bermegah-megahan'?",
+      "jawaban": "Al-'Adiyat (Kuda Perang yang Berlari Kencang) dan At-Takatsur (Bermegah-megahan).",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KK-018",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Bacakan bacaan Tasyahud Awal (Attahiyyat) sampai Shalawat Nabi!",
+      "jawaban": "Attahiyyaatul mubaarakaatush-shalawaatuth-thayyibaatu lillaah... Allaahumma shalli 'alaa sayyidinaa Muhammad.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KK-019",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Berikan 1 pertanyaan tebak huruf atau sambung ayat mudah kepada salah satu adik kelas TK di ruangan ini! Jika adik TK berhasil menjawab dengan bantuanmu, kamu dapat +2 Bintang!",
+      "jawaban": "Santri berinteraksi positif membimbing adik kelas menjawab pertanyaan singkat.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KK-020",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 6 huruf Idzhar Halqi dan 4 huruf Idgham Bighunnah dalam waktu kurang dari 20 detik!",
+      "jawaban": "Idzhar: Hamzah, Ha, 'Ain, Ha, Ghain, Kha. Idgham Bighunnah: Ya, Nun, Mim, Wawu.",
+      "bintang": 2
+    },
+    {
+      "id": "SD-KK-021",
+      "jenjang": "SD",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Pimpin doa penutup majelis ('Subhanakallahumma wa bihamdika...') dengan suara lantang dan khusyuk!",
+      "jawaban": "Santri memimpin doa penutup majelis dengan benar.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-SA-001",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Bacakan 5 ayat pertama Surah Al-'Alaq (wahyu pertama yang turun kepada Rasulullah SAW)!",
+      "jawaban": "Iqra' bismi rabbikalladzii khalaq. Khalaqal insaana min 'alaq. Iqra' wa rabbukal akram. Alladzii 'allama bil qalam. 'Allamal insaana maa lam ya'lam.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-SA-002",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Al-'Alaq ini: 'Kallaa innal insaana layathghaa...'",
+      "jawaban": "Ar-ra'aahustaghnaa. Inna ilaa rabbikar-ruj'aa.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-SA-003",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Al-Bayyinah ini: 'Wa maa umiruu illaa liya'budullaaha mukhlishiina lahud-diina hunafaa'a...'",
+      "jawaban": "Wa yuqiimush-shalaata wa yu'tuz-zakaata wa dzaalika diinul qayyimah.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-SA-004",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Asy-Syams: 'Wasy-syamsi wa dhuhaahaa, Wal-qamari idzaa talaahaa...'",
+      "jawaban": "Wan-nahaari idzaa jallaahaa. Wal-laili idzaa yaghsyaahaa.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-SA-005",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Asy-Syams ini: 'Wa nafsiw-wa maa sawwaahaa, Fa-alhamahaa fujuurahaa wa taqwaahaa...'",
+      "jawaban": "Qad aflaha man zakkaahaa. Wa qad khaaba man dassaahaa.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-SA-006",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Al-Lail: 'Wal-laili idzaa yaghsyaa, Wan-nahaari idzaa tajallaa...'",
+      "jawaban": "Wa maa khalaqadz-dzakara wal-untsaa. Inna sa'yakum lasyattaa.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-SA-007",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Al-Balad: 'Laa uqsimu bihaadzal balad, Wa anta hillum-bihaadzal balad...'",
+      "jawaban": "Wa waalidiw-wa maa walad. Laqad khalaqnal insaana fii kabad.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-SA-008",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan 4 ayat terakhir Surah Al-Fajr: 'Yaa ayyatuhan-nafsul muthma'innah...'",
+      "jawaban": "Irji'ii ilaa rabbiki raadhiyatam-mardhiyyah. Fadkhulii fii 'ibaadii. Wadkhulii jannatii.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-SA-009",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Al-Ghasyiyah: 'Hal ataaka hadiitsul ghaasyiyah...'",
+      "jawaban": "Wujuuhuy-yauma'idzin khaasyi'ah. 'Aamilatun naashibah. Tashlaa naaran haamiyah.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-SA-010",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Al-Ghasyiyah ini: 'Afalaa yanzhuruuna ilal ibili kaifa khuliqat...'",
+      "jawaban": "Wa ilas-samaa'i kaifa rufi'at. Wa ilal jibaali kaifa nushibat. Wa ilal ardhi kaifa suthihar.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-SA-011",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Al-A'la: 'Sabbihisma rabbikal a'laa...'",
+      "jawaban": "Alladzii khalaqa fasawwaa. Walladzii qaddara fahadaa. Walladzii akhrajal mar'aa.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-SA-012",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan 3 ayat terakhir Surah Al-A'la: 'Qad aflaha man tazakkaa, Wa dzakarasma rabbihii fashallaa...'",
+      "jawaban": "Bal tu'tsiruunal hayaatad-dunyaa. Wal-aakhiratu khairuw-wa abqaa. Inna haadzaa lafish-shuhufil uulaa, Shuhufi Ibraahiima wa Muusaa.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-SA-013",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Ath-Thariq: 'Was-samaa'i wath-thaariq, Wa maa adraaka math-thaariq...'",
+      "jawaban": "An-najmuts-tsaaqib. In kullu nafsil-lammaa 'alaihaa haafizh.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-SA-014",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Al-Buruj: 'Was-samaa'i dzaatil buruuj, Wal-yaumil mau'uud...'",
+      "jawaban": "Wa syaahidiw-wa masyhuud. Qutila ashhaabul ukhduud.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-SA-015",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah Al-Infitar: 'Idzas-samaa'un fatharat, Wa idzal kawaakibun tatsarat...'",
+      "jawaban": "Wa idzal bihaarufujjirat. Wa idzal qubuuru bu'tsirat.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-SA-016",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat pertama Surah At-Takwir: 'Idzasy-syamsu kuwwirat, Wa idzan-nujuumun kadarat...'",
+      "jawaban": "Wa idzal jibaalu suyyirat. Wa idzal 'isyaaru 'uththilat.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-SA-017",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan 5 ayat pertama Surah An-Naba': 'Amma yatasaa'aluun, 'Anin-naba'il 'azhiim...'",
+      "jawaban": "Alladzii hum fiihi mukhtalifuun. Kallaa saya'lamuun. Tsumma kallaa saya'lamuun.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-SA-018",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan 2 ayat pertama Surah Al-Mulk: 'Tabaarakalladzii biyadihil mulku wa huwa 'alaa kulli syai'in qadiir...'",
+      "jawaban": "Alladzii khalaqal mauta wal hayaata liyabluwakum ayyukum ahsanu 'amalaa, wa huwal 'aziizul ghafuur.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-SA-019",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan awal ayat terakhir Surah Al-Baqarah (ayat 286): 'Laa yukallifullaahu nafsan illaa wus'ahaa...'",
+      "jawaban": "Lahaa maa kasabat wa 'alaihaa maktasabat, rabbanaa laa tu'aakhidznaa in nasiinaa au akhtha'naa...",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-SA-020",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Luqman ayat 13 tentang nasihat Luqman kepada anaknya: 'Yaa bunayya laa tusyrik billaah...'",
+      "jawaban": "Innasy-syirka lazhulmun 'azhiim.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-SA-021",
+      "jenjang": "SMP",
+      "kategori": "Sambung Ayat",
+      "pertanyaan": "Lanjutkan ayat Surah Al-Hujurat ayat 13: 'Yaa ayyuhan-naasu innaa khalaqnaakum min dzakariw-wa untsaa wa ja'alnaakum syu'uubaw-wa qabaa'ila lita'aarafuu...'",
+      "jawaban": "Inna akramakum 'indallaahi atqaakum, innallaaha 'aliimun khabiir.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-HT-001",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apa perbedaan antara Mad Wajib Muttashil dan Mad Jaiz Munfashil beserta contohnya?",
+      "jawaban": "Mad Wajib Muttashil: Mad Thabi'i bertemu Hamzah dalam SATU kata (contoh: Jaa'a, Suu'a), wajib panjang 4-5 harakat. Mad Jaiz Munfashil: Mad Thabi'i bertemu Hamzah di LAIN kata (contoh: Innaa a'thainaa), panjang 2/4/5 harakat.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-HT-002",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Kapan terjadi hukum bacaan Mad 'Aridh Lissukun dan berapa harakat panjang bacaannya?",
+      "jawaban": "Apabila Mad Thabi'i bertemu huruf hidup di akhir ayat yang dimatikan karena waqaf (berhenti), seperti 'Al-'aalamiin'. Dibaca 2, 4, atau 6 harakat.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-HT-003",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apa yang dimaksud dengan Mad 'Iwadh dan berikan contohnya?",
+      "jawaban": "Berhenti (waqaf) pada huruf di akhir ayat yang berharakat Fathah-tain (kecuali Ta' Marbuthah), sehingga tanwinnya diganti bacaan panjang 2 harakat. Contoh: 'Afwaajan' dibaca 'Afwaajaa'.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-HT-004",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apa yang dimaksud dengan Mad Lin (Mad Layyin) dan berikan contohnya di Surah Quraisy!",
+      "jawaban": "Apabila Wawu sukun atau Ya sukun didahului huruf berharakat Fathah lalu bertemu huruf yang dimatikan karena waqaf. Contoh di Surah Quraisy: 'Quraisy', 'Ash-Shaif', 'Al-Bait', 'Khauf'.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-HT-005",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apa yang dimaksud dengan Mad Lazim Mutsaqqal Kalimi dan berapa harakat panjangnya? Berikan contohnya di akhir Surah Al-Fatihah!",
+      "jawaban": "Mad Thabi'i bertemu huruf yang bertasydid dalam satu kata. Panjangnya 6 harakat (3 alif). Contoh: 'Waladh-dhaalliin'.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-HT-006",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apa perbedaan antara Mad Shilah Qashirah dan Mad Shilah Thawilah?",
+      "jawaban": "Mad Shilah Qashirah: Ha Dhamir (ـه / ـهٖ) didahului huruf hidup dan tidak bertemu Hamzah (panjang 2 harakat). Mad Shilah Thawilah: Ha Dhamir bertemu huruf Hamzah (panjang 4-5 harakat).",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-HT-007",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Kapan Lafadz Jalalah (اللّٰه) dibaca Tafkhim (tebal) dan kapan dibaca Tarqiq (tipis)?",
+      "jawaban": "Dibaca Tafkhim (tebal) jika didahului harakat Fathah atau Dhammah (contoh: Rasuulullaah). Dibaca Tarqiq (tipis) jika didahului harakat Kasrah (contoh: Bismillaah).",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-HT-008",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Sebutkan kapan huruf Ra (ر) dibaca Tafkhim (tebal) dan kapan dibaca Tarqiq (tipis)!",
+      "jawaban": "Tafkhim: Ra berharakat Fathah/Dhammah, atau Ra sukun didahului Fathah/Dhammah. Tarqiq: Ra berharakat Kasrah, atau Ra sukun didahului Kasrah asli dan tidak bertemu huruf Isti'la.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-HT-009",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Sebutkan 5 tempat keluarnya huruf Hijaiyah (Makharijul Huruf) secara garis besar!",
+      "jawaban": "1. Al-Jauf (rongga mulut), 2. Al-Halq (tenggorokan), 3. Al-Lisan (lidah), 4. Asy-Syafatain (dua bibir), 5. Al-Khaisyum (rongga hidung).",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-HT-010",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apa perbedaan antara Idgham Mutamatsilain, Idgham Mutajanisain, dan Idgham Mutaqaribain?",
+      "jawaban": "Mutamatsilain: pertemuan 2 huruf yang sama makhraj dan sifatnya (misal Ba sukun bertemu Ba). Mutajanisain: sama makhraj tapi beda sifat (misal Ta sukun bertemu Tha/Dal). Mutaqaribain: berdekatan makhraj dan sifatnya (misal Qaf sukun bertemu Kaf).",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-HT-011",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apa arti tanda waqaf Mim kecil (مـ / Waqaf Lazim) dan tanda Laa (لا / Waqaf Laa Washal)?",
+      "jawaban": "Mim kecil (Waqaf Lazim): harus berhenti. Laa (Laa Washal): dilarang berhenti di tengah ayat (kecuali di akhir ayat).",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-HT-012",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apa perbedaan tanda waqaf 'Qala' (قلى) dan 'Shala' (صلى)?",
+      "jawaban": "Qala (Al-Waqfu Aula): boleh lanjut tapi lebih utama berhenti. Shala (Al-Washlu Aula): boleh berhenti tapi lebih utama lanjut (washal).",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-HT-013",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Bagaimana cara membaca tanda Waqaf Mu'anaqah (tanda titik tiga sepasang ؞ ... ؞) seperti pada ayat ke-2 Surah Al-Baqarah?",
+      "jawaban": "Berhenti pada salah satu tanda titik tiga saja, tidak boleh berhenti pada keduanya.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-HT-014",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apa yang dimaksud dengan bacaan Gharib 'Saktah' dan bagaimana cara membacanya?",
+      "jawaban": "Berhenti sejenak sekitar 2 harakat tanpa mengambil napas, lalu melanjutkan bacaan (terdapat di 4 tempat dalam Al-Qur'an, seperti di QS Al-Muthaffifin: 14 'Kallaa bal raana').",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-HT-015",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apa yang dimaksud dengan bacaan 'Imalah' pada QS Hud ayat 41 ('Bismillaahi majreehaa wa mursaahaa')?",
+      "jawaban": "Memiringkan bunyi harakat Fathah menjadi mendekati bunyi 'e' (sehingga 'majraahaa' dibaca 'majreehaa').",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-HT-016",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apa yang dimaksud dengan bacaan 'Isymam' pada QS Yusuf ayat 11 ('Laa ta'mannaa')?",
+      "jawaban": "Memonyongkan kedua bibir sebagai isyarat harakat Dhammah ketika mengucapkan ghunnah pada Nun bertasydid tanpa mengubah bunyi.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-HT-017",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apa yang dimaksud dengan bacaan 'Naql' pada QS Al-Hujurat ayat 11 ('Bi'sal ismu')?",
+      "jawaban": "Memindahkan harakat Kasrah dari Hamzah ke huruf Lam sukun sebelumnya, sehingga dibaca 'Bi'salismu'.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-HT-018",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Sebutkan pasangan sifat huruf yang saling berlawanan: Hams lawannya apa, dan Syiddah lawannya apa?",
+      "jawaban": "Hams (napas mengalir) lawannya Jahr (napas tertahan); Syiddah (suara tertahan) lawannya Rakhawah (suara mengalir), dan di tengahnya Tawassuth.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-HT-019",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Sebutkan 7 huruf Isti'la (huruf-huruf yang lidahnya terangkat ke langit-langit dan dibaca tebal)!",
+      "jawaban": "Kha (خ), Shad (ص), Dhad (ض), Ghain (غ), Tha (ط), Qaf (ق), Zha (ظ) — disingkat 'Khushsha Dhaghthin Qizh'.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-HT-020",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apabila di dalam Al-Qur'an terdapat huruf yang di atasnya ada tanda lingkaran bulat lonjong (Shifr Mustathil) seperti pada kata 'Ana' (أَنَاْ), bagaimana cara membacanya?",
+      "jawaban": "Jika disambung (washal) dibaca pendek 1 harakat ('Ana'), tetapi jika berhenti (waqaf) dibaca panjang 2 harakat ('Anaa').",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-HT-021",
+      "jenjang": "SMP",
+      "kategori": "Huruf & Tajwid",
+      "pertanyaan": "Apa yang dimaksud dengan 'Nun Wiqayah' (Nun kecil berharakat kasrah نِ) ketika Tanwin bertemu Hamzah Washal?",
+      "jawaban": "Mengubah bunyi tanwin menjadi huruf pendek lalu menyambungnya dengan Nun kecil berharakat kasrah ('ni') agar bisa disambung ke kata sesudahnya.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-DH-001",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa meminta keteguhan hati di atas agama dan ketaatan kepada Allah!",
+      "jawaban": "Yaa Muqallibal quluub, tsabbit qalbii 'alaa diinik (Wahai Dzat yang membolak-balikkan hati, teguhkanlah hatiku di atas agama-Mu).",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-DH-002",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa Nabi Musa AS untuk melapangkan dada dan memudahkan urusan (QS Thaha: 25-28)!",
+      "jawaban": "Rabbisyrah lii shadrii, wa yassir lii amrii, wahlul 'uqdatam-mil lisaanii, yafqahuu qaulii.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-DH-003",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa Nabi Yunus AS ketika berada di dalam kegelapan perut ikan paus (QS Al-Anbiya: 87)!",
+      "jawaban": "Laa ilaaha illaa anta subhaanaka innii kuntu minazh-zhaalimiin.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-DH-004",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa Nabi Adam AS saat memohon ampunan kepada Allah (QS Al-A'raf: 23)!",
+      "jawaban": "Rabbanaa zhalamnaa anfusanaa wa il-lam taghfir lanaa wa tarhamnaa lanakuunanna minal khaasiriin.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-DH-005",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa berlindung dari 4 perkara yang dianjurkan dibaca setelah Tasyahud Akhir sebelum salam!",
+      "jawaban": "Allaahumma innii a'uudzubika min 'adzaabi jahannam, wa min 'adzaabil qabri, wa min fitnatil mahyaa wal mamaat, wa min syarri fitnatil masiihid-dajjaal.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-DH-006",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa memohon ilmu yang bermanfaat, rezeki yang baik, dan amal yang diterima!",
+      "jawaban": "Allaahumma innii as'aluka 'ilman naafi'an, wa rizqan thayyiban, wa 'amalan mutaqabbalan.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-DH-007",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa yang diajarkan Rasulullah SAW kepada Aisyah RA ketika bertemu malam Lailatul Qadr!",
+      "jawaban": "Allaahumma innaka 'afuwwun tuhibbul 'afwa fa'fu 'annii.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-DH-008",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa memohon perlindungan dari sifat malas, pikun, dosa, dan lilitan utang!",
+      "jawaban": "Allaahumma innii a'uudzubika minal hammi wal hazan, wal 'ajzi wal kasal, wal bukhli wal jubn, wa dhala'id-daini wa ghalabatir-rijaal.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-DH-009",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa agar diberikan keturunan dan keluarga yang penyejuk mata (QS Al-Furqan: 74)!",
+      "jawaban": "Rabbanaa hab lanaa min azwaajinaa wa dzurriyyaatinaa qurrata a'yuniw-waj'alnaa lil-muttaqiina imaamaa.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-DH-010",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa agar hati tidak dicondongkan kepada kesesatan setelah mendapat petunjuk (QS Ali 'Imran: 8)!",
+      "jawaban": "Rabbanaa laa tuzigh quluubanaa ba'da idz hadaitanaa wa hab lanaa mil-ladunka rahmah, innaka antal wahhaab.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-DH-011",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Apa bacaan dzikir setelah shalat Witir yang dicontohkan Rasulullah SAW?",
+      "jawaban": "Subhaanal Malikil Qudduus (dibaca 3 kali, dengan memanjangkan dan mengeraskan suara pada bacaan ketiga).",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-DH-012",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Apa bacaan doa ketika melakukan Sujud Tilawah (saat membaca atau mendengar ayat Sajdah)?",
+      "jawaban": "Sajada wajhiya lilladzii khalaqahuu wa syaqqa sam'ahuu wa basharahuu bihaulihii wa quwwatihii fatabaarakallaahu ahsanul khaaliqiin.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-DH-013",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa memohon pertolongan agar selalu bisa berdzikir, bersyukur, dan beribadah dengan baik kepada Allah!",
+      "jawaban": "Allaahumma a'innii 'alaa dzikrika wa syukrika wa husni 'ibaadatik.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-DH-014",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan awal bacaan Sayyidul Istighfar (penghulu istighfar)!",
+      "jawaban": "Allaahumma anta rabbii laa ilaaha illaa anta, khalaqtanii wa ana 'abduka, wa ana 'alaa 'ahdika wa wa'dika mastatha'tu...",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-DH-015",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa ketika tertimpa musibah agar Allah memberi pahala dan mengganti dengan yang lebih baik!",
+      "jawaban": "Innaa lillaahi wa innaa ilaihi raaji'uun. Allaahumma ajurnii fii mushiibatii wakhluf lii khairam-minhaa.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-DH-016",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan salah satu doa Istiftah (Iftitah) yang dibaca setelah Takbiratul Ihram pada rakaat pertama!",
+      "jawaban": "Allaahu akbar kabiiraa, walhamdulillaahi katsiiraa, wa subhaanallaahi bukrataw-wa ashiilaa... (atau Allaahumma baa'id bainii wa baina khathaayaaya...).",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-DH-017",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa memohon ampunan untuk diri sendiri, orang tua, dan seluruh kaum mukminin (QS Ibrahim: 41)!",
+      "jawaban": "Rabbanaghfir lii wa liwaalidayya wa lil-mu'miniina yauma yaquumul hisaab.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-DH-018",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa ketika menjamu atau didoakan setelah diberi makan oleh tuan rumah!",
+      "jawaban": "Allaahumma baarik lahum fiimaa razaqtahum, waghfir lahum warhamhum (atau Afthara 'indakumush-shaa'imuun...).",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-DH-019",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan awal doa Qunut yang biasa dibaca saat shalat Subuh atau Witir!",
+      "jawaban": "Allaahummahdinii fiiman hadait, wa 'aafinii fiiman 'aafait, wa tawallanii fiiman tawallait, wa baarik lii fiimaa a'thait...",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-DH-020",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan dzikir pagi dan petang untuk memohon keselamatan dari bahaya di bumi dan di langit!",
+      "jawaban": "Bismillaahilladzii laa yadhurru ma'asmihii syai'un fil ardhi wa laa fis-samaa'i wa huwas-samii'ul 'aliim (3x).",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-DH-021",
+      "jenjang": "SMP",
+      "kategori": "Doa Harian",
+      "pertanyaan": "Bacakan doa memohon petunjuk, ketakwaan, kesucian diri, dan kecukupan!",
+      "jawaban": "Allaahumma innii as'alukal hudaa wat-tuqaa wal 'afaafa wal ghinaa.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-KN-001",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Ada berapa jumlah Juz, Surah, dan apa perbedaan utama antara Surah Makkiyah dan Surah Madaniyah dalam Al-Qur'an?",
+      "jawaban": "30 Juz, 114 Surah. Surah Makkiyah diturunkan sebelum Nabi hijrah ke Madinah (umumnya membahas tauhid/akidah), sedangkan Surah Madaniyah diturunkan setelah hijrah (umumnya membahas hukum/syariat & muamalah).",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KN-002",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Pada masa khalifah siapakah Al-Qur'an pertama kali dikumpulkan dalam satu mushaf atas usul Umar bin Khattab, dan siapa ketua tim penulisnya?",
+      "jawaban": "Dikumpulkan pertama kali pada masa Khalifah Abu Bakar Ash-Shiddiq (dan diseragamkan/diperbanyak pada masa Khalifah Utsman bin Affan). Ketua tim penulisnya adalah Zaid bin Tsabit RA.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KN-003",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Jelaskan pengertian peristiwa Isra' dan Mi'raj serta perintah ibadah apa yang diterima langsung oleh Rasulullah SAW dalam peristiwa tersebut!",
+      "jawaban": "Isra': perjalanan malam Nabi dari Masjidil Haram ke Masjidil Aqsa. Mi'raj: naiknya Nabi dari Masjidil Aqsa menembus langit ke-7 hingga Sidratul Muntaha. Perintah yang diterima langsung adalah Shalat 5 Waktu.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KN-004",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Apa perbedaan antara kaum Muhajirin dan kaum Anshar ketika peristiwa Hijrah ke Madinah?",
+      "jawaban": "Kaum Muhajirin adalah sahabat Nabi yang berhijrah dari Makkah ke Madinah, sedangkan kaum Anshar adalah penduduk asli Madinah yang menyambut dan menolong kaum Muhajirin.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-KN-005",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Kapan terjadinya Perang Badar Kubra (tanggal dan bulan Hijriah) dan berapa jumlah pasukan Muslimin dibanding pasukan Quraisy?",
+      "jawaban": "Terjadi pada 17 Ramadhan tahun 2 Hijriah. Pasukan Muslimin berjumlah sekitar 313 orang melawan sekitar 1.000 pasukan Quraisy, dan dimenangkan oleh kaum Muslimin.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KN-006",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Siapakah sahabat Nabi yang mengusulkan strategi pembuatan parit pada Perang Khandaq (Perang Ahzab)?",
+      "jawaban": "Salman Al-Farisi radhiyallahu 'anhu.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-KN-007",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Sebutkan minimal 5 dari 10 sahabat Nabi yang dijamin masuk surga (Al-'Asyarah Al-Mubasysyaruna bil Jannah)!",
+      "jawaban": "Abu Bakar, Umar, Utsman, Ali, Thalhah bin Ubaidillah, Zubair bin Awwam, Abdurrahman bin Auf, Sa'ad bin Abi Waqqash, Sa'id bin Zaid, Abu Ubaidah bin Jarrah.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KN-008",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Sebutkan 8 golongan (Ashnaf) yang berhak menerima zakat sesuai QS At-Taubah ayat 60!",
+      "jawaban": "1. Fakir, 2. Miskin, 3. Amil (pengelola zakat), 4. Muallaf, 5. Riqab (hamba sahaya), 6. Gharimin (orang terlilit utang), 7. Fisabilillah, 8. Ibnu Sabil (musafir).",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KN-009",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Apa perbedaan antara Syarat Wajib Shalat dan Syarat Sah Shalat? Berikan masing-masing 3 contohnya!",
+      "jawaban": "Syarat Wajib (yang membuat seseorang wajib shalat): Islam, Baligh, Berakal. Syarat Sah (yang membuat shalat sah): Suci dari hadats, suci badan/pakaian/tempat dari najis, menutup aurat, masuk waktu, menghadap kiblat.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KN-010",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Apa yang dimaksud dengan Sujud Sahwi dan kapan kita melakukannya dalam shalat?",
+      "jawaban": "Dua sujud yang dilakukan sebelum atau sesudah salam karena lupa atau ragu dalam jumlah rakaat/meninggalkan sunnah ab'adh shalat (seperti lupa tasyahud awal).",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-KN-011",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Sebutkan 6 sifat wajib bagi Allah yang pertama (Wujud sampai Wahdaniyah) beserta artinya!",
+      "jawaban": "1. Wujud (Ada), 2. Qidam (Terdahulu/Tanpa awal), 3. Baqa' (Kekal), 4. Mukhalafatu lil hawaditsi (Berbeda dengan makhluk), 5. Qiyamuhu binafsihi (Berdiri sendiri), 6. Wahdaniyah (Maha Esa).",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KN-012",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Apa perbedaan antara Hadats Kecil dan Hadats Besar serta bagaimana cara mensucikan masing-masing?",
+      "jawaban": "Hadats Kecil (seperti buang air/kentut) disucikan dengan berwudhu (atau tayammum jika uzur). Hadats Besar (seperti haid/junub) disucikan dengan mandi wajib (mandi janabah).",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-KN-013",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Sebutkan 3 macam Najis dalam fikih Islam (Mukhaffafah, Mutawassithah, Mughallazhah) beserta contohnya!",
+      "jawaban": "1. Najis Mukhaffafah (ringan): air kencing bayi laki-laki yang hanya minum ASI. 2. Najis Mutawassithah (sedang): darah, kotoran, bangkai. 3. Najis Mughallazhah (berat): air liur/sentuhan anjing dan babi.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KN-014",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Apa yang dimaksud dengan Shalat Jama' dan Shalat Qashar bagi musafir, serta shalat apa saja yang tidak boleh di-qashar?",
+      "jawaban": "Jama': menggabungkan 2 shalat dalam 1 waktu (Dzuhur-Ashar atau Maghrib-Isya). Qashar: meringkas shalat 4 rakaat menjadi 2 rakaat. Shalat yang tidak boleh di-qashar adalah Subuh (2 rakaat) dan Maghrib (3 rakaat).",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KN-015",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Surah apakah di dalam Al-Qur'an yang tidak diawali dengan lafal Basmalah, dan surah apakah yang memiliki dua Basmalah?",
+      "jawaban": "Yang tidak diawali Basmalah adalah Surah At-Taubah (ke-9). Yang memiliki dua Basmalah adalah Surah An-Naml (ke-27, di awal surah dan pada ayat 30).",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KN-016",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Siapakah 4 wanita mulia penghulu surga yang disebutkan oleh Rasulullah SAW?",
+      "jawaban": "Khadijah binti Khuwailid, Fatimah binti Muhammad, Maryam binti Imran, dan Asiyah binti Muzahim (istri Fir'aun yang beriman).",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KN-017",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Apa nama perjanjian damai antara kaum Muslimin dan kaum Quraisy Makkah pada tahun 6 Hijriah sebelum terjadinya Fathu Makkah?",
+      "jawaban": "Perjanjian Hudaibiyah.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-KN-018",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Sebutkan 3 amal jariyah yang pahalanya tidak terputus meskipun seseorang telah meninggal dunia menurut hadits Nabi SAW!",
+      "jawaban": "1. Sedekah jariyah, 2. Ilmu yang bermanfaat, 3. Anak shalih yang mendoakan orang tuanya.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-KN-019",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Siapakah pemuda kelompok beriman dalam Surah Al-Kahfi yang ditidurkan Allah di dalam gua selama 309 tahun untuk menyelamatkan iman mereka?",
+      "jawaban": "Ashabul Kahfi (Para Pemuda Penghuni Gua).",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-KN-020",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Sebutkan 12 nama bulan dalam kalender Hijriah secara berurutan!",
+      "jawaban": "1. Muharram, 2. Shafar, 3. Rabi'ul Awwal, 4. Rabi'ul Akhir, 5. Jumadil Ula, 6. Jumadil Akhirah, 7. Rajab, 8. Sya'ban, 9. Ramadhan, 10. Syawwal, 11. Dzulqa'dah, 12. Dzulhijjah.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KN-021",
+      "jenjang": "SMP",
+      "kategori": "Kisah Nabi & Islam",
+      "pertanyaan": "Apa perbedaan antara Nabi dan Rasul dalam ajaran akidah Islam?",
+      "jawaban": "Nabi adalah manusia pilihan yang menerima wahyu dari Allah untuk diamalkan sendiri (atau melanjutkan syariat sebelumnya), sedangkan Rasul menerima wahyu dan wajib menyampaikannya kepada umatnya.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-KK-001",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Bedah Tajwid Kilat! Bacakan Surah Al-Ikhlas ayat 1-4 lalu sebutkan minimal 4 hukum tajwid yang ada di dalamnya!",
+      "jawaban": "Contoh: Qalqalah Kubra (Ahad, Shamad, Yuulad), Alif Lam Syamsiyah (Ash-Shamad), Idzhar Syafawi (Lam yalid), Idgham Bilaghunnah (Yakul-lahuu), Idzhar Halqi (Kufuwan ahad).",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KK-002",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Tantangan Ustadz/Ustadzah Muda! Maju ke depan dan jelaskan selama 30 detik kepada adik-adik kelas TK/SD tentang pentingnya menjaga shalat 5 waktu!",
+      "jawaban": "Santri menyampaikan nasihat singkat dengan bahasa yang baik dan percaya diri.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KK-003",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Tantangan Sambung Ayat Berantai! Pilih 1 teman SMP-mu, lalu bacakan Surah Al-A'la ayat 1-19 secara bergantian per ayat tanpa salah!",
+      "jawaban": "Kedua santri berhasil membaca Surah Al-A'la secara bergantian per ayat.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KK-004",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 25 nama Nabi dan Rasul dari Nabi Adam AS sampai Nabi Muhammad SAW secara lengkap!",
+      "jawaban": "Adam, Idris, Nuh, Hud, Shalih, Ibrahim, Luth, Ismail, Ishaq, Ya'qub, Yusuf, Ayyub, Syu'aib, Musa, Harun, Dzulkifli, Daud, Sulaiman, Ilyas, Ilyasa', Yunus, Zakariya, Yahya, Isa, Muhammad SAW.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KK-005",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Praktikkan cara bertayammum yang benar (niat, menepuk debu suci, mengusap wajah, dan mengusap kedua tangan) beserta penjelasannya!",
+      "jawaban": "Santri mempraktikkan tata cara tayammum sambil menjelaskan urutannya.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KK-006",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Bacakan 2 ayat terakhir Surah Al-Baqarah (ayat 285-286: 'Aamanar-rasuulu...') atau 5 ayat pertama Surah Al-Mulk dengan tartil!",
+      "jawaban": "Santri membacakan ayat pilihan tersebut dengan lancar dan sesuai tajwid.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KK-007",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Kuis Cepat 20 Detik! Sebutkan surah terpanjang, surah terpendek, dan ayat paling agung di dalam Al-Qur'an!",
+      "jawaban": "Surah terpanjang: Al-Baqarah (286 ayat), Surah terpendek: Al-Kautsar (3 ayat), Ayat paling agung: Ayat Kursi (QS Al-Baqarah: 255).",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KK-008",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 13 Rukun Shalat secara berurutan dari Niat sampai Tertib!",
+      "jawaban": "Niat, Berdiri bagi yang mampu, Takbiratul Ihram, Membaca Al-Fatihah, Ruku' dengan thuma'ninah, I'tidal, Sujud 2x, Duduk di antara dua sujud, Duduk tasyahud akhir, Membaca tasyahud akhir, Membaca shalawat Nabi, Salam pertama, Tertib.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KK-009",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Jelaskan 3 hikmah kenapa umat Islam diwajibkan berpuasa di bulan Ramadhan!",
+      "jawaban": "Contoh: Melatih ketakwaan & kesabaran, merasakan penderitaan fakir miskin (menumbuhkan empati), menyehatkan jasmani & rohani.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-KK-010",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Tantangan Mentor! Pilih 1 adik kelas TK/SD, lalu ajarkan 1 hukum tajwid (misal Qalqalah atau Ghunnah) sampai adik itu bisa menyebutkan contohnya!",
+      "jawaban": "Santri berhasil membimbing adik kelas menyebutkan 1 hukum tajwid dan contohnya.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KK-011",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Bacakan bacaan Tasyahud Akhir lengkap dengan Shalawat Ibrahimiyah sampai selesai!",
+      "jawaban": "Attahiyyaatul mubaarakaatush-shalawaatuth-thayyibaatu lillaah... Allaahumma shalli 'alaa sayyidinaa Muhammad... kamaa shallaita 'alaa sayyidinaa Ibraahiim... fil 'aalamiina innaka hamiidum-majiid.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KK-012",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 4 macam air yang suci dan mensucikan (Air Muthlaq) yang sah digunakan untuk berwudhu!",
+      "jawaban": "Contoh: Air hujan, air sumur, air mata air, air sungai, air laut, air salju/embun.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-KK-013",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Bedah Ayat! Pada ayat 'Wa min syarri haasidin idzaa hasad', sebutkan 3 hukum tajwid yang ada di dalamnya!",
+      "jawaban": "1. 'Min syarri' = Ikhfa Haqiqi, 2. 'Haasidin idzaa' = Idzhar Halqi (dan Mad Thabi'i pada Haa & Idzaa), 3. 'Hasad' = Qalqalah Kubra.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KK-014",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 4 adab bergaul dengan teman sebaya dan menggunakan media sosial menurut ajaran Islam!",
+      "jawaban": "Contoh: Menjaga lisan/tulisan dari ghibah & bullying, tabayyun (cek kebenaran berita), menutup aurat, tidak melalaikan waktu shalat dan mengaji.",
+      "bintang": 1
+    },
+    {
+      "id": "SMP-KK-015",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Tebak Tokoh Sahabat! Siapakah sahabat yang bergelar 'Ash-Shiddiq', 'Al-Faruq', 'Dzun-Nurain', dan 'Babul Ilmi / Karramallahu Wajhah'?",
+      "jawaban": "Ash-Shiddiq: Abu Bakar, Al-Faruq: Umar bin Khattab, Dzun-Nurain: Utsman bin Affan, Babul Ilmi: Ali bin Abi Thalib.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KK-016",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Bacakan Surah Al-Fatihah ayat 1-7 dengan irama murattal terbaikmu dan makhraj huruf yang tepat!",
+      "jawaban": "Santri membaca Surah Al-Fatihah dengan tartil, memperhatikan makhraj dan panjang pendek.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KK-017",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 4 takbir dalam Shalat Jenazah beserta bacaan di setiap setelah takbirnya!",
+      "jawaban": "Takbir 1: Membaca Al-Fatihah. Takbir 2: Membaca Shalawat Nabi. Takbir 3: Doa untuk jenazah (Allahummaghfir lahu...). Takbir 4: Doa (Allahumma laa tahrimnaa ajrahu...) lalu Salam.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KK-018",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 5 contoh huruf Ikhfa Haqiqi beserta contoh kalimatnya di Juz 30!",
+      "jawaban": "Contoh: Ta (Kuntum), Tsa (Man tsaqulat), Jim (Min ju'in), Dal (Min duunihim), Syin (Min syarri), Shad ('An shalaatihim).",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KK-019",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Ceritakan singkat kisah keteladanan kejujuran atau kedermawanan salah satu sahabat Nabi yang paling menginspirasimu!",
+      "jawaban": "Santri menceritakan kisah sahabat (misal kedermawanan Utsman bin Affan / Abu Bakar, atau ketegasan Umar bin Khattab).",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KK-020",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Sebutkan 7 macam-macam Mad Far'i yang kamu ketahui dalam waktu 20 detik!",
+      "jawaban": "Contoh: Mad Wajib Muttashil, Mad Jaiz Munfashil, Mad 'Aridh Lissukun, Mad 'Iwadh, Mad Badal, Mad Lin, Mad Lazim, Mad Shilah.",
+      "bintang": 2
+    },
+    {
+      "id": "SMP-KK-021",
+      "jenjang": "SMP",
+      "kategori": "Kartu Kejutan",
+      "pertanyaan": "KARTU KEJUTAN: Pimpin doa penutup kelas hari ini (Doa Kaffaratul Majlis + Doa untuk Orang Tua + Doa Sapu Jagat) dengan khusyuk!",
+      "jawaban": "Santri memimpin rangkaian doa penutup kelas dengan lancar dan khusyuk.",
+      "bintang": 2
+    }
+  ]
+}
