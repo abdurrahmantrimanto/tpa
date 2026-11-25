@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tpa-huda-v4';
+const CACHE_NAME = 'tpa-huda-v5';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',

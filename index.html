@@ -1971,6 +1971,10 @@
       display: flex;
       flex-direction: column;
       gap: 14px;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      overflow-x: hidden;
     }
 
     .game-toolbar-card {
@@ -1982,6 +1986,8 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
+      width: 100%;
+      min-width: 0;
     }
 
     .game-filter-group {
@@ -2067,16 +2073,20 @@
 
     .game-participant-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 6px;
       max-height: 210px;
       overflow-y: auto;
+      width: 100%;
     }
 
     .game-p-item {
       display: flex;
       align-items: center;
       gap: 8px;
+      min-width: 0;
+      width: 100%;
+      overflow: hidden;
       background: var(--surface-card);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
@@ -2156,8 +2166,8 @@
 
     .wheel-container {
       position: relative;
-      width: 288px;
-      height: 288px;
+      width: min(288px, calc(100vw - 64px));
+      height: min(288px, calc(100vw - 64px));
       max-width: 100%;
       display: flex;
       align-items: center;
@@ -2166,8 +2176,8 @@
     }
 
     .wheel-canvas {
-      width: 288px;
-      height: 288px;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
       box-shadow: 0 6px 22px rgba(8, 72, 45, 0.16), inset 0 0 0 6px #FFFFFF;
       display: block;
@@ -2483,9 +2493,10 @@
 
     .challenge-actions-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 8px;
       padding-top: 4px;
+      width: 100%;
     }
 
     .btn-reward-star {
@@ -2652,6 +2663,442 @@
       display: grid;
       grid-template-columns: 1fr 1.3fr;
       gap: 8px;
+    }
+
+    /* ── Game Mode Switcher & Team Mystery Box Game ── */
+    .game-mode-switcher {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      background: var(--surface-subtle);
+      border: 1px solid var(--border-subtle);
+      padding: 5px;
+      border-radius: var(--radius-control);
+    }
+
+    .game-mode-tab {
+      min-height: 40px;
+      border: none;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      transition: all 0.15s ease;
+    }
+
+    .game-mode-tab.active {
+      background: var(--surface-card);
+      color: var(--brand-primary);
+      font-weight: 800;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .team-setup-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .team-config-pills {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+
+    .team-pill-btn {
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      background: var(--surface-subtle);
+      color: var(--text-secondary);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .team-pill-btn.active {
+      background: var(--brand-primary);
+      border-color: var(--brand-primary);
+      color: #FFFFFF;
+    }
+
+    .team-scoreboard-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .team-score-card {
+      background: var(--surface-card);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-control);
+      padding: 11px 12px;
+      text-align: left;
+      position: relative;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    .team-score-card.active-turn {
+      border-color: var(--brand-primary);
+      box-shadow: 0 0 0 2px var(--brand-soft);
+      background: linear-gradient(180deg, #F5FBF8 0%, #FFFFFF 100%);
+    }
+
+    .team-score-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .team-name-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .team-color-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .team-name-text {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
+    }
+
+    .team-turn-badge {
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: var(--radius-pill);
+      background: var(--brand-primary);
+      color: #FFFFFF;
+      flex-shrink: 0;
+    }
+
+    .team-points-num {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .team-members-preview {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+      line-height: 1.35;
+      width: 100%;
+      min-width: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    .team-roster-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      max-height: 240px;
+      overflow-y: auto;
+    }
+
+    .team-roster-box {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 8px 10px;
+    }
+
+    .team-roster-box-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .team-roster-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .team-member-chip {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      background: var(--surface-subtle);
+      color: var(--text-primary);
+    }
+
+    /* Mystery Box Grid */
+    .mystery-board-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 14px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .mystery-board-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .mystery-turn-banner {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--brand-deep);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .mystery-board-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .mystery-box-btn {
+      aspect-ratio: 1 / 0.92;
+      min-height: 64px;
+      width: 100%;
+      min-width: 0;
+      overflow: hidden;
+      border-radius: var(--radius-control);
+      border: 1.5px solid #B7E2CE;
+      background: linear-gradient(145deg, var(--brand-primary), var(--brand-deep));
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      box-shadow: 0 3px 8px rgba(8, 72, 45, 0.16);
+      position: relative;
+      transition: transform 0.12s ease, opacity 0.15s ease, background 0.15s ease;
+    }
+
+    .mystery-box-btn:active:not(:disabled) {
+      transform: scale(0.95);
+    }
+
+    .mystery-box-num {
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .mystery-box-sub {
+      font-size: 10px;
+      font-weight: 700;
+      opacity: 0.88;
+      padding: 0 4px;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+
+    .mystery-box-btn.active-box {
+      border-color: var(--gold-accent);
+      background: linear-gradient(145deg, #D8961E, #B37412);
+      box-shadow: 0 0 0 3px var(--gold-soft);
+    }
+
+    .mystery-box-btn.opened {
+      background: var(--surface-subtle);
+      border-color: var(--border-subtle);
+      color: var(--text-muted);
+      box-shadow: none;
+      cursor: default;
+    }
+
+    .mystery-box-btn.opened.type-double,
+    .mystery-box-btn.opened.type-gift,
+    .mystery-box-btn.opened.type-steal {
+      background: var(--gold-soft);
+      border-color: var(--gold-border);
+      color: var(--gold-text);
+    }
+
+    .team-steal-picker {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      padding: 10px 12px;
+      background: var(--surface-subtle);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-control);
+    }
+
+    .team-steal-picker.show {
+      display: flex;
+    }
+
+    .team-steal-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .team-victory-card {
+      background: linear-gradient(180deg, #FFFDF7 0%, #FFFFFF 100%);
+      border: 1.5px solid var(--gold-border);
+      border-radius: var(--radius-card);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    @media (max-width: 480px) {
+      .game-wrap {
+        padding: 12px 12px 22px;
+        gap: 12px;
+      }
+
+      .game-toolbar-card,
+      .mystery-board-card,
+      .challenge-card,
+      .wheel-stage-card {
+        padding: 12px;
+      }
+
+      .team-setup-bar,
+      .game-status-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .team-config-pills,
+      .game-status-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .game-status-actions .btn-mini {
+        flex: 1;
+        text-align: center;
+        justify-content: center;
+        padding: 6px 8px;
+      }
+
+      .team-score-card {
+        padding: 10px;
+      }
+
+      .team-name-text {
+        font-size: 12px;
+      }
+
+      .team-points-num {
+        font-size: 18px;
+      }
+
+      .mystery-board-grid {
+        gap: 6px;
+      }
+
+      .mystery-box-btn {
+        min-height: 56px;
+        aspect-ratio: 1 / 0.86;
+      }
+
+      .mystery-box-num {
+        font-size: 17px;
+      }
+
+      .mystery-box-sub {
+        font-size: 9.5px;
+      }
+
+      .challenge-santri-banner {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .challenge-question-text {
+        font-size: 15px;
+      }
+
+      .bottom-nav .nav-item {
+        font-size: 10.5px;
+        padding: 6px 2px;
+      }
+
+      .bottom-nav .nav-icon-pill {
+        width: 38px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .team-scoreboard-grid,
+      .game-participant-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .mystery-board-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .challenge-actions-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -3061,6 +3508,16 @@
       </div>
 
       <div class="game-wrap">
+        <!-- Game Mode Switcher -->
+        <div class="game-mode-switcher" role="tablist" aria-label="Pilih permainan kelas">
+          <button type="button" class="game-mode-tab active" id="btnModeWheel" role="tab" aria-selected="true" onclick="switchGameMode('wheel')">
+            <span>🎡 Roda Individu</span>
+          </button>
+          <button type="button" class="game-mode-tab" id="btnModeTeam" role="tab" aria-selected="false" onclick="switchGameMode('team')">
+            <span>📦 Kotak Kelompok</span>
+          </button>
+        </div>
+
         <!-- Filter & Attendance Control Card -->
         <div class="game-toolbar-card">
           <div class="game-filter-group">
@@ -3079,7 +3536,8 @@
             <div class="game-chip-row" id="gameKategoriChips" role="tablist" aria-label="Filter kategori tantangan"></div>
           </div>
 
-          <div class="game-status-bar">
+          <!-- Wheel Mode Status Bar -->
+          <div class="game-status-bar" id="wheelStatusBar">
             <div class="game-status-info" id="gameTurnStatusText">
               Semua santri siap diputar
             </div>
@@ -3093,10 +3551,33 @@
             </div>
           </div>
 
+          <!-- Team Mode Setup Bar -->
+          <div class="team-setup-bar" id="teamSetupBar" style="display:none">
+            <div class="team-config-pills" aria-label="Pengaturan jumlah tim dan kotak">
+              <button type="button" class="team-pill-btn" id="btnTeamCount2" onclick="setTeamCount(2)">2 Tim</button>
+              <button type="button" class="team-pill-btn active" id="btnTeamCount3" onclick="setTeamCount(3)">3 Tim</button>
+              <button type="button" class="team-pill-btn" id="btnTeamCount4" onclick="setTeamCount(4)">4 Tim</button>
+              <span style="color:var(--border-strong);margin:0 2px">|</span>
+              <button type="button" class="team-pill-btn active" id="btnBoxCount12" onclick="setMysteryBoxCount(12)">12 Kotak</button>
+              <button type="button" class="team-pill-btn" id="btnBoxCount16" onclick="setMysteryBoxCount(16)">16 Kotak</button>
+            </div>
+            <div class="game-status-actions">
+              <button type="button" class="btn-mini" onclick="toggleGameParticipantDrawer()">
+                Absen
+              </button>
+              <button type="button" class="btn-mini" onclick="toggleTeamRosterDrawer()">
+                Anggota Tim
+              </button>
+              <button type="button" class="btn-mini" onclick="startNewTeamMysteryGame(true)">
+                Acak &amp; Reset
+              </button>
+            </div>
+          </div>
+
           <!-- Collapsible Participant Attendance Drawer -->
           <div class="game-drawer" id="gameParticipantDrawer">
             <div class="game-drawer-head">
-              <div class="game-drawer-title">Pilih Santri Hadir di Roda</div>
+              <div class="game-drawer-title">Pilih Santri Hadir Hari Ini</div>
               <div style="display:flex;gap:6px">
                 <button type="button" class="btn-mini" onclick="setAllGameParticipants(true)">Hadir Semua</button>
                 <button type="button" class="btn-mini" onclick="resetGameDeckHistory()">Reset Deck Soal</button>
@@ -3104,111 +3585,249 @@
             </div>
             <div class="game-participant-grid" id="gameParticipantGrid"></div>
           </div>
-        </div>
 
-        <!-- Spin Wheel Stage -->
-        <div class="wheel-stage-card">
-          <div class="wheel-container">
-            <div class="wheel-pointer" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <path d="M16 30L4 6C3.2 4.4 4.4 2.5 6.2 2.5H25.8C27.6 2.5 28.8 4.4 28 6L16 30Z" fill="#C98A1C" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round"/>
-                <circle cx="16" cy="9" r="3" fill="#FFFFFF"/>
-              </svg>
+          <!-- Collapsible Team Roster Drawer -->
+          <div class="game-drawer" id="teamRosterDrawer">
+            <div class="game-drawer-head">
+              <div class="game-drawer-title">Pembagian Anggota Kelompok (Ketuk nama untuk pindah tim)</div>
+              <button type="button" class="btn-mini" onclick="shuffleTeamMembers(true)">Acak Ulang Anggota</button>
             </div>
-            <canvas id="gameWheelCanvas" class="wheel-canvas" width="576" height="576" aria-label="Roda keberuntungan nama santri"></canvas>
-            <button type="button" class="wheel-center-btn" id="btnWheelCenter" onclick="spinGameWheel()">
-              PUTAR
-            </button>
-          </div>
-
-          <div class="wheel-actions-row">
-            <button type="button" class="wheel-spin-main-btn" id="btnSpinMain" onclick="spinGameWheel()">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
-                <polyline points="21 3 21 9 15 9"></polyline>
-              </svg>
-              <span id="btnSpinMainText">Putar Roda Santri</span>
-            </button>
-            <button type="button" class="wheel-direct-btn" onclick="drawPracticeQuestionOnly()" title="Ambil kartu soal langsung tanpa putar nama">
-              Soal Saja
-            </button>
+            <div class="team-roster-grid" id="teamRosterGrid"></div>
           </div>
         </div>
 
-        <!-- Active Challenge Card -->
-        <div class="challenge-card" id="gameChallengeCard" style="display:none">
-          <div class="challenge-santri-banner" id="gameSelectedSantriBanner">
-            <div class="challenge-avatar" id="gameSelectedAvatar">?</div>
-            <div class="challenge-santri-meta">
-              <div class="challenge-santri-name" id="gameSelectedName">Latihan Mandiri</div>
-              <div class="challenge-santri-sub" id="gameSelectedSub">Siap menjawab tantangan</div>
-            </div>
-            <button type="button" class="btn-mini" onclick="drawNextQuestionForCurrent()" title="Ganti pertanyaan lain untuk santri ini">
-              Ganti Soal
-            </button>
-          </div>
-
-          <div class="challenge-top-row">
-            <div class="challenge-badges">
-              <span class="challenge-badge jenjang" id="gameCardJenjangBadge">SD</span>
-              <span class="challenge-badge" id="gameCardKategoriBadge">Sambung Ayat</span>
-              <span class="challenge-badge reward tabular" id="gameCardRewardBadge">+1 Bintang</span>
-            </div>
-            <button type="button" class="timer-pill-btn tabular" id="btnGameTimer" onclick="toggleGameTimer()">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-              <span id="gameTimerText">20d · Mulai</span>
-            </button>
-          </div>
-
-          <div class="timer-bar-wrap" id="gameTimerBarWrap">
-            <div class="timer-bar-fill" id="gameTimerBarFill"></div>
-          </div>
-
-          <div class="challenge-question-box">
-            <div class="challenge-question-text" id="gameQuestionText">—</div>
-            <div class="challenge-question-id">
-              <span id="gameQuestionIdMeta">ID: —</span>
-              <span id="gameQuestionDeckRemain" class="tabular"></span>
-            </div>
-          </div>
-
-          <div class="challenge-answer-wrap">
-            <button type="button" class="challenge-answer-toggle" id="btnToggleAnswer" onclick="toggleGameAnswer()">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-              <span id="btnToggleAnswerText">Lihat Kunci Jawaban</span>
-            </button>
-            <div class="challenge-answer-box" id="gameAnswerBox"></div>
-          </div>
-
-          <!-- Guru Reward Actions vs Guest Notice -->
-          <div id="gameGuruRewardArea" style="display:none">
-            <div class="challenge-actions-grid">
-              <button type="button" class="btn-reward-star" id="btnAwardPrimaryStar" onclick="awardGameStar()">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <span id="btnAwardPrimaryStarText">Berhasil! Kasih +1 Bintang</span>
+        <!-- ══════════════════ MODE 1: RODA INDIVIDU ══════════════════ -->
+        <div id="gameWheelModeArea" style="display:flex;flex-direction:column;gap:14px;width:100%;min-width:0">
+          <!-- Spin Wheel Stage -->
+          <div class="wheel-stage-card">
+            <div class="wheel-container">
+              <div class="wheel-pointer" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <path d="M16 30L4 6C3.2 4.4 4.4 2.5 6.2 2.5H25.8C27.6 2.5 28.8 4.4 28 6L16 30Z" fill="#C98A1C" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round"/>
+                  <circle cx="16" cy="9" r="3" fill="#FFFFFF"/>
+                </svg>
+              </div>
+              <canvas id="gameWheelCanvas" class="wheel-canvas" width="576" height="576" aria-label="Roda keberuntungan nama santri"></canvas>
+              <button type="button" class="wheel-center-btn" id="btnWheelCenter" onclick="spinGameWheel()">
+                PUTAR
               </button>
-              <button type="button" class="btn-secondary" onclick="spinGameWheel()" style="min-height:42px;font-size:13px">
-                Putar Berikutnya
+            </div>
+
+            <div class="wheel-actions-row">
+              <button type="button" class="wheel-spin-main-btn" id="btnSpinMain" onclick="spinGameWheel()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
+                  <polyline points="21 3 21 9 15 9"></polyline>
+                </svg>
+                <span id="btnSpinMainText">Putar Roda Santri</span>
               </button>
-              <button type="button" class="btn-secondary" id="btnAwardBonus2" onclick="awardGameStar(2)" style="min-height:42px;font-size:13px">
-                Bonus +2 Bintang
+              <button type="button" class="wheel-direct-btn" onclick="drawPracticeQuestionOnly()" title="Ambil kartu soal langsung tanpa putar nama">
+                Soal Saja
               </button>
             </div>
           </div>
 
-          <div class="game-guru-notice" id="gameGuestNotice">
-            <span>Mode Latihan · Masuk PIN Pengajar untuk memberi Bintang ke santri.</span>
-            <button type="button" class="btn-mini" onclick="openGuruLoginFromGame()">Login Guru</button>
+          <!-- Active Challenge Card -->
+          <div class="challenge-card" id="gameChallengeCard" style="display:none">
+            <div class="challenge-santri-banner" id="gameSelectedSantriBanner">
+              <div class="challenge-avatar" id="gameSelectedAvatar">?</div>
+              <div class="challenge-santri-meta">
+                <div class="challenge-santri-name" id="gameSelectedName">Latihan Mandiri</div>
+                <div class="challenge-santri-sub" id="gameSelectedSub">Siap menjawab tantangan</div>
+              </div>
+              <button type="button" class="btn-mini" onclick="drawNextQuestionForCurrent()" title="Ganti pertanyaan lain untuk santri ini">
+                Ganti Soal
+              </button>
+            </div>
+
+            <div class="challenge-top-row">
+              <div class="challenge-badges">
+                <span class="challenge-badge jenjang" id="gameCardJenjangBadge">SD</span>
+                <span class="challenge-badge" id="gameCardKategoriBadge">Sambung Ayat</span>
+                <span class="challenge-badge reward tabular" id="gameCardRewardBadge">+1 Bintang</span>
+              </div>
+              <button type="button" class="timer-pill-btn tabular" id="btnGameTimer" onclick="toggleGameTimer()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span id="gameTimerText">20d · Mulai</span>
+              </button>
+            </div>
+
+            <div class="timer-bar-wrap" id="gameTimerBarWrap">
+              <div class="timer-bar-fill" id="gameTimerBarFill"></div>
+            </div>
+
+            <div class="challenge-question-box">
+              <div class="challenge-question-text" id="gameQuestionText">—</div>
+              <div class="challenge-question-id">
+                <span id="gameQuestionIdMeta">ID: —</span>
+                <span id="gameQuestionDeckRemain" class="tabular"></span>
+              </div>
+            </div>
+
+            <div class="challenge-answer-wrap">
+              <button type="button" class="challenge-answer-toggle" id="btnToggleAnswer" onclick="toggleGameAnswer()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span id="btnToggleAnswerText">Lihat Kunci Jawaban</span>
+              </button>
+              <div class="challenge-answer-box" id="gameAnswerBox"></div>
+            </div>
+
+            <!-- Guru Reward Actions vs Guest Notice -->
+            <div id="gameGuruRewardArea" style="display:none">
+              <div class="challenge-actions-grid">
+                <button type="button" class="btn-reward-star" id="btnAwardPrimaryStar" onclick="awardGameStar()">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <span id="btnAwardPrimaryStarText">Berhasil! Kasih +1 Bintang</span>
+                </button>
+                <button type="button" class="btn-secondary" onclick="spinGameWheel()" style="min-height:42px;font-size:13px">
+                  Putar Berikutnya
+                </button>
+                <button type="button" class="btn-secondary" id="btnAwardBonus2" onclick="awardGameStar(2)" style="min-height:42px;font-size:13px">
+                  Bonus +2 Bintang
+                </button>
+              </div>
+            </div>
+
+            <div class="game-guru-notice" id="gameGuestNotice">
+              <span>Mode Latihan · Masuk PIN Pengajar untuk memberi Bintang ke santri.</span>
+              <button type="button" class="btn-mini" onclick="openGuruLoginFromGame()">Login Guru</button>
+            </div>
           </div>
         </div>
 
-        <!-- Session Scoreboard -->
+        <!-- ══════════════════ MODE 2: KOTAK MISTERI KELOMPOK ══════════════════ -->
+        <div id="gameTeamModeArea" style="display:none;flex-direction:column;gap:14px;width:100%;min-width:0">
+          <!-- Team Scoreboard Cards -->
+          <div class="team-scoreboard-grid" id="teamScoreboardGrid"></div>
+
+          <!-- Mystery Box Board -->
+          <div class="mystery-board-card">
+            <div class="mystery-board-head">
+              <div class="mystery-turn-banner" id="mysteryTurnBanner">
+                Giliran: Tim Abu Bakar
+              </div>
+              <div style="display:flex;gap:6px;align-items:center">
+                <span class="section-meta tabular" id="mysteryBoxesRemainingMeta">12 kotak tersisa</span>
+                <button type="button" class="btn-mini" onclick="showTeamVictorySummary()">Podium Juara</button>
+              </div>
+            </div>
+            <div class="mystery-board-grid" id="mysteryBoardGrid"></div>
+          </div>
+
+          <!-- Active Mystery Box Question / Surprise Card -->
+          <div class="challenge-card" id="teamChallengeCard" style="display:none">
+            <div class="challenge-santri-banner" id="teamActiveBanner">
+              <div class="challenge-avatar" id="teamActiveBadgeBox" style="background:var(--brand-primary)">#1</div>
+              <div class="challenge-santri-meta">
+                <div class="challenge-santri-name" id="teamActiveTitle">Kotak #1 · Tim Abu Bakar</div>
+                <div class="challenge-santri-sub" id="teamActiveEffectSub">Soal Bernilai +20 Poin</div>
+              </div>
+              <button type="button" class="btn-mini" id="btnTeamChangeQuestion" onclick="replaceTeamMysteryQuestion()">
+                Ganti Soal
+              </button>
+            </div>
+
+            <!-- Only shown for Question Boxes (hidden for instant Gift Box) -->
+            <div id="teamQuestionContentArea" style="display:flex;flex-direction:column;gap:12px">
+              <div class="challenge-top-row">
+                <div class="challenge-badges">
+                  <span class="challenge-badge jenjang" id="teamCardJenjangBadge">SD</span>
+                  <span class="challenge-badge" id="teamCardKategoriBadge">Sambung Ayat</span>
+                  <span class="challenge-badge reward tabular" id="teamCardPointsBadge">+20 Poin</span>
+                </div>
+                <button type="button" class="timer-pill-btn tabular" id="btnTeamTimer" onclick="toggleGameTimer()">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  <span id="teamTimerText">20d · Mulai</span>
+                </button>
+              </div>
+
+              <div class="challenge-question-box">
+                <div class="challenge-question-text" id="teamQuestionText">—</div>
+                <div class="challenge-question-id">
+                  <span id="teamQuestionIdMeta">ID: —</span>
+                  <span id="teamQuestionEffectNote" style="color:var(--gold-text);font-weight:700"></span>
+                </div>
+              </div>
+
+              <div class="challenge-answer-wrap">
+                <button type="button" class="challenge-answer-toggle" onclick="toggleTeamAnswer()">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  <span id="btnTeamToggleAnswerText">Lihat Kunci Jawaban</span>
+                </button>
+                <div class="challenge-answer-box" id="teamAnswerBox"></div>
+              </div>
+
+              <!-- Pass / Lempar Soal to Another Team Picker -->
+              <div class="team-steal-picker" id="teamPassPicker">
+                <div style="font-size:12px;font-weight:700;color:var(--text-primary)">Pilih tim yang berhasil merebut jawaban:</div>
+                <div class="team-steal-row" id="teamPassButtonsRow"></div>
+              </div>
+
+              <div class="challenge-actions-grid">
+                <button type="button" class="btn-reward-star" id="btnTeamAnswerCorrect" onclick="resolveTeamBoxAnswer(true)">
+                  <span id="btnTeamAnswerCorrectText">✓ Tim Benar (+20 Poin)</span>
+                </button>
+                <button type="button" class="btn-secondary" style="min-height:42px;font-size:13px" onclick="toggleTeamPassPicker()">
+                  Lempar ke Tim Lain
+                </button>
+                <button type="button" class="btn-secondary" style="min-height:42px;font-size:13px" onclick="resolveTeamBoxAnswer(false)">
+                  ✗ Belum Tepat (0 Poin)
+                </button>
+              </div>
+            </div>
+
+            <!-- Shown only for Instant Bonus Gift Box -->
+            <div id="teamGiftContentArea" style="display:none;flex-direction:column;gap:12px">
+              <div class="challenge-question-box" style="text-align:center;background:var(--gold-soft);border-color:var(--gold-border)">
+                <div style="font-size:28px;margin-bottom:4px">🎁</div>
+                <div class="challenge-question-text" id="teamGiftHeadline" style="color:var(--gold-text)">KOTAK BERKAH!</div>
+                <div style="font-size:13px;color:var(--text-secondary);margin-top:4px" id="teamGiftDesc">
+                  Kelompok ini langsung mendapat tambahan +15 Poin gratis tanpa soal!
+                </div>
+              </div>
+              <button type="button" class="btn-reward-star" onclick="claimTeamGiftBox()">
+                Ambil Bonus +15 Poin &amp; Lanjut Giliran
+              </button>
+            </div>
+          </div>
+
+          <!-- Team Victory & Star Distribution Card -->
+          <div class="team-victory-card" id="teamVictoryCard" style="display:none">
+            <div class="section-row" style="padding:0">
+              <h2 class="section-title" style="font-size:15px;color:var(--gold-text)">🏆 Podium Juara Kelompok</h2>
+              <button type="button" class="btn-mini" onclick="startNewTeamMysteryGame(false)">Main Babak Baru</button>
+            </div>
+            <div id="teamVictorySummaryBody" style="font-size:13px;color:var(--text-secondary);line-height:1.5"></div>
+            <div id="teamVictoryGuruActions" style="display:none">
+              <div class="challenge-actions-grid">
+                <button type="button" class="btn-reward-star" id="btnAwardWinningTeam1" onclick="requestAwardWinningTeamStars(1)">
+                  <span id="btnAwardWinningTeam1Text">Kasih +1 Bintang ke Anggota Tim Juara</span>
+                </button>
+                <button type="button" class="btn-secondary" id="btnAwardWinningTeam2" style="grid-column:1/-1;min-height:40px;font-size:13px" onclick="requestAwardWinningTeamStars(2)">
+                  Bonus Spesial: Kasih +2 Bintang ke Anggota Tim Juara
+                </button>
+              </div>
+            </div>
+            <div class="game-guru-notice" id="teamVictoryGuestNotice" style="display:none">
+              <span>Login PIN Pengajar untuk membagikan Bintang otomatis ke seluruh anggota Tim Juara.</span>
+              <button type="button" class="btn-mini" onclick="openGuruLoginFromGame()">Login Guru</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Session Scoreboard (Shared across both games) -->
         <div class="game-session-card" id="gameSessionCard" style="display:none">
           <div class="section-row" style="padding:0">
             <h2 class="section-title" style="font-size:14px">Perolehan Bintang Sesi Ini</h2>
@@ -5456,6 +6075,9 @@
       updateGameDeckMeta();
       updateGameGuruUI();
       drawGameWheel();
+      if (typeof refreshTeamMysteryView === 'function') {
+        refreshTeamMysteryView();
+      }
     }
 
     function buildGameKelasChips() {
@@ -5913,6 +6535,10 @@
         guruArea.style.display = 'none';
         guestNotice.style.display = 'flex';
       }
+
+      if (typeof updateTeamVictoryGuruUI === 'function') {
+        updateTeamVictoryGuruUI();
+      }
     }
 
     function openGuruLoginFromGame() {
@@ -5921,6 +6547,7 @@
     }
 
     let pendingAwardPts = 1;
+    let pendingConfirmMode = 'wheel';
 
     function awardGameStar(overridePts) {
       if (!guruLoggedIn) {
@@ -5939,10 +6566,12 @@
       stopGameTimer();
       const pts = overridePts || Number(gameCurrentQuestion.bintang) || 1;
       pendingAwardPts = pts;
+      pendingConfirmMode = 'wheel';
 
       const santri = allSantri.find(s => String(s.id) === String(gameSelectedSantri.id)) || gameSelectedSantri;
       const curSaldo = Number(santri.saldo) || 0;
 
+      document.getElementById('gameConfirmTitle').textContent = 'Berikan Hadiah Bintang?';
       document.getElementById('gameConfirmSantriName').textContent = `${santri.nama} (${santri.kelas || 'TPA'})`;
       document.getElementById('gameConfirmKategori').textContent = `${gameCurrentQuestion.kategori} · ${gameCurrentQuestion.id}`;
       document.getElementById('gameConfirmPoints').textContent = `+${pts} Bintang`;
@@ -5962,6 +6591,11 @@
     function confirmAwardGameStar() {
       document.getElementById('gameConfirmOverlay').classList.remove('open');
       document.body.style.overflow = '';
+
+      if (pendingConfirmMode === 'team') {
+        executeAwardWinningTeamStars();
+        return;
+      }
 
       if (!guruLoggedIn || !gameSelectedSantri || !gameCurrentQuestion || gameCurrentTurnAwarded) return;
 
@@ -6046,16 +6680,694 @@
       `).join('');
     }
 
-    // ── Optional 20-Second Timer ──
+    // ── Mode 2: Kotak Misteri Kelompok (Team Mystery Box Game) ──
+    const TEAM_TEMPLATES = [
+      { id: 'T1', nama: 'Tim Abu Bakar', color: '#0B5D3B' },
+      { id: 'T2', nama: 'Tim Umar', color: '#C98A1C' },
+      { id: 'T3', nama: 'Tim Utsman', color: '#1E5FA8' },
+      { id: 'T4', nama: 'Tim Ali', color: '#8B5A2B' }
+    ];
+
+    let activeGameMode = 'wheel'; // 'wheel' | 'team'
+    let teamCountConfig = 3;
+    let mysteryBoxCountConfig = 12;
+    let teamList = [];
+    let teamTurnIndex = 0;
+    let teamMysteryBoxes = [];
+    let activeMysteryBoxIndex = -1;
+    let teamRoundStarsAwarded = false;
+    let teamInitialized = false;
+
+    function switchGameMode(mode) {
+      if (gameWheelSpinning) return;
+      stopGameTimer();
+      activeGameMode = mode === 'team' ? 'team' : 'wheel';
+
+      const isTeam = activeGameMode === 'team';
+      document.getElementById('btnModeWheel').classList.toggle('active', !isTeam);
+      document.getElementById('btnModeWheel').setAttribute('aria-selected', String(!isTeam));
+      document.getElementById('btnModeTeam').classList.toggle('active', isTeam);
+      document.getElementById('btnModeTeam').setAttribute('aria-selected', String(isTeam));
+
+      document.getElementById('wheelStatusBar').style.display = isTeam ? 'none' : 'flex';
+      document.getElementById('teamSetupBar').style.display = isTeam ? 'flex' : 'none';
+      document.getElementById('gameWheelModeArea').style.display = isTeam ? 'none' : 'flex';
+      document.getElementById('gameTeamModeArea').style.display = isTeam ? 'flex' : 'none';
+
+      if (!isTeam) {
+        document.getElementById('teamRosterDrawer')?.classList.remove('open');
+        drawGameWheel();
+      } else {
+        if (!teamInitialized) {
+          startNewTeamMysteryGame(false);
+        } else {
+          refreshTeamMysteryView();
+        }
+      }
+    }
+
+    function setTeamCount(n) {
+      teamCountConfig = [2, 3, 4].includes(n) ? n : 3;
+      [2, 3, 4].forEach(c => {
+        document.getElementById('btnTeamCount' + c)?.classList.toggle('active', c === teamCountConfig);
+      });
+      startNewTeamMysteryGame(true);
+    }
+
+    function setMysteryBoxCount(count) {
+      mysteryBoxCountConfig = count === 16 ? 16 : 12;
+      [12, 16].forEach(c => {
+        document.getElementById('btnBoxCount' + c)?.classList.toggle('active', c === mysteryBoxCountConfig);
+      });
+      startNewTeamMysteryGame(true);
+    }
+
+    function toggleTeamRosterDrawer() {
+      const drawer = document.getElementById('teamRosterDrawer');
+      if (!drawer) return;
+      drawer.classList.toggle('open');
+      renderTeamRosterGrid();
+    }
+
+    function shuffleTeamMembers(showMsg = false) {
+      const attending = getAttendingGameSantri().slice();
+      // Fisher-Yates shuffle
+      for (let i = attending.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = attending[i];
+        attending[i] = attending[j];
+        attending[j] = tmp;
+      }
+
+      // Preserve existing scores if teams already exist
+      const prevScores = new Map(teamList.map(t => [t.id, t.score]));
+
+      teamList = TEAM_TEMPLATES.slice(0, teamCountConfig).map(tpl => ({
+        id: tpl.id,
+        nama: tpl.nama,
+        color: tpl.color,
+        score: prevScores.get(tpl.id) || 0,
+        memberIds: []
+      }));
+
+      attending.forEach((s, idx) => {
+        teamList[idx % teamCountConfig].memberIds.push(String(s.id));
+      });
+
+      renderTeamScoreboard();
+      renderTeamRosterGrid();
+      if (showMsg) {
+        showToast(`Anggota ${teamCountConfig} kelompok berhasil diacak merata!`, 'success');
+      }
+    }
+
+    function cycleMemberTeam(santriId) {
+      const sid = String(santriId);
+      let currentTeamIdx = teamList.findIndex(t => t.memberIds.includes(sid));
+      if (currentTeamIdx === -1) return;
+      teamList[currentTeamIdx].memberIds = teamList[currentTeamIdx].memberIds.filter(id => id !== sid);
+      const nextIdx = (currentTeamIdx + 1) % teamList.length;
+      teamList[nextIdx].memberIds.push(sid);
+      renderTeamScoreboard();
+      renderTeamRosterGrid();
+    }
+
+    function generateMysteryBoxes(count) {
+      // Build balanced surprise deck for 12 or 16 boxes
+      const deck12 = [
+        { type: 'normal', points: 10, label: '+10 Poin', short: '+10' },
+        { type: 'normal', points: 10, label: '+10 Poin', short: '+10' },
+        { type: 'normal', points: 10, label: '+10 Poin', short: '+10' },
+        { type: 'normal', points: 20, label: '+20 Poin', short: '+20' },
+        { type: 'normal', points: 20, label: '+20 Poin', short: '+20' },
+        { type: 'normal', points: 20, label: '+20 Poin', short: '+20' },
+        { type: 'normal', points: 30, label: '+30 Poin', short: '+30' },
+        { type: 'normal', points: 30, label: '+30 Poin', short: '+30' },
+        { type: 'double', points: 40, label: '🌟 Poin Ganda 2x (+40 Poin)', short: '🌟 2x (40)' },
+        { type: 'double', points: 40, label: '🌟 Poin Ganda 2x (+40 Poin)', short: '🌟 2x (40)' },
+        { type: 'gift', points: 15, label: '🎁 Kotak Berkah (+15 Gratis)', short: '🎁 +15' },
+        { type: 'steal', points: 20, steal: 10, label: '⚡ Curi Poin (+20 & Curi 10)', short: '⚡ Curi 10' }
+      ];
+
+      const extra4 = [
+        { type: 'normal', points: 10, label: '+10 Poin', short: '+10' },
+        { type: 'normal', points: 20, label: '+20 Poin', short: '+20' },
+        { type: 'normal', points: 30, label: '+30 Poin', short: '+30' },
+        { type: 'steal', points: 20, steal: 10, label: '⚡ Curi Poin (+20 & Curi 10)', short: '⚡ Curi 10' }
+      ];
+
+      const raw = count === 16 ? [...deck12, ...extra4] : deck12.slice();
+      for (let i = raw.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = raw[i];
+        raw[i] = raw[j];
+        raw[j] = tmp;
+      }
+
+      return raw.map((item, idx) => ({
+        num: idx + 1,
+        ...item,
+        opened: false,
+        winnerTeamName: '',
+        question: null
+      }));
+    }
+
+    function startNewTeamMysteryGame(showMsg = false) {
+      stopGameTimer();
+      teamInitialized = true;
+      teamRoundStarsAwarded = false;
+      activeMysteryBoxIndex = -1;
+      teamTurnIndex = 0;
+      teamList = [];
+      shuffleTeamMembers(false);
+      teamMysteryBoxes = generateMysteryBoxes(mysteryBoxCountConfig);
+
+      const challengeCard = document.getElementById('teamChallengeCard');
+      const victoryCard = document.getElementById('teamVictoryCard');
+      if (challengeCard) challengeCard.style.display = 'none';
+      if (victoryCard) victoryCard.style.display = 'none';
+
+      refreshTeamMysteryView();
+      if (showMsg) {
+        showToast(`Papan ${mysteryBoxCountConfig} Kotak Misteri & ${teamCountConfig} Kelompok siap dimainkan!`, 'success');
+      }
+    }
+
+    function refreshTeamMysteryView() {
+      if (!teamInitialized) return;
+      // Ensure all attending students are represented in teams
+      const attendingIds = new Set(getAttendingGameSantri().map(s => String(s.id)));
+      const assignedIds = new Set();
+      teamList.forEach(t => {
+        t.memberIds = t.memberIds.filter(id => attendingIds.has(id));
+        t.memberIds.forEach(id => assignedIds.add(id));
+      });
+      let nextT = 0;
+      attendingIds.forEach(id => {
+        if (!assignedIds.has(id) && teamList.length) {
+          teamList[nextT % teamList.length].memberIds.push(id);
+          nextT++;
+        }
+      });
+
+      renderTeamScoreboard();
+      renderTeamRosterGrid();
+      renderMysteryBoardGrid();
+      updateTeamVictoryGuruUI();
+    }
+
+    function selectTeamTurnManual(idx) {
+      if (idx < 0 || idx >= teamList.length) return;
+      teamTurnIndex = idx;
+      renderTeamScoreboard();
+      renderMysteryBoardGrid();
+      if (activeMysteryBoxIndex !== -1) {
+        renderActiveTeamMysteryCard();
+      }
+    }
+
+    function getTeamMembersObjects(team) {
+      if (!team) return [];
+      return team.memberIds
+        .map(id => allSantri.find(s => String(s.id) === String(id)))
+        .filter(Boolean);
+    }
+
+    function renderTeamScoreboard() {
+      const grid = document.getElementById('teamScoreboardGrid');
+      if (!grid || !teamList.length) return;
+
+      grid.innerHTML = teamList.map((t, idx) => {
+        const isTurn = idx === teamTurnIndex;
+        const members = getTeamMembersObjects(t);
+        const memberNames = members.length
+          ? members.map(m => m.nama.split(' ')[0]).join(', ')
+          : 'Ketuk Anggota Tim untuk atur';
+
+        return `
+          <button type="button" class="team-score-card ${isTurn ? 'active-turn' : ''}" onclick="selectTeamTurnManual(${idx})" title="Ketuk untuk pindahkan giliran ke ${escapeHtml(t.nama)}">
+            <div class="team-score-head">
+              <div class="team-name-wrap">
+                <span class="team-color-dot" style="background:${t.color}"></span>
+                <span class="team-name-text">${escapeHtml(t.nama)}</span>
+              </div>
+              ${isTurn ? '<span class="team-turn-badge">Giliran</span>' : ''}
+            </div>
+            <div class="team-points-num tabular">${t.score} <span style="font-size:12px;font-weight:700;color:var(--text-muted)">poin</span></div>
+            <div class="team-members-preview">${escapeHtml(memberNames)} (${members.length})</div>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function renderTeamRosterGrid() {
+      const grid = document.getElementById('teamRosterGrid');
+      if (!grid || !teamList.length) return;
+
+      grid.innerHTML = teamList.map(t => {
+        const members = getTeamMembersObjects(t);
+        const chipsHtml = members.length
+          ? members.map(m => `
+              <button type="button" class="team-member-chip" onclick="cycleMemberTeam('${escapeHtml(String(m.id))}')">
+                ${escapeHtml(m.nama)} <span style="color:var(--text-muted)">(${escapeHtml(m.kelas || 'TPA')}) ⇄</span>
+              </button>
+            `).join('')
+          : '<span style="font-size:11px;color:var(--text-muted)">Belum ada anggota</span>';
+
+        return `
+          <div class="team-roster-box">
+            <div class="team-roster-box-title">
+              <span style="display:inline-flex;align-items:center;gap:6px">
+                <span class="team-color-dot" style="background:${t.color}"></span>
+                ${escapeHtml(t.nama)}
+              </span>
+              <span class="tabular" style="font-size:11px;color:var(--text-muted)">${members.length} santri</span>
+            </div>
+            <div class="team-roster-chips">${chipsHtml}</div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderMysteryBoardGrid() {
+      const grid = document.getElementById('mysteryBoardGrid');
+      const turnBanner = document.getElementById('mysteryTurnBanner');
+      const remMeta = document.getElementById('mysteryBoxesRemainingMeta');
+      if (!grid) return;
+
+      const currentTeam = teamList[teamTurnIndex] || teamList[0];
+      const remaining = teamMysteryBoxes.filter(b => !b.opened).length;
+
+      if (turnBanner && currentTeam) {
+        turnBanner.innerHTML = `
+          <span class="team-color-dot" style="background:${currentTeam.color}"></span>
+          <span>Giliran Pilih Kotak: <strong>${escapeHtml(currentTeam.nama)}</strong></span>
+        `;
+      }
+      if (remMeta) {
+        remMeta.textContent = `${remaining}/${teamMysteryBoxes.length} kotak tersisa`;
+      }
+
+      grid.innerHTML = teamMysteryBoxes.map((box, idx) => {
+        const isActive = idx === activeMysteryBoxIndex && !box.opened;
+        if (box.opened) {
+          return `
+            <button type="button" class="mystery-box-btn opened type-${box.type}" disabled>
+              <span class="mystery-box-num tabular">#${box.num}</span>
+              <span class="mystery-box-sub">${escapeHtml(box.short)}</span>
+              ${box.winnerTeamName ? `<span class="mystery-box-sub" style="font-size:9px">${escapeHtml(box.winnerTeamName.replace('Tim ', ''))}</span>` : ''}
+            </button>
+          `;
+        }
+        return `
+          <button type="button" class="mystery-box-btn ${isActive ? 'active-box' : ''}" onclick="openMysteryBox(${idx})">
+            <span class="mystery-box-num tabular">${box.num}</span>
+            <span class="mystery-box-sub">Buka Kotak</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function openMysteryBox(idx) {
+      const box = teamMysteryBoxes[idx];
+      if (!box || box.opened) return;
+
+      stopGameTimer();
+      activeMysteryBoxIndex = idx;
+
+      if (box.type === 'gift') {
+        playGameVictoryFanfare();
+      } else {
+        playGameSelectChime();
+        if (!box.question) {
+          const targetJenjang = gameKelasFilter !== 'Semua' ? gameKelasFilter : '';
+          box.question = drawQuestionFromDeck(targetJenjang);
+        }
+      }
+
+      renderMysteryBoardGrid();
+      renderActiveTeamMysteryCard();
+    }
+
+    function replaceTeamMysteryQuestion() {
+      if (activeMysteryBoxIndex === -1) return;
+      const box = teamMysteryBoxes[activeMysteryBoxIndex];
+      if (!box || box.type === 'gift') return;
+
+      stopGameTimer();
+      playGameWheelTick();
+      const targetJenjang = gameKelasFilter !== 'Semua' ? gameKelasFilter : '';
+      box.question = drawQuestionFromDeck(targetJenjang);
+      renderActiveTeamMysteryCard();
+      showToast(`Soal pada Kotak #${box.num} diganti dengan soal baru.`, '');
+    }
+
+    function renderActiveTeamMysteryCard() {
+      const card = document.getElementById('teamChallengeCard');
+      if (!card || activeMysteryBoxIndex === -1) return;
+      const box = teamMysteryBoxes[activeMysteryBoxIndex];
+      const currentTeam = teamList[teamTurnIndex] || teamList[0];
+      if (!box || !currentTeam) return;
+
+      card.style.display = 'flex';
+      card.classList.toggle('is-surprise', box.type !== 'normal');
+
+      document.getElementById('teamActiveBadgeBox').textContent = '#' + box.num;
+      document.getElementById('teamActiveBadgeBox').style.background = currentTeam.color;
+      document.getElementById('teamActiveTitle').textContent = `Kotak #${box.num} · ${currentTeam.nama}`;
+      document.getElementById('teamActiveEffectSub').textContent = box.label;
+
+      const qArea = document.getElementById('teamQuestionContentArea');
+      const giftArea = document.getElementById('teamGiftContentArea');
+      const btnChangeQ = document.getElementById('btnTeamChangeQuestion');
+
+      if (box.type === 'gift') {
+        qArea.style.display = 'none';
+        giftArea.style.display = 'flex';
+        btnChangeQ.style.display = 'none';
+        document.getElementById('teamGiftHeadline').textContent = `🎁 KOTAK BERKAH UNTUK ${currentTeam.nama.toUpperCase()}!`;
+        document.getElementById('teamGiftDesc').textContent = `${currentTeam.nama} langsung mendapat tambahan +${box.points} Poin gratis tanpa soal!`;
+      } else {
+        qArea.style.display = 'flex';
+        giftArea.style.display = 'none';
+        btnChangeQ.style.display = 'inline-flex';
+
+        const q = box.question || FALLBACK_GAME_QUESTIONS[0];
+        document.getElementById('teamCardJenjangBadge').textContent = q.jenjang || 'TPA';
+        document.getElementById('teamCardKategoriBadge').textContent = q.kategori || 'Tantangan';
+        document.getElementById('teamCardPointsBadge').textContent = `+${box.points} Poin`;
+        document.getElementById('teamQuestionText').textContent = q.pertanyaan;
+        document.getElementById('teamQuestionIdMeta').textContent = `Kode Soal: ${q.id}`;
+
+        const effectNote = document.getElementById('teamQuestionEffectNote');
+        if (box.type === 'double') {
+          effectNote.textContent = '🌟 POIN GANDA 2X LIPAT!';
+        } else if (box.type === 'steal') {
+          effectNote.textContent = '⚡ JAWAB BENAR = CURI 10 POIN LAWAN!';
+        } else {
+          effectNote.textContent = '';
+        }
+
+        const ansBox = document.getElementById('teamAnswerBox');
+        ansBox.textContent = 'Kunci Jawaban: ' + q.jawaban;
+        ansBox.classList.remove('show');
+        document.getElementById('btnTeamToggleAnswerText').textContent = 'Lihat Kunci Jawaban';
+
+        document.getElementById('teamPassPicker').classList.remove('show');
+        document.getElementById('btnTeamAnswerCorrectText').textContent =
+          `✓ ${currentTeam.nama} Benar (+${box.points} Poin)`;
+
+        resetGameTimerUI();
+      }
+
+      setTimeout(() => {
+        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 80);
+    }
+
+    function toggleTeamAnswer() {
+      const ansBox = document.getElementById('teamAnswerBox');
+      const txt = document.getElementById('btnTeamToggleAnswerText');
+      if (!ansBox) return;
+      const isShown = ansBox.classList.toggle('show');
+      txt.textContent = isShown ? 'Sembunyikan Kunci Jawaban' : 'Lihat Kunci Jawaban';
+    }
+
+    function toggleTeamPassPicker() {
+      const picker = document.getElementById('teamPassPicker');
+      const row = document.getElementById('teamPassButtonsRow');
+      if (!picker || !row || activeMysteryBoxIndex === -1) return;
+      const box = teamMysteryBoxes[activeMysteryBoxIndex];
+      const isShown = picker.classList.toggle('show');
+      if (isShown) {
+        row.innerHTML = teamList
+          .map((t, idx) => idx === teamTurnIndex ? '' : `
+            <button type="button" class="btn-mini" style="border-color:${t.color};color:${t.color}" onclick="resolveTeamBoxAnswer(true, ${idx})">
+              ✓ Rebut: ${escapeHtml(t.nama)} (+${box.points} Poin)
+            </button>
+          `)
+          .join('');
+      }
+    }
+
+    function claimTeamGiftBox() {
+      if (activeMysteryBoxIndex === -1) return;
+      const box = teamMysteryBoxes[activeMysteryBoxIndex];
+      const currentTeam = teamList[teamTurnIndex];
+      if (!box || !currentTeam) return;
+
+      currentTeam.score += box.points;
+      box.opened = true;
+      box.winnerTeamName = currentTeam.nama;
+      activeMysteryBoxIndex = -1;
+      document.getElementById('teamChallengeCard').style.display = 'none';
+
+      advanceTeamTurnAndCheckEnd(`${currentTeam.nama} mendapat Bonus Berkah +${box.points} Poin!`);
+    }
+
+    function resolveTeamBoxAnswer(isCorrect, overrideTeamIdx = null) {
+      if (activeMysteryBoxIndex === -1) return;
+      stopGameTimer();
+
+      const box = teamMysteryBoxes[activeMysteryBoxIndex];
+      const winnerIdx = overrideTeamIdx !== null ? overrideTeamIdx : teamTurnIndex;
+      const winningTeam = teamList[winnerIdx];
+      if (!box || !winningTeam) return;
+
+      box.opened = true;
+      let toastMsg = `Kotak #${box.num} ditutup tanpa poin. Lanjut giliran berikutnya!`;
+
+      if (isCorrect) {
+        playGameVictoryFanfare();
+        winningTeam.score += box.points;
+        box.winnerTeamName = winningTeam.nama;
+        toastMsg = `${winningTeam.nama} meraih +${box.points} Poin!`;
+
+        if (box.type === 'steal') {
+          // Find highest-scoring rival team
+          const rivals = teamList.filter((_, idx) => idx !== winnerIdx && _.score > 0);
+          if (rivals.length) {
+            rivals.sort((a, b) => b.score - a.score);
+            const victim = rivals[0];
+            const stolen = Math.min(10, victim.score);
+            victim.score -= stolen;
+            winningTeam.score += stolen;
+            toastMsg = `⚡ ${winningTeam.nama} dapat +${box.points} Poin & mencuri ${stolen} Poin dari ${victim.nama}!`;
+          }
+        }
+      } else {
+        playGameTimeUpBuzzer();
+      }
+
+      activeMysteryBoxIndex = -1;
+      document.getElementById('teamChallengeCard').style.display = 'none';
+      advanceTeamTurnAndCheckEnd(toastMsg, isCorrect ? 'success' : '');
+    }
+
+    function advanceTeamTurnAndCheckEnd(msg, toastType = 'success') {
+      teamTurnIndex = (teamTurnIndex + 1) % teamList.length;
+      renderTeamScoreboard();
+      renderMysteryBoardGrid();
+
+      const remaining = teamMysteryBoxes.filter(b => !b.opened).length;
+      if (remaining === 0) {
+        showTeamVictorySummary();
+        showToast('Seluruh Kotak Misteri telah terbuka! Ini dia Tim Juaranya!', 'success');
+      } else if (msg) {
+        showToast(msg, toastType);
+      }
+    }
+
+    function getWinningTeams() {
+      if (!teamList.length) return [];
+      const maxScore = Math.max(...teamList.map(t => t.score));
+      return teamList.filter(t => t.score === maxScore);
+    }
+
+    function showTeamVictorySummary() {
+      const card = document.getElementById('teamVictoryCard');
+      const body = document.getElementById('teamVictorySummaryBody');
+      if (!card || !body) return;
+
+      const winners = getWinningTeams();
+      const sorted = [...teamList].sort((a, b) => b.score - a.score);
+      const winNames = winners.map(w => w.nama).join(' & ');
+
+      const allWinnerMembers = [];
+      winners.forEach(w => {
+        getTeamMembersObjects(w).forEach(m => allWinnerMembers.push(m));
+      });
+
+      const memberListStr = allWinnerMembers.length
+        ? allWinnerMembers.map(m => `${escapeHtml(m.nama)} (${escapeHtml(m.kelas || 'TPA')})`).join(', ')
+        : 'Belum ada anggota santri di tim ini';
+
+      body.innerHTML = `
+        <div style="font-size:15px;font-weight:800;color:var(--text-primary);margin-bottom:6px">
+          Juara 1: <span style="color:var(--brand-primary)">${escapeHtml(winNames)}</span> (${winners[0]?.score || 0} Poin)
+        </div>
+        <div style="margin-bottom:8px">
+          <strong>Anggota Tim Juara (${allWinnerMembers.length} santri):</strong><br>
+          <span>${memberListStr}</span>
+        </div>
+        <div style="font-size:12px;color:var(--text-muted)">
+          Klasemen: ${sorted.map((t, i) => `#${i + 1} ${escapeHtml(t.nama)} (${t.score} poin)`).join(' · ')}
+        </div>
+      `;
+
+      card.style.display = 'flex';
+      updateTeamVictoryGuruUI();
+      setTimeout(() => {
+        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 80);
+    }
+
+    function updateTeamVictoryGuruUI() {
+      const guruAct = document.getElementById('teamVictoryGuruActions');
+      const guestNot = document.getElementById('teamVictoryGuestNotice');
+      if (!guruAct || !guestNot) return;
+
+      if (guruLoggedIn) {
+        guruAct.style.display = 'block';
+        guestNot.style.display = 'none';
+
+        const winners = getWinningTeams();
+        const winNames = winners.map(w => w.nama).join(' & ');
+        const btn1 = document.getElementById('btnAwardWinningTeam1');
+        const btn1Txt = document.getElementById('btnAwardWinningTeam1Text');
+        const btn2 = document.getElementById('btnAwardWinningTeam2');
+
+        if (teamRoundStarsAwarded) {
+          btn1.disabled = true;
+          btn1Txt.textContent = `✓ Bintang Sudah Dibagikan ke ${winNames}`;
+          btn2.style.display = 'none';
+        } else {
+          btn1.disabled = false;
+          btn1Txt.textContent = `Kasih +1 Bintang ke Anggota ${winNames}`;
+          btn2.style.display = 'inline-flex';
+        }
+      } else {
+        guruAct.style.display = 'none';
+        guestNot.style.display = 'flex';
+      }
+    }
+
+    function requestAwardWinningTeamStars(pts) {
+      if (!guruLoggedIn) {
+        openGuruLoginFromGame();
+        return;
+      }
+      if (teamRoundStarsAwarded) {
+        showToast('Bintang untuk babak kelompok ini sudah dibagikan.', '');
+        return;
+      }
+
+      const winners = getWinningTeams();
+      const winnerMembers = [];
+      winners.forEach(w => {
+        getTeamMembersObjects(w).forEach(m => winnerMembers.push(m));
+      });
+
+      if (!winnerMembers.length) {
+        showToast('Tim juara belum memiliki anggota santri.', 'warn');
+        return;
+      }
+
+      pendingAwardPts = pts || 1;
+      pendingConfirmMode = 'team';
+      const winNames = winners.map(w => w.nama).join(' & ');
+
+      document.getElementById('gameConfirmTitle').textContent = `Bagi Bintang ke ${winNames}?`;
+      document.getElementById('gameConfirmSantriName').textContent =
+        `${winnerMembers.length} santri (${winnerMembers.map(m => m.nama.split(' ')[0]).join(', ')})`;
+      document.getElementById('gameConfirmKategori').textContent =
+        `Juara Kotak Misteri (${winners[0]?.score || 0} Poin)`;
+      document.getElementById('gameConfirmPoints').textContent =
+        `+${pendingAwardPts} Bintang / santri`;
+      document.getElementById('gameConfirmSaldoChange').textContent =
+        `Total +${pendingAwardPts * winnerMembers.length} bintang dibagikan`;
+      document.getElementById('btnConfirmAwardExec').textContent =
+        `Ya, Bagi ke ${winnerMembers.length} Santri ★`;
+
+      document.getElementById('gameConfirmOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function executeAwardWinningTeamStars() {
+      if (!guruLoggedIn || teamRoundStarsAwarded) return;
+      const winners = getWinningTeams();
+      const winnerMembers = [];
+      winners.forEach(w => {
+        getTeamMembersObjects(w).forEach(m => winnerMembers.push(m));
+      });
+      if (!winnerMembers.length) return;
+
+      const pts = pendingAwardPts || 1;
+      const nilai = pts >= 2 ? 'A++' : 'A+';
+      const pengajar = localStorage.getItem(STORAGE_KEYS.PENGAJAR) || document.getElementById('f_pengajar')?.value || CONFIG.GURU[0];
+      const winNames = winners.map(w => w.nama).join(' & ');
+
+      winnerMembers.forEach(santri => {
+        const payload = {
+          id: String(santri.id),
+          nama: santri.nama,
+          pengajar,
+          kategori: 'Tantangan Game',
+          level: '',
+          halaman: '',
+          surah: `Juara Kotak Misteri (${winNames})`,
+          ayat_dari: '',
+          ayat_sampai: '',
+          nilai,
+          keterangan: `Menang Game Kelompok Kotak Misteri bersama ${winNames} (${winners[0]?.score || 0} Poin)`,
+          tambah_bintang: String(pts)
+        };
+
+        const meta = {
+          santriId: String(santri.id),
+          santriNama: santri.nama,
+          detail: `Kotak Misteri · ${winNames}`,
+          tanggalDisplay: getJakartaDateDisplay(new Date())
+        };
+
+        enqueueMutation('saveLog', payload, meta);
+
+        const existingSession = gameSessionScores.find(x => String(x.id) === String(santri.id));
+        if (existingSession) {
+          existingSession.bintang += pts;
+          existingSession.soalCount += 1;
+        } else {
+          gameSessionScores.push({
+            id: String(santri.id),
+            nama: santri.nama,
+            kelas: santri.kelas || 'TPA',
+            bintang: pts,
+            soalCount: 1
+          });
+        }
+      });
+
+      teamRoundStarsAwarded = true;
+      playGameVictoryFanfare();
+      renderGameSessionScoreboard();
+      updateTeamVictoryGuruUI();
+      showToast(`+${pts} Bintang berhasil dibagikan ke ${winnerMembers.length} anggota ${winNames}!`, 'success');
+    }
+
+    // ── Optional 20-Second Timer (Shared for Wheel & Team Modes) ──
     function resetGameTimerUI() {
       stopGameTimer();
       gameTimerRemaining = 20;
-      const btn = document.getElementById('btnGameTimer');
-      const txt = document.getElementById('gameTimerText');
+      ['btnGameTimer', 'btnTeamTimer'].forEach(id => {
+        document.getElementById(id)?.classList.remove('running', 'urgent');
+      });
+      ['gameTimerText', 'teamTimerText'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = '20d · Mulai';
+      });
       const barWrap = document.getElementById('gameTimerBarWrap');
       const barFill = document.getElementById('gameTimerBarFill');
-      if (btn) btn.classList.remove('running', 'urgent');
-      if (txt) txt.textContent = '20d · Mulai';
       if (barWrap) barWrap.classList.remove('show');
       if (barFill) {
         barFill.style.width = '100%';
@@ -6072,8 +7384,8 @@
     }
 
     function toggleGameTimer() {
-      const btn = document.getElementById('btnGameTimer');
-      const txt = document.getElementById('gameTimerText');
+      const btns = ['btnGameTimer', 'btnTeamTimer'].map(id => document.getElementById(id)).filter(Boolean);
+      const txts = ['gameTimerText', 'teamTimerText'].map(id => document.getElementById(id)).filter(Boolean);
       const barWrap = document.getElementById('gameTimerBarWrap');
       const barFill = document.getElementById('gameTimerBarFill');
 
@@ -6084,32 +7396,32 @@
 
       gameTimerRemaining = 20;
       gameTimerRunning = true;
-      btn.classList.add('running');
-      btn.classList.remove('urgent');
-      barWrap.classList.add('show');
-      barFill.style.width = '100%';
-      barFill.classList.remove('urgent');
-      txt.textContent = '20d · Berhenti';
+      btns.forEach(b => { b.classList.add('running'); b.classList.remove('urgent'); });
+      txts.forEach(t => { t.textContent = '20d · Berhenti'; });
+      if (barWrap) barWrap.classList.add('show');
+      if (barFill) {
+        barFill.style.width = '100%';
+        barFill.classList.remove('urgent');
+      }
 
       gameTimerInterval = setInterval(() => {
         gameTimerRemaining -= 1;
         const pct = Math.max(0, (gameTimerRemaining / 20) * 100);
-        barFill.style.width = `${pct}%`;
+        if (barFill) barFill.style.width = `${pct}%`;
 
         if (gameTimerRemaining <= 5 && gameTimerRemaining > 0) {
-          btn.classList.add('urgent');
-          barFill.classList.add('urgent');
+          btns.forEach(b => b.classList.add('urgent'));
+          if (barFill) barFill.classList.add('urgent');
           playGameTimerUrgentTick();
         }
 
         if (gameTimerRemaining <= 0) {
           stopGameTimer();
-          btn.classList.remove('running');
-          btn.classList.add('urgent');
-          txt.textContent = 'Waktu Habis! · Ulang';
+          btns.forEach(b => { b.classList.remove('running'); b.classList.add('urgent'); });
+          txts.forEach(t => { t.textContent = 'Waktu Habis! · Ulang'; });
           playGameTimeUpBuzzer();
         } else {
-          txt.textContent = `${gameTimerRemaining}d · Berhenti`;
+          txts.forEach(t => { t.textContent = `${gameTimerRemaining}d · Berhenti`; });
         }
       }, 1000);
     }
