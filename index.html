@@ -2668,26 +2668,33 @@
     /* ── Game Mode Switcher & Team Mystery Box Game ── */
     .game-mode-switcher {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 5px;
       background: var(--surface-subtle);
       border: 1px solid var(--border-subtle);
       padding: 5px;
       border-radius: var(--radius-control);
+      width: 100%;
+      min-width: 0;
     }
 
     .game-mode-tab {
       min-height: 40px;
+      padding: 6px 4px;
+      min-width: 0;
       border: none;
       border-radius: 8px;
       background: transparent;
       color: var(--text-secondary);
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 7px;
+      gap: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       transition: all 0.15s ease;
     }
 
@@ -3004,6 +3011,282 @@
       gap: 12px;
       width: 100%;
       min-width: 0;
+    }
+
+    /* ── Mode 3: Arcade Reward Hub (4 Mini-Games) ── */
+    .arcade-player-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 13px 14px;
+      box-shadow: var(--shadow-xs);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .arcade-player-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .arcade-player-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .arcade-player-sub {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .arcade-player-select {
+      width: 100%;
+      min-height: 40px;
+      padding: 8px 12px;
+      border-radius: var(--radius-control);
+      border: 1px solid var(--border-strong);
+      background: var(--bg-canvas);
+      color: var(--text-primary);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .arcade-hub-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .arcade-game-card {
+      background: var(--surface-card);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 14px 12px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      box-shadow: var(--shadow-xs);
+      width: 100%;
+      min-width: 0;
+      overflow: hidden;
+      transition: transform 0.12s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .arcade-game-card:active {
+      transform: scale(0.97);
+    }
+
+    .arcade-game-card:hover {
+      border-color: var(--brand-bright);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .arcade-game-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--brand-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 2px;
+    }
+
+    .arcade-game-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.25;
+    }
+
+    .arcade-game-desc {
+      font-size: 11.5px;
+      color: var(--text-secondary);
+      line-height: 1.35;
+      flex: 1;
+    }
+
+    .arcade-record-pill {
+      margin-top: 4px;
+      padding: 4px 8px;
+      border-radius: 8px;
+      background: var(--gold-soft);
+      border: 1px solid var(--gold-border);
+      color: var(--gold-text);
+      font-size: 10.5px;
+      font-weight: 800;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+    }
+
+    .arcade-stage-card {
+      background: var(--surface-card);
+      border: 1.5px solid var(--border-strong);
+      border-radius: var(--radius-card);
+      padding: 14px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .arcade-stage-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .arcade-hud-pills {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .arcade-hud-pill {
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--surface-subtle);
+      border: 1px solid var(--border-subtle);
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .arcade-hud-pill.score {
+      background: var(--gold-soft);
+      border-color: var(--gold-border);
+      color: var(--gold-text);
+    }
+
+    .arcade-canvas-wrap {
+      position: relative;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #0A2E1F;
+      border: 2px solid var(--border-strong);
+      touch-action: none;
+      user-select: none;
+    }
+
+    .arcade-canvas {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 4.3;
+      max-height: 360px;
+      touch-action: none;
+    }
+
+    .arcade-controls-row {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .arcade-ctrl-btn {
+      min-height: 46px;
+      border-radius: var(--radius-control);
+      border: 1px solid var(--border-strong);
+      background: var(--surface-subtle);
+      color: var(--text-primary);
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      user-select: none;
+      touch-action: manipulation;
+    }
+
+    .arcade-ctrl-btn:active {
+      background: var(--brand-soft);
+      border-color: var(--brand-primary);
+      transform: scale(0.97);
+    }
+
+    .arcade-ctrl-btn.action-primary {
+      background: linear-gradient(135deg, #D8961E, #B8790E);
+      border-color: var(--gold-border);
+      color: #FFFFFF;
+    }
+
+    /* Memory Match 4x3 Grid */
+    .memory-board-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      width: 100%;
+      min-width: 0;
+      padding: 4px 0;
+    }
+
+    .memory-card-btn {
+      aspect-ratio: 1 / 1.05;
+      min-height: 68px;
+      width: 100%;
+      min-width: 0;
+      border-radius: var(--radius-control);
+      border: 1.5px solid #B7E2CE;
+      background: linear-gradient(145deg, var(--brand-primary), var(--brand-deep));
+      color: #FFFFFF;
+      font-size: 24px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 8px rgba(8, 72, 45, 0.14);
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .memory-card-btn.flipped {
+      background: #FFFFFF;
+      border-color: var(--gold-accent);
+      color: var(--text-primary);
+      transform: scale(1.02);
+    }
+
+    .memory-card-btn.matched {
+      background: var(--gold-soft);
+      border-color: var(--gold-border);
+      color: var(--gold-text);
+      box-shadow: none;
+      cursor: default;
+    }
+
+    .arcade-result-banner {
+      padding: 14px;
+      border-radius: var(--radius-control);
+      background: var(--gold-soft);
+      border: 1.5px solid var(--gold-border);
+      text-align: center;
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .arcade-result-banner.show {
+      display: flex;
     }
 
     @media (max-width: 480px) {
@@ -3511,15 +3794,18 @@
         <!-- Game Mode Switcher -->
         <div class="game-mode-switcher" role="tablist" aria-label="Pilih permainan kelas">
           <button type="button" class="game-mode-tab active" id="btnModeWheel" role="tab" aria-selected="true" onclick="switchGameMode('wheel')">
-            <span>🎡 Roda Individu</span>
+            <span>🎡 Roda</span>
           </button>
           <button type="button" class="game-mode-tab" id="btnModeTeam" role="tab" aria-selected="false" onclick="switchGameMode('team')">
-            <span>📦 Kotak Kelompok</span>
+            <span>📦 Kelompok</span>
+          </button>
+          <button type="button" class="game-mode-tab" id="btnModeArcade" role="tab" aria-selected="false" onclick="switchGameMode('arcade')">
+            <span>🎮 Zona Main</span>
           </button>
         </div>
 
         <!-- Filter & Attendance Control Card -->
-        <div class="game-toolbar-card">
+        <div class="game-toolbar-card" id="gameQuizToolbarCard">
           <div class="game-filter-group">
             <div class="game-filter-label">
               <span>Filter Jenjang Santri</span>
@@ -3827,6 +4113,113 @@
           </div>
         </div>
 
+        <!-- ══════════════════ MODE 3: ZONA MAIN (4 ARCADE MINI-GAMES) ══════════════════ -->
+        <div id="gameArcadeModeArea" style="display:none;flex-direction:column;gap:14px;width:100%;min-width:0">
+          <!-- Player Selector Card -->
+          <div class="arcade-player-card">
+            <div class="arcade-player-head">
+              <div>
+                <div class="arcade-player-title">🎁 Reward Selesai Mengaji</div>
+                <div class="arcade-player-sub">Pilih santri yang bermain untuk mencatat Rekor Kelas</div>
+              </div>
+              <button type="button" class="btn-mini" onclick="resetArcadeRecords()" title="Reset semua rekor tertinggi">
+                Reset Rekor
+              </button>
+            </div>
+            <select id="arcadeSantriSelect" class="arcade-player-select" onchange="onArcadePlayerChange(this.value)" aria-label="Pilih santri yang sedang bermain">
+              <option value="">Santri Tamu (Latihan Bebas)</option>
+            </select>
+          </div>
+
+          <!-- 4-Game Selector Grid -->
+          <div id="arcadeHubView" class="arcade-hub-grid">
+            <button type="button" class="arcade-game-card" onclick="openArcadeGame('catcher')">
+              <div class="arcade-game-icon" aria-hidden="true">⭐</div>
+              <div class="arcade-game-title">Hujan Bintang</div>
+              <div class="arcade-game-desc">Geser keranjang tangkap bintang, bulan, &amp; kurma selama 30 detik!</div>
+              <div class="arcade-record-pill tabular" id="arcadeRecCatcher">🏆 Belum ada rekor</div>
+            </button>
+
+            <button type="button" class="arcade-game-card" onclick="openArcadeGame('claw')">
+              <div class="arcade-game-icon" aria-hidden="true">🕹️</div>
+              <div class="arcade-game-title">Capit Berkah</div>
+              <div class="arcade-game-desc">Arahkan mesin capit &amp; angkat kapsul hadiah berkilau (3x capit)!</div>
+              <div class="arcade-record-pill tabular" id="arcadeRecClaw">🏆 Belum ada rekor</div>
+            </button>
+
+            <button type="button" class="arcade-game-card" onclick="openArcadeGame('memory')">
+              <div class="arcade-game-icon" aria-hidden="true">🃏</div>
+              <div class="arcade-game-title">Memory Match</div>
+              <div class="arcade-game-desc">Buka &amp; cocokkan 6 pasang kartu gambar Islami secepat mungkin!</div>
+              <div class="arcade-record-pill tabular" id="arcadeRecMemory">🏆 Belum ada rekor</div>
+            </button>
+
+            <button type="button" class="arcade-game-card" onclick="openArcadeGame('flappy')">
+              <div class="arcade-game-icon" aria-hidden="true">🐦</div>
+              <div class="arcade-game-title">Terbang Hud-Hud</div>
+              <div class="arcade-game-desc">Ketuk layar menerbangkan burung Hud-Hud melewati celah lentera!</div>
+              <div class="arcade-record-pill tabular" id="arcadeRecFlappy">🏆 Belum ada rekor</div>
+            </button>
+          </div>
+
+          <!-- Active Arcade Game Arena -->
+          <div id="arcadeStageView" class="arcade-stage-card" style="display:none">
+            <div class="arcade-stage-head">
+              <button type="button" class="btn-mini" onclick="closeArcadeStage()">
+                ← Pilih Game
+              </button>
+              <div style="font-size:14px;font-weight:800;color:var(--text-primary)" id="arcadeStageTitle">Hujan Bintang</div>
+              <div class="arcade-hud-pills">
+                <span class="arcade-hud-pill tabular" id="arcadeHudStatus">30d</span>
+                <span class="arcade-hud-pill score tabular" id="arcadeHudScore">0 poin</span>
+              </div>
+            </div>
+
+            <div style="font-size:12px;color:var(--text-secondary);font-weight:600;text-align:center" id="arcadeStageHint">
+              Geser jari di layar atau tekan tombol kiri/kanan untuk menangkap bintang!
+            </div>
+
+            <!-- Canvas Arena (Used for Catcher, Claw, Flappy) -->
+            <div id="arcadeCanvasWrap" class="arcade-canvas-wrap">
+              <canvas id="arcadeCanvas" class="arcade-canvas" width="440" height="470"></canvas>
+            </div>
+
+            <!-- On-Screen Touch Buttons for Canvas Games -->
+            <div id="arcadeControlsRow" class="arcade-controls-row">
+              <button type="button" class="arcade-ctrl-btn" id="btnArcadeLeft"
+                onpointerdown="setArcadeMoveDir(-1)" onpointerup="setArcadeMoveDir(0)" onpointerleave="setArcadeMoveDir(0)">
+                ◀ Kiri
+              </button>
+              <button type="button" class="arcade-ctrl-btn action-primary" id="btnArcadeAction" onclick="triggerArcadePrimaryAction()">
+                MULAI
+              </button>
+              <button type="button" class="arcade-ctrl-btn" id="btnArcadeRight"
+                onpointerdown="setArcadeMoveDir(1)" onpointerup="setArcadeMoveDir(0)" onpointerleave="setArcadeMoveDir(0)">
+                Kanan ▶
+              </button>
+            </div>
+
+            <!-- Memory Match Board Arena -->
+            <div id="arcadeMemoryWrap" style="display:none">
+              <div class="memory-board-grid" id="arcadeMemoryGrid"></div>
+            </div>
+
+            <!-- End of Round Result & Record Banner -->
+            <div class="arcade-result-banner" id="arcadeResultBanner">
+              <div style="font-size:16px;font-weight:800;color:var(--text-primary)" id="arcadeResultTitle">Permainan Selesai!</div>
+              <div style="font-size:13px;color:var(--text-secondary);font-weight:600" id="arcadeResultSub">Skor Akhir: 0 Poin</div>
+              <div style="display:flex;gap:8px;justify-content:center;margin-top:4px">
+                <button type="button" class="btn-primary" style="min-height:40px;font-size:13px;padding:0 16px;width:auto" onclick="restartCurrentArcadeGame()">
+                  Main Lagi
+                </button>
+                <button type="button" class="btn-secondary" style="min-height:40px;font-size:13px;padding:0 16px;width:auto" onclick="closeArcadeStage()">
+                  Ganti Game
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Session Scoreboard (Shared across both games) -->
         <div class="game-session-card" id="gameSessionCard" style="display:none">
           <div class="section-row" style="padding:0">
@@ -4110,6 +4503,8 @@
       GAME_USED_Q: 'tpa_game_used_q_v1',
       GAME_BANK_CACHE: 'tpa_game_bank_cache_v1',
       GAME_SOUND_MUTED: 'tpa_game_sound_muted',
+      ARCADE_RECORDS: 'tpa_arcade_records_v1',
+      ARCADE_LAST_PLAYER: 'tpa_arcade_last_player_v1',
     };
 
     const isConfigured = CONFIG.APPS_SCRIPT_URL && CONFIG.APPS_SCRIPT_URL.startsWith('http');
@@ -5033,6 +5428,9 @@
       if (name === 'dashboard' && isConfigured) {
         loadStatistikBulan();
       }
+      if (name !== 'game' && typeof stopArcadeGameLoop === 'function') {
+        stopArcadeGameLoop();
+      }
       if (name === 'game' && typeof refreshGameView === 'function') {
         refreshGameView();
       }
@@ -5788,6 +6186,10 @@
       };
 
       enqueueMutation('saveLog', payload, meta);
+      localStorage.setItem(STORAGE_KEYS.ARCADE_LAST_PLAYER, String(santriId));
+      if (typeof syncArcadeLastPlayer === 'function') {
+        syncArcadeLastPlayer(String(santriId));
+      }
       resetForm();
 
       if (!isConfigured) {
@@ -6077,6 +6479,9 @@
       drawGameWheel();
       if (typeof refreshTeamMysteryView === 'function') {
         refreshTeamMysteryView();
+      }
+      if (typeof refreshArcadeHubView === 'function') {
+        refreshArcadeHubView();
       }
     }
 
@@ -6701,28 +7106,44 @@
     function switchGameMode(mode) {
       if (gameWheelSpinning) return;
       stopGameTimer();
-      activeGameMode = mode === 'team' ? 'team' : 'wheel';
+      if (typeof stopArcadeGameLoop === 'function' && mode !== 'arcade') {
+        stopArcadeGameLoop();
+      }
 
+      activeGameMode = ['wheel', 'team', 'arcade'].includes(mode) ? mode : 'wheel';
+
+      const isWheel = activeGameMode === 'wheel';
       const isTeam = activeGameMode === 'team';
-      document.getElementById('btnModeWheel').classList.toggle('active', !isTeam);
-      document.getElementById('btnModeWheel').setAttribute('aria-selected', String(!isTeam));
-      document.getElementById('btnModeTeam').classList.toggle('active', isTeam);
-      document.getElementById('btnModeTeam').setAttribute('aria-selected', String(isTeam));
+      const isArcade = activeGameMode === 'arcade';
 
-      document.getElementById('wheelStatusBar').style.display = isTeam ? 'none' : 'flex';
+      const btnW = document.getElementById('btnModeWheel');
+      const btnT = document.getElementById('btnModeTeam');
+      const btnA = document.getElementById('btnModeArcade');
+
+      if (btnW) { btnW.classList.toggle('active', isWheel); btnW.setAttribute('aria-selected', String(isWheel)); }
+      if (btnT) { btnT.classList.toggle('active', isTeam); btnT.setAttribute('aria-selected', String(isTeam)); }
+      if (btnA) { btnA.classList.toggle('active', isArcade); btnA.setAttribute('aria-selected', String(isArcade)); }
+
+      const quizToolbar = document.getElementById('gameQuizToolbarCard');
+      if (quizToolbar) quizToolbar.style.display = isArcade ? 'none' : 'flex';
+
+      document.getElementById('wheelStatusBar').style.display = isWheel ? 'flex' : 'none';
       document.getElementById('teamSetupBar').style.display = isTeam ? 'flex' : 'none';
-      document.getElementById('gameWheelModeArea').style.display = isTeam ? 'none' : 'flex';
+      document.getElementById('gameWheelModeArea').style.display = isWheel ? 'flex' : 'none';
       document.getElementById('gameTeamModeArea').style.display = isTeam ? 'flex' : 'none';
+      document.getElementById('gameArcadeModeArea').style.display = isArcade ? 'flex' : 'none';
 
-      if (!isTeam) {
+      if (isWheel) {
         document.getElementById('teamRosterDrawer')?.classList.remove('open');
         drawGameWheel();
-      } else {
+      } else if (isTeam) {
         if (!teamInitialized) {
           startNewTeamMysteryGame(false);
         } else {
           refreshTeamMysteryView();
         }
+      } else if (isArcade && typeof refreshArcadeHubView === 'function') {
+        refreshArcadeHubView();
       }
     }
 
@@ -7545,6 +7966,992 @@
       gain.connect(ctx.destination);
       osc.start();
       osc.stop(ctx.currentTime + 0.4);
+    }
+
+    // ── Mode 3: Zona Main (4 Arcade Reward Mini-Games) ──
+    let arcadeRecords = {};
+    let arcadeActiveSantriId = '';
+    let arcadeCurrentGame = ''; // 'catcher' | 'claw' | 'memory' | 'flappy'
+    let arcadeRafId = null;
+    let arcadeSecondTimer = null;
+    let arcadeRunning = false;
+    let arcadeScore = 0;
+    let arcadeMoveDir = 0; // -1 left, 0 idle, 1 right
+    let arcadeState = {};
+    let arcadeCanvasBound = false;
+
+    function loadArcadeRecords() {
+      arcadeRecords = readJsonStorage(STORAGE_KEYS.ARCADE_RECORDS, {}) || {};
+    }
+
+    function saveArcadeRecords() {
+      writeJsonStorage(STORAGE_KEYS.ARCADE_RECORDS, arcadeRecords);
+    }
+
+    function syncArcadeLastPlayer(santriId) {
+      arcadeActiveSantriId = String(santriId || '');
+      const sel = document.getElementById('arcadeSantriSelect');
+      if (sel) sel.value = arcadeActiveSantriId;
+    }
+
+    function onArcadePlayerChange(val) {
+      arcadeActiveSantriId = String(val || '');
+      if (arcadeActiveSantriId) {
+        localStorage.setItem(STORAGE_KEYS.ARCADE_LAST_PLAYER, arcadeActiveSantriId);
+      }
+    }
+
+    function getArcadePlayerName() {
+      if (arcadeActiveSantriId) {
+        const s = allSantri.find(x => String(x.id) === String(arcadeActiveSantriId));
+        if (s) return s.nama;
+      }
+      return 'Santri TPA';
+    }
+
+    function refreshArcadeHubView() {
+      loadArcadeRecords();
+      if (!arcadeActiveSantriId) {
+        const savedLast = localStorage.getItem(STORAGE_KEYS.ARCADE_LAST_PLAYER);
+        if (savedLast) arcadeActiveSantriId = savedLast;
+      }
+
+      const sel = document.getElementById('arcadeSantriSelect');
+      if (sel) {
+        sel.innerHTML = '<option value="">Santri Tamu (Latihan Bebas)</option>' +
+          allSantri.map(s => `<option value="${escapeHtml(String(s.id))}">${escapeHtml(s.nama)} (${escapeHtml(s.kelas || 'TPA')})</option>`).join('');
+        if (arcadeActiveSantriId && allSantri.some(s => String(s.id) === String(arcadeActiveSantriId))) {
+          sel.value = arcadeActiveSantriId;
+        }
+      }
+
+      const mapIds = {
+        catcher: 'arcadeRecCatcher',
+        claw: 'arcadeRecClaw',
+        memory: 'arcadeRecMemory',
+        flappy: 'arcadeRecFlappy'
+      };
+
+      Object.keys(mapIds).forEach(gKey => {
+        const el = document.getElementById(mapIds[gKey]);
+        if (!el) return;
+        const rec = arcadeRecords[gKey];
+        if (rec && rec.score > 0) {
+          el.textContent = `🏆 Rekor: ${rec.score} (${rec.nama || 'Santri'})`;
+        } else {
+          el.textContent = '🏆 Belum ada rekor';
+        }
+      });
+
+      bindArcadeCanvasEventsOnce();
+    }
+
+    function resetArcadeRecords() {
+      if (!confirm('Reset semua Rekor Skor Tertinggi di Zona Main?')) return;
+      arcadeRecords = {};
+      saveArcadeRecords();
+      refreshArcadeHubView();
+      showToast('Rekor Zona Main berhasil direset.', '');
+    }
+
+    function stopArcadeGameLoop() {
+      arcadeRunning = false;
+      arcadeMoveDir = 0;
+      if (arcadeRafId) {
+        cancelAnimationFrame(arcadeRafId);
+        arcadeRafId = null;
+      }
+      if (arcadeSecondTimer) {
+        clearInterval(arcadeSecondTimer);
+        arcadeSecondTimer = null;
+      }
+    }
+
+    function closeArcadeStage() {
+      stopArcadeGameLoop();
+      arcadeCurrentGame = '';
+      document.getElementById('arcadeStageView').style.display = 'none';
+      document.getElementById('arcadeHubView').style.display = 'grid';
+      refreshArcadeHubView();
+    }
+
+    function openArcadeGame(gameKey) {
+      stopArcadeGameLoop();
+      arcadeCurrentGame = gameKey;
+      document.getElementById('arcadeHubView').style.display = 'none';
+      document.getElementById('arcadeStageView').style.display = 'flex';
+      document.getElementById('arcadeResultBanner').classList.remove('show');
+
+      const isMemory = gameKey === 'memory';
+      document.getElementById('arcadeCanvasWrap').style.display = isMemory ? 'none' : 'block';
+      document.getElementById('arcadeControlsRow').style.display = isMemory ? 'none' : 'grid';
+      document.getElementById('arcadeMemoryWrap').style.display = isMemory ? 'block' : 'none';
+
+      restartCurrentArcadeGame();
+    }
+
+    function restartCurrentArcadeGame() {
+      stopArcadeGameLoop();
+      arcadeScore = 0;
+      arcadeMoveDir = 0;
+      document.getElementById('arcadeResultBanner').classList.remove('show');
+      updateArcadeHudScore(0);
+
+      if (arcadeCurrentGame === 'catcher') {
+        initCatcherGame();
+      } else if (arcadeCurrentGame === 'claw') {
+        initClawGame();
+      } else if (arcadeCurrentGame === 'memory') {
+        initMemoryGame();
+      } else if (arcadeCurrentGame === 'flappy') {
+        initFlappyGame();
+      }
+    }
+
+    function updateArcadeHudScore(newScore) {
+      arcadeScore = Math.max(0, Math.round(newScore));
+      const el = document.getElementById('arcadeHudScore');
+      if (el) el.textContent = `${arcadeScore} poin`;
+    }
+
+    function updateArcadeHudStatus(text) {
+      const el = document.getElementById('arcadeHudStatus');
+      if (el) el.textContent = text;
+    }
+
+    function finishArcadeRound(reasonText) {
+      stopArcadeGameLoop();
+      const playerName = getArcadePlayerName();
+      const prevRec = arcadeRecords[arcadeCurrentGame]?.score || 0;
+      let isNewRecord = false;
+
+      if (arcadeScore > prevRec && arcadeScore > 0) {
+        isNewRecord = true;
+        arcadeRecords[arcadeCurrentGame] = {
+          score: arcadeScore,
+          nama: playerName,
+          at: new Date().toISOString()
+        };
+        saveArcadeRecords();
+        playGameVictoryFanfare();
+      } else {
+        playGameSelectChime();
+      }
+
+      const banner = document.getElementById('arcadeResultBanner');
+      const titleEl = document.getElementById('arcadeResultTitle');
+      const subEl = document.getElementById('arcadeResultSub');
+
+      if (isNewRecord) {
+        titleEl.textContent = `🎉 REKOR BARU KELAS! (${arcadeScore} Poin)`;
+        subEl.textContent = `Selamat ${playerName}! Kamu memecahkan rekor tertinggi sebelumnya (${prevRec} poin).`;
+      } else {
+        titleEl.textContent = `${reasonText || 'Permainan Selesai!'} · Skor: ${arcadeScore} Poin`;
+        const recHolder = arcadeRecords[arcadeCurrentGame];
+        subEl.textContent = recHolder
+          ? `Rekor Tertinggi: ${recHolder.score} poin oleh ${recHolder.nama}`
+          : `Hebat ${playerName}! Ayo coba cetak rekor yang lebih tinggi lagi!`;
+      }
+
+      banner.classList.add('show');
+    }
+
+    function setArcadeMoveDir(dir) {
+      arcadeMoveDir = dir;
+    }
+
+    function triggerArcadePrimaryAction() {
+      if (!arcadeRunning) {
+        restartCurrentArcadeGame();
+        return;
+      }
+      if (arcadeCurrentGame === 'claw') {
+        if (arcadeState.phase === 'aim') {
+          arcadeState.phase = 'drop';
+          playGameWheelTick();
+        }
+      } else if (arcadeCurrentGame === 'flappy') {
+        flapHudHudBird();
+      }
+    }
+
+    function bindArcadeCanvasEventsOnce() {
+      if (arcadeCanvasBound) return;
+      const canvas = document.getElementById('arcadeCanvas');
+      if (!canvas) return;
+      arcadeCanvasBound = true;
+
+      function handlePointer(e) {
+        if (!arcadeRunning) return;
+        const rect = canvas.getBoundingClientRect();
+        const scaleX = canvas.width / rect.width;
+        const x = (e.clientX - rect.left) * scaleX;
+
+        if (arcadeCurrentGame === 'catcher') {
+          arcadeState.basketX = Math.max(44, Math.min(canvas.width - 44, x));
+        } else if (arcadeCurrentGame === 'claw' && arcadeState.phase === 'aim') {
+          arcadeState.clawX = Math.max(46, Math.min(canvas.width - 46, x));
+        }
+      }
+
+      canvas.addEventListener('pointerdown', e => {
+        if (!arcadeRunning) return;
+        if (arcadeCurrentGame === 'flappy') {
+          e.preventDefault();
+          flapHudHudBird();
+          return;
+        }
+        handlePointer(e);
+      });
+
+      canvas.addEventListener('pointermove', e => {
+        if (e.buttons > 0 || e.pointerType === 'touch') {
+          handlePointer(e);
+        }
+      });
+
+      document.addEventListener('keydown', e => {
+        if (!arcadeRunning || activeGameMode !== 'arcade') return;
+        if (e.key === 'ArrowLeft') {
+          setArcadeMoveDir(-1);
+        } else if (e.key === 'ArrowRight') {
+          setArcadeMoveDir(1);
+        } else if (e.key === ' ' || e.key === 'ArrowUp') {
+          if (arcadeCurrentGame === 'claw' || arcadeCurrentGame === 'flappy') {
+            e.preventDefault();
+            triggerArcadePrimaryAction();
+          }
+        }
+      });
+
+      document.addEventListener('keyup', e => {
+        if (e.key === 'ArrowLeft' && arcadeMoveDir === -1) setArcadeMoveDir(0);
+        if (e.key === 'ArrowRight' && arcadeMoveDir === 1) setArcadeMoveDir(0);
+      });
+    }
+
+    // ════════════════════════════════════════════════════════════
+    //  ARCADE GAME 1: ⭐ HUJAN BINTANG (30s Star & Moon Catcher)
+    // ════════════════════════════════════════════════════════════
+    function initCatcherGame() {
+      document.getElementById('arcadeStageTitle').textContent = '⭐ Hujan Bintang';
+      document.getElementById('arcadeStageHint').textContent =
+        'Geser keranjang di layar (atau tombol Kiri/Kanan) untuk menangkap bintang & bulan!';
+
+      document.getElementById('btnArcadeLeft').style.display = 'flex';
+      document.getElementById('btnArcadeRight').style.display = 'flex';
+      const actBtn = document.getElementById('btnArcadeAction');
+      actBtn.textContent = '⭐ Tangkap!';
+
+      arcadeState = {
+        timeLeft: 30,
+        basketX: 220,
+        basketY: 416,
+        basketW: 84,
+        combo: 0,
+        items: [],
+        popups: [],
+        spawnTick: 0,
+        bgStars: Array.from({ length: 24 }, () => ({
+          x: Math.random() * 440,
+          y: Math.random() * 380,
+          r: 1 + Math.random() * 1.8
+        }))
+      };
+
+      arcadeRunning = true;
+      updateArcadeHudStatus('30d');
+
+      arcadeSecondTimer = setInterval(() => {
+        if (!arcadeRunning) return;
+        arcadeState.timeLeft -= 1;
+        updateArcadeHudStatus(`${arcadeState.timeLeft}d`);
+        if (arcadeState.timeLeft <= 5 && arcadeState.timeLeft > 0) {
+          playGameTimerUrgentTick();
+        }
+        if (arcadeState.timeLeft <= 0) {
+          finishArcadeRound('Waktu Habis!');
+        }
+      }, 1000);
+
+      function loopCatcher() {
+        if (!arcadeRunning || arcadeCurrentGame !== 'catcher') return;
+        updateCatcherFrame();
+        drawCatcherFrame();
+        arcadeRafId = requestAnimationFrame(loopCatcher);
+      }
+      arcadeRafId = requestAnimationFrame(loopCatcher);
+    }
+
+    function updateCatcherFrame() {
+      const s = arcadeState;
+      if (arcadeMoveDir !== 0) {
+        s.basketX = Math.max(44, Math.min(440 - 44, s.basketX + arcadeMoveDir * 6.5));
+      }
+
+      s.spawnTick += 1;
+      if (s.spawnTick >= 23) {
+        s.spawnTick = 0;
+        const roll = Math.random();
+        let item;
+        if (roll < 0.17) {
+          item = { emoji: '⛈️', pts: -15, speed: 3.3 + Math.random() * 1.6, bad: true };
+        } else if (roll < 0.30) {
+          item = { emoji: '🌙', pts: 25, speed: 3.6 + Math.random() * 1.5, comboBoost: true };
+        } else if (roll < 0.52) {
+          item = { emoji: '🌴', pts: 15, speed: 3.0 + Math.random() * 1.3 };
+        } else if (roll < 0.62) {
+          item = { emoji: '💎', pts: 35, speed: 4.3 + Math.random() * 1.4, comboBoost: true };
+        } else {
+          item = { emoji: '⭐', pts: 10, speed: 2.8 + Math.random() * 1.5 };
+        }
+        s.items.push({
+          ...item,
+          x: 28 + Math.random() * (440 - 56),
+          y: -20
+        });
+      }
+
+      for (let i = s.items.length - 1; i >= 0; i--) {
+        const it = s.items[i];
+        it.y += it.speed;
+
+        // Check catch collision with basket
+        if (it.y >= s.basketY - 22 && it.y <= s.basketY + 22 &&
+            Math.abs(it.x - s.basketX) <= s.basketW / 2 + 12) {
+          if (it.bad) {
+            s.combo = 0;
+            updateArcadeHudScore(arcadeScore + it.pts);
+            playGameTimeUpBuzzer();
+            s.popups.push({ x: it.x, y: it.y, text: '-15 Awan!', color: '#FCA5A5', life: 28 });
+          } else {
+            s.combo += 1;
+            const bonus = s.combo >= 3 ? 5 : 0;
+            const gain = it.pts + bonus;
+            updateArcadeHudScore(arcadeScore + gain);
+            playGameWheelTick();
+            const label = s.combo >= 3 ? `+${gain} (Combo x${s.combo})` : `+${gain}`;
+            s.popups.push({ x: it.x, y: it.y, text: label, color: '#FDE68A', life: 28 });
+          }
+          s.items.splice(i, 1);
+          continue;
+        }
+
+        if (it.y > 485) {
+          if (!it.bad) s.combo = 0;
+          s.items.splice(i, 1);
+        }
+      }
+
+      for (let i = s.popups.length - 1; i >= 0; i--) {
+        s.popups[i].y -= 1.2;
+        s.popups[i].life -= 1;
+        if (s.popups[i].life <= 0) s.popups.splice(i, 1);
+      }
+    }
+
+    function drawCatcherFrame() {
+      const canvas = document.getElementById('arcadeCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const s = arcadeState;
+
+      // Night emerald sky gradient
+      const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      grad.addColorStop(0, '#062317');
+      grad.addColorStop(1, '#0D4A30');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Twinkling background stars
+      ctx.fillStyle = 'rgba(254, 243, 199, 0.55)';
+      s.bgStars.forEach(st => {
+        ctx.beginPath();
+        ctx.arc(st.x, st.y, st.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // Ground strip
+      ctx.fillStyle = '#083320';
+      ctx.fillRect(0, 442, canvas.width, 28);
+
+      // Draw falling items
+      ctx.font = '28px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      s.items.forEach(it => {
+        ctx.fillText(it.emoji, it.x, it.y);
+      });
+
+      // Draw glowing catcher basket
+      const bx = s.basketX - s.basketW / 2;
+      const by = s.basketY - 14;
+      ctx.fillStyle = '#C98A1C';
+      ctx.beginPath();
+      ctx.roundRect(bx, by, s.basketW, 26, [6, 6, 14, 14]);
+      ctx.fill();
+      ctx.lineWidth = 2.5;
+      ctx.strokeStyle = '#FEF3C7';
+      ctx.stroke();
+
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = '800 11px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(s.combo >= 2 ? `COMBO x${s.combo}` : 'BERKAH', s.basketX, s.basketY);
+
+      // Floating score popups
+      s.popups.forEach(p => {
+        ctx.fillStyle = p.color;
+        ctx.font = '800 14px "Plus Jakarta Sans", sans-serif';
+        ctx.fillText(p.text, p.x, p.y);
+      });
+    }
+
+    // ════════════════════════════════════════════════════════════
+    //  ARCADE GAME 2: 🕹️ CAPIT BERKAH (Claw Machine — 3 Drops)
+    // ════════════════════════════════════════════════════════════
+    function initClawGame() {
+      document.getElementById('arcadeStageTitle').textContent = '🕹️ Capit Berkah';
+      document.getElementById('arcadeStageHint').textContent =
+        'Arahkan capit ke kiri/kanan, lalu tekan tombol CAPIT! untuk mengangkat kapsul hadiah!';
+
+      document.getElementById('btnArcadeLeft').style.display = 'flex';
+      document.getElementById('btnArcadeRight').style.display = 'flex';
+      document.getElementById('btnArcadeAction').textContent = '🕹️ CAPIT!';
+
+      const prizeTemplates = [
+        { emoji: '⭐', label: 'Bintang', pts: 25, color: '#D97706', r: 22, y: 395, speed: 1.4 },
+        { emoji: '🌙', label: 'Sabit Emas', pts: 35, color: '#059669', r: 22, y: 355, speed: -1.6 },
+        { emoji: '💎', label: 'Permata', pts: 50, color: '#2563EB', r: 20, y: 415, speed: 2.1 },
+        { emoji: '🎁', label: 'Kado Berkah', pts: 40, color: '#7C3AED', r: 22, y: 375, speed: -1.3 },
+        { emoji: '🏆', label: 'Trofi +1 Capit', pts: 75, color: '#B45309', r: 19, y: 420, speed: 2.6, bonusDrop: true },
+        { emoji: '🌴', label: 'Kurma Manis', pts: 20, color: '#10B981', r: 23, y: 360, speed: 1.2 },
+        { emoji: '🕌', label: 'Miniatur', pts: 45, color: '#0D9488', r: 21, y: 398, speed: -1.8 }
+      ];
+
+      arcadeState = {
+        dropsLeft: 3,
+        clawX: 220,
+        clawY: 54,
+        phase: 'aim', // 'aim' | 'drop' | 'retract'
+        caughtPrize: null,
+        popups: [],
+        prizes: prizeTemplates.map((p, idx) => ({
+          ...p,
+          x: 55 + idx * 54,
+          caught: false
+        }))
+      };
+
+      arcadeRunning = true;
+      updateArcadeHudStatus('3x Capit');
+
+      function loopClaw() {
+        if (!arcadeRunning || arcadeCurrentGame !== 'claw') return;
+        updateClawFrame();
+        drawClawFrame();
+        arcadeRafId = requestAnimationFrame(loopClaw);
+      }
+      arcadeRafId = requestAnimationFrame(loopClaw);
+    }
+
+    function updateClawFrame() {
+      const s = arcadeState;
+
+      // Move prizes horizontally along conveyor floor
+      s.prizes.forEach(p => {
+        if (p.caught) return;
+        p.x += p.speed;
+        if (p.x < 36 || p.x > 440 - 36) {
+          p.speed *= -1;
+          p.x = Math.max(36, Math.min(440 - 36, p.x));
+        }
+      });
+
+      if (s.phase === 'aim') {
+        if (arcadeMoveDir !== 0) {
+          s.clawX = Math.max(46, Math.min(440 - 46, s.clawX + arcadeMoveDir * 4.8));
+        }
+      } else if (s.phase === 'drop') {
+        s.clawY += 6.2;
+        // Check collision with any uncaught capsule
+        for (let i = 0; i < s.prizes.length; i++) {
+          const p = s.prizes[i];
+          if (p.caught) continue;
+          const dist = Math.hypot(p.x - s.clawX, p.y - (s.clawY + 18));
+          if (dist <= p.r + 10) {
+            p.caught = true;
+            s.caughtPrize = p;
+            s.phase = 'retract';
+            playGameSelectChime();
+            break;
+          }
+        }
+        if (s.clawY >= 418) {
+          s.phase = 'retract';
+          playGameTimeUpBuzzer();
+        }
+      } else if (s.phase === 'retract') {
+        s.clawY -= 5.5;
+        if (s.caughtPrize) {
+          s.caughtPrize.x = s.clawX;
+          s.caughtPrize.y = s.clawY + 22;
+        }
+        if (s.clawY <= 54) {
+          s.clawY = 54;
+          s.dropsLeft -= 1;
+
+          if (s.caughtPrize) {
+            const prize = s.caughtPrize;
+            updateArcadeHudScore(arcadeScore + prize.pts);
+            let msg = `+${prize.pts} (${prize.label})`;
+            if (prize.bonusDrop) {
+              s.dropsLeft += 1;
+              msg = `+${prize.pts} & +1 Capit Gratis!`;
+            }
+            s.popups.push({ x: s.clawX, y: 95, text: msg, color: '#FDE68A', life: 40 });
+            s.caughtPrize = null;
+          } else {
+            s.popups.push({ x: s.clawX, y: 95, text: 'Belum kena!', color: '#CBD5E1', life: 30 });
+          }
+
+          updateArcadeHudStatus(`${s.dropsLeft}x Capit`);
+          const remainingPrizes = s.prizes.filter(p => !p.caught).length;
+
+          if (s.dropsLeft <= 0 || remainingPrizes === 0) {
+            finishArcadeRound('Sesi Capit Selesai!');
+            return;
+          }
+          s.phase = 'aim';
+        }
+      }
+
+      for (let i = s.popups.length - 1; i >= 0; i--) {
+        s.popups[i].y -= 0.9;
+        s.popups[i].life -= 1;
+        if (s.popups[i].life <= 0) s.popups.splice(i, 1);
+      }
+    }
+
+    function drawClawFrame() {
+      const canvas = document.getElementById('arcadeCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const s = arcadeState;
+
+      // Arcade cabinet backdrop
+      const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      grad.addColorStop(0, '#092B1C');
+      grad.addColorStop(1, '#114B32');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Top rail bar
+      ctx.fillStyle = '#C98A1C';
+      ctx.fillRect(16, 22, canvas.width - 32, 10);
+
+      // Prize pit glass zone
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+      ctx.fillRect(16, 325, canvas.width - 32, 125);
+
+      // Aiming laser guide line while aiming
+      if (s.phase === 'aim') {
+        ctx.save();
+        ctx.setLineDash([5, 5]);
+        ctx.strokeStyle = 'rgba(253, 230, 138, 0.35)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(s.clawX, s.clawY + 24);
+        ctx.lineTo(s.clawX, 435);
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      // Cable from top rail to claw head
+      ctx.strokeStyle = '#E2E8F0';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(s.clawX, 27);
+      ctx.lineTo(s.clawX, s.clawY);
+      ctx.stroke();
+
+      // Carriage on rail
+      ctx.fillStyle = '#F59E0B';
+      ctx.beginPath();
+      ctx.roundRect(s.clawX - 18, 17, 36, 18, 5);
+      ctx.fill();
+
+      // Claw head & prongs
+      ctx.strokeStyle = '#FDE68A';
+      ctx.lineWidth = 4;
+      const spread = s.caughtPrize ? 14 : (s.phase === 'drop' ? 24 : 19);
+      ctx.beginPath();
+      ctx.moveTo(s.clawX, s.clawY);
+      ctx.lineTo(s.clawX - spread, s.clawY + 18);
+      ctx.lineTo(s.clawX - spread + 6, s.clawY + 32);
+      ctx.moveTo(s.clawX, s.clawY);
+      ctx.lineTo(s.clawX + spread, s.clawY + 18);
+      ctx.lineTo(s.clawX + spread - 6, s.clawY + 32);
+      ctx.stroke();
+
+      // Draw capsules
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      s.prizes.forEach(p => {
+        if (p.caught && s.caughtPrize !== p) return;
+        // Capsule sphere
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+        ctx.lineWidth = 2.5;
+        ctx.strokeStyle = '#FEF3C7';
+        ctx.stroke();
+
+        // Emoji inside capsule
+        ctx.font = '20px sans-serif';
+        ctx.fillText(p.emoji, p.x, p.y - 1);
+
+        // Points tag below capsule
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = '800 10px "Plus Jakarta Sans", sans-serif';
+        ctx.fillText(`+${p.pts}`, p.x, p.y + p.r + 10);
+      });
+
+      // Floating popups
+      s.popups.forEach(p => {
+        ctx.fillStyle = p.color;
+        ctx.font = '800 14px "Plus Jakarta Sans", sans-serif';
+        ctx.fillText(p.text, p.x, p.y);
+      });
+    }
+
+    // ════════════════════════════════════════════════════════════
+    //  ARCADE GAME 3: 🃏 MEMORY MATCH (12 Cards · 45 Seconds)
+    // ════════════════════════════════════════════════════════════
+    function initMemoryGame() {
+      document.getElementById('arcadeStageTitle').textContent = '🃏 Memory Match';
+      document.getElementById('arcadeStageHint').textContent =
+        'Buka 2 kartu yang sama gambarnya! Makin cepat selesai, makin besar bonus poinnya!';
+
+      const icons = ['🕌', '🌙', '📖', '🌴', '🐪', '⭐'];
+      const deck = [...icons, ...icons];
+      for (let i = deck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = deck[i];
+        deck[i] = deck[j];
+        deck[j] = tmp;
+      }
+
+      arcadeState = {
+        timeLeft: 45,
+        cards: deck.map((icon, idx) => ({ id: idx, icon, flipped: false, matched: false })),
+        firstIdx: -1,
+        secondIdx: -1,
+        locked: false,
+        matchesFound: 0,
+        streak: 0
+      };
+
+      arcadeRunning = true;
+      updateArcadeHudStatus('45d');
+      renderMemoryGrid();
+
+      arcadeSecondTimer = setInterval(() => {
+        if (!arcadeRunning || arcadeCurrentGame !== 'memory') return;
+        arcadeState.timeLeft -= 1;
+        updateArcadeHudStatus(`${arcadeState.timeLeft}d`);
+        if (arcadeState.timeLeft <= 0) {
+          finishArcadeRound('Waktu Habis!');
+        }
+      }, 1000);
+    }
+
+    function renderMemoryGrid() {
+      const grid = document.getElementById('arcadeMemoryGrid');
+      if (!grid || !arcadeState.cards) return;
+
+      grid.innerHTML = arcadeState.cards.map((c, idx) => {
+        const showIcon = c.flipped || c.matched;
+        const cls = c.matched ? 'matched' : (c.flipped ? 'flipped' : '');
+        return `
+          <button type="button" class="memory-card-btn ${cls}" onclick="flipMemoryCard(${idx})" ${showIcon ? 'disabled' : ''}>
+            <span>${showIcon ? c.icon : '✦'}</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function flipMemoryCard(idx) {
+      if (!arcadeRunning || arcadeCurrentGame !== 'memory') return;
+      const s = arcadeState;
+      if (s.locked) return;
+      const card = s.cards[idx];
+      if (!card || card.flipped || card.matched) return;
+
+      playGameWheelTick();
+      card.flipped = true;
+      renderMemoryGrid();
+
+      if (s.firstIdx === -1) {
+        s.firstIdx = idx;
+        return;
+      }
+
+      s.secondIdx = idx;
+      const firstCard = s.cards[s.firstIdx];
+
+      if (firstCard.icon === card.icon) {
+        firstCard.matched = true;
+        card.matched = true;
+        s.firstIdx = -1;
+        s.secondIdx = -1;
+        s.matchesFound += 1;
+        s.streak += 1;
+
+        const gain = 25 + (s.streak > 1 ? s.streak * 5 : 0);
+        updateArcadeHudScore(arcadeScore + gain);
+        playGameSelectChime();
+        renderMemoryGrid();
+
+        if (s.matchesFound === 6) {
+          const timeBonus = s.timeLeft * 3;
+          updateArcadeHudScore(arcadeScore + timeBonus);
+          finishArcadeRound(`Semua Cocok! (+${timeBonus} Bonus Waktu)`);
+        }
+      } else {
+        s.locked = true;
+        s.streak = 0;
+        setTimeout(() => {
+          if (!arcadeRunning || arcadeCurrentGame !== 'memory') return;
+          firstCard.flipped = false;
+          card.flipped = false;
+          s.firstIdx = -1;
+          s.secondIdx = -1;
+          s.locked = false;
+          renderMemoryGrid();
+        }, 620);
+      }
+    }
+
+    // ════════════════════════════════════════════════════════════
+    //  ARCADE GAME 4: 🐦 TERBANG HUD-HUD (Flappy Oasis Arcade)
+    // ════════════════════════════════════════════════════════════
+    function initFlappyGame() {
+      document.getElementById('arcadeStageTitle').textContent = '🐦 Terbang Hud-Hud';
+      document.getElementById('arcadeStageHint').textContent =
+        'Ketuk layar atau tombol TERBANG! untuk melewati celah tiang lentera & ambil bintang!';
+
+      document.getElementById('btnArcadeLeft').style.display = 'none';
+      document.getElementById('btnArcadeRight').style.display = 'none';
+      const actBtn = document.getElementById('btnArcadeAction');
+      actBtn.style.gridColumn = '1 / -1';
+      actBtn.textContent = '🐦 KETUK TERBANG!';
+
+      arcadeState = {
+        birdX: 105,
+        birdY: 210,
+        birdVy: -3.5,
+        hearts: 2,
+        invincibleTicks: 30,
+        pipes: [],
+        spawnTick: 15,
+        popups: []
+      };
+
+      arcadeRunning = true;
+      updateArcadeHudStatus('❤️❤️');
+
+      function loopFlappy() {
+        if (!arcadeRunning || arcadeCurrentGame !== 'flappy') {
+          actBtn.style.gridColumn = '';
+          return;
+        }
+        updateFlappyFrame();
+        drawFlappyFrame();
+        arcadeRafId = requestAnimationFrame(loopFlappy);
+      }
+      arcadeRafId = requestAnimationFrame(loopFlappy);
+    }
+
+    function flapHudHudBird() {
+      if (!arcadeRunning || arcadeCurrentGame !== 'flappy') return;
+      arcadeState.birdVy = -5.8;
+      playGameWheelTick();
+    }
+
+    function updateFlappyFrame() {
+      const s = arcadeState;
+      if (s.invincibleTicks > 0) s.invincibleTicks -= 1;
+
+      s.birdVy += 0.27; // Gentle child-friendly gravity
+      s.birdY += s.birdVy;
+
+      s.spawnTick += 1;
+      if (s.spawnTick >= 96) {
+        s.spawnTick = 0;
+        const gapSize = 138;
+        const gapTop = 65 + Math.random() * (420 - gapSize - 110);
+        s.pipes.push({
+          x: 450,
+          w: 52,
+          gapTop,
+          gapBottom: gapTop + gapSize,
+          passed: false,
+          starCollected: false,
+          starY: gapTop + gapSize / 2
+        });
+      }
+
+      for (let i = s.pipes.length - 1; i >= 0; i--) {
+        const p = s.pipes[i];
+        p.x -= 2.5;
+
+        // Collect floating star inside gap
+        if (!p.starCollected && Math.hypot((p.x + p.w / 2) - s.birdX, p.starY - s.birdY) < 28) {
+          p.starCollected = true;
+          updateArcadeHudScore(arcadeScore + 15);
+          playGameSelectChime();
+          s.popups.push({ x: s.birdX, y: s.birdY - 15, text: '+15 ★', color: '#FDE68A', life: 25 });
+        }
+
+        // Score passing pillar
+        if (!p.passed && p.x + p.w < s.birdX) {
+          p.passed = true;
+          updateArcadeHudScore(arcadeScore + 20);
+          s.popups.push({ x: s.birdX, y: s.birdY - 22, text: '+20 Lolos!', color: '#A7F3D0', life: 25 });
+        }
+
+        // Check pillar collision
+        const hitX = s.birdX + 14 > p.x && s.birdX - 14 < p.x + p.w;
+        const hitY = s.birdY - 14 < p.gapTop || s.birdY + 14 > p.gapBottom;
+
+        if (hitX && hitY && s.invincibleTicks <= 0) {
+          onFlappyHit();
+          return;
+        }
+
+        if (p.x < -70) s.pipes.splice(i, 1);
+      }
+
+      // Check ceiling/floor bounds
+      if (s.birdY < 16) {
+        s.birdY = 16;
+        s.birdVy = 0;
+      } else if (s.birdY > 426 && s.invincibleTicks <= 0) {
+        onFlappyHit();
+        return;
+      }
+
+      for (let i = s.popups.length - 1; i >= 0; i--) {
+        s.popups[i].y -= 1;
+        s.popups[i].life -= 1;
+        if (s.popups[i].life <= 0) s.popups.splice(i, 1);
+      }
+    }
+
+    function onFlappyHit() {
+      const s = arcadeState;
+      s.hearts -= 1;
+      playGameTimeUpBuzzer();
+
+      if (s.hearts <= 0) {
+        updateArcadeHudStatus('💔');
+        document.getElementById('btnArcadeAction').style.gridColumn = '';
+        finishArcadeRound('Menabrak Rintangan!');
+      } else {
+        updateArcadeHudStatus('❤️');
+        s.birdY = 210;
+        s.birdVy = -4.2;
+        s.invincibleTicks = 75;
+        s.popups.push({ x: s.birdX + 20, y: s.birdY, text: 'Sisa 1 Nyawa ❤️', color: '#FCA5A5', life: 38 });
+      }
+    }
+
+    function drawFlappyFrame() {
+      const canvas = document.getElementById('arcadeCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const s = arcadeState;
+
+      // Oasis twilight background
+      const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      grad.addColorStop(0, '#072B1D');
+      grad.addColorStop(1, '#125E3F');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Draw pillars
+      s.pipes.forEach(p => {
+        ctx.fillStyle = '#C98A1C';
+        ctx.strokeStyle = '#FEF3C7';
+        ctx.lineWidth = 2;
+
+        // Top pillar
+        ctx.fillRect(p.x, 0, p.w, p.gapTop);
+        ctx.strokeRect(p.x, 0, p.w, p.gapTop);
+
+        // Bottom pillar
+        ctx.fillRect(p.x, p.gapBottom, p.w, 442 - p.gapBottom);
+        ctx.strokeRect(p.x, p.gapBottom, p.w, 442 - p.gapBottom);
+
+        // Bonus star inside gap
+        if (!p.starCollected) {
+          ctx.font = '22px sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('⭐', p.x + p.w / 2, p.starY);
+        }
+      });
+
+      // Oasis ground
+      ctx.fillStyle = '#062618';
+      ctx.fillRect(0, 442, canvas.width, 28);
+
+      // Draw Hud-Hud bird (blinks when invincible)
+      if (s.invincibleTicks % 6 < 4) {
+        ctx.save();
+        ctx.translate(s.birdX, s.birdY);
+        // Body
+        ctx.beginPath();
+        ctx.arc(0, 0, 16, 0, Math.PI * 2);
+        ctx.fillStyle = '#F59E0B';
+        ctx.fill();
+        ctx.lineWidth = 2.5;
+        ctx.strokeStyle = '#FFFFFF';
+        ctx.stroke();
+
+        // Crown crest
+        ctx.fillStyle = '#FEF08A';
+        ctx.beginPath();
+        ctx.moveTo(-6, -15);
+        ctx.lineTo(0, -25);
+        ctx.lineTo(6, -15);
+        ctx.closePath();
+        ctx.fill();
+
+        // Eye & Beak
+        ctx.fillStyle = '#14261E';
+        ctx.beginPath();
+        ctx.arc(6, -3, 2.8, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#FEF3C7';
+        ctx.beginPath();
+        ctx.moveTo(15, -2);
+        ctx.lineTo(25, 2);
+        ctx.lineTo(15, 6);
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+      }
+
+      // Popups
+      ctx.textAlign = 'center';
+      s.popups.forEach(p => {
+        ctx.fillStyle = p.color;
+        ctx.font = '800 14px "Plus Jakarta Sans", sans-serif';
+        ctx.fillText(p.text, p.x, p.y);
+      });
     }
 
     // ── Toast ──
