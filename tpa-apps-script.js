@@ -26,6 +26,29 @@ function doGet(e) {
     else if (action === 'redeemHadiah') result = redeemHadiah(e.parameter);
     else if (action === 'getLogHariIni') result = getLogHariIni(e.parameter.tanggal);
     else if (action === 'getStatistikBulanIni') result = getStatistikBulanIni();
+    else if (action === 'updateSantri')  result = updateSantri(e.parameter);
+    else result = { success: false, error: 'Unknown action: ' + action };
+  } catch (err) {
+    result = { success: false, error: err.message };
+  }
+
+  return ContentService
+    .createTextOutput(JSON.stringify(result))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+// ════════════════════════════════════════════════════════════
+//  POST HANDLER — Terima payload besar (mis. foto profil base64)
+// ════════════════════════════════════════════════════════════
+function doPost(e) {
+  let result;
+  try {
+    const body = e && e.postData && e.postData.contents
+      ? JSON.parse(e.postData.contents)
+      : {};
+    const action = body.action || (e && e.parameter && e.parameter.action);
+
+    if (action === 'updateSantri') result = updateSantri(body);
     else result = { success: false, error: 'Unknown action: ' + action };
   } catch (err) {
     result = { success: false, error: err.message };
@@ -168,9 +191,10 @@ function saveLog(p) {
     p.keterangan || '',   // Keterangan
   ]);
 
-  // 2. Jika nilai A+, tambah saldo bintang santri
-  if (p.tambah_bintang === '1') {
-    updateBintang(ss, p.id, 1);
+  // 2. Jika nilai A+ (+1) atau A++ (+2), tambah saldo bintang santri
+  const tambahanBintang = Math.max(0, Math.floor(Number(p.tambah_bintang) || 0));
+  if (tambahanBintang > 0) {
+    updateBintang(ss, p.id, tambahanBintang);
   }
 
   return { success: true };
@@ -207,6 +231,37 @@ function redeemHadiah(p) {
   ]);
 
   return { success: true, saldo_baru: currentSaldo - poin };
+}
+
+// ════════════════════════════════════════════════════════════
+//  UPDATE SANTRI — Perbarui nama, kelas, dan foto profil santri
+// ════════════════════════════════════════════════════════════
+function updateSantri(p) {
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  const santriSheet = ss.getSheetByName(SHEET_SANTRI);
+  const data = santriSheet.getDataRange().getValues();
+  const rowIdx = data.findIndex((row, i) => i > 0 && String(row[0]) === String(p.id));
+
+  if (rowIdx === -1) throw new Error('Santri tidak ditemukan');
+
+  const namaBaru = p.nama !== undefined ? String(p.nama).trim() : String(data[rowIdx][1] || '');
+  if (!namaBaru) throw new Error('Nama santri tidak boleh kosong');
+
+  const fotoBaru = p.foto !== undefined ? String(p.foto).trim() : String(data[rowIdx][2] || '');
+  const kelasBaru = p.kelas !== undefined ? String(p.kelas).trim() : String(data[rowIdx][3] || '');
+
+  // Update hanya kolom B (Nama_Santri), C (Foto), D (Kelas) — saldo & total bintang tidak disentuh
+  santriSheet.getRange(rowIdx + 1, 2, 1, 3).setValues([[namaBaru, fotoBaru, kelasBaru]]);
+
+  return {
+    success: true,
+    santri: {
+      id: data[rowIdx][0],
+      nama: namaBaru,
+      foto: fotoBaru,
+      kelas: kelasBaru,
+    }
+  };
 }
 
 // ════════════════════════════════════════════════════════════

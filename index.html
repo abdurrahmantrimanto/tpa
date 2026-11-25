@@ -1575,10 +1575,69 @@
     .modal-quick-actions {
       display: none;
       margin-bottom: 12px;
+      gap: 8px;
     }
 
     .modal-quick-actions.show {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .edit-profil-card {
+      display: none;
+      background: var(--surface-card);
+      border: 1.5px solid var(--brand-soft);
+      border-radius: var(--radius-card);
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .edit-profil-card.open {
       display: block;
+    }
+
+    .edit-photo-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .edit-photo-preview {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--brand-soft);
+      color: var(--brand-deep);
+      border: 2px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 800;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .edit-photo-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .edit-photo-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .kelas-quick-row {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+      flex-wrap: wrap;
     }
 
     .log-section-title {
@@ -2166,7 +2225,7 @@
               <label>Nilai</label>
               <input type="hidden" id="f_nilai">
               <div class="grade-grid" role="radiogroup" aria-label="Pilih nilai mengaji">
-                <button type="button" class="grade-btn is-star-grade" data-nilai="A++" onclick="selectNilai('A++')">A++<small>+1 Bintang</small></button>
+                <button type="button" class="grade-btn is-star-grade" data-nilai="A++" onclick="selectNilai('A++')">A++<small>+2 Bintang</small></button>
                 <button type="button" class="grade-btn is-star-grade" data-nilai="A+" onclick="selectNilai('A+')">A+<small>+1 Bintang</small></button>
                 <button type="button" class="grade-btn" data-nilai="A" onclick="selectNilai('A')">A<small>Bagus</small></button>
                 <button type="button" class="grade-btn" data-nilai="A-" onclick="selectNilai('A-')">A-<small>Baik</small></button>
@@ -2181,7 +2240,7 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
               </svg>
-              <span>Santri akan menerima <strong>+1 Bintang</strong> secara langsung.</span>
+              <span id="rewardIndicatorText">Santri akan menerima <strong>+1 Bintang</strong> secara langsung.</span>
             </div>
 
             <div class="form-group" style="margin-top:14px">
@@ -2368,9 +2427,64 @@
         </div>
 
         <div class="modal-quick-actions" id="modalQuickActions">
-          <button type="button" class="btn-secondary" style="width:100%" onclick="quickInputCurrentSantri()">
-            Catat Mengaji untuk Santri Ini
+          <button type="button" class="btn-secondary" onclick="quickInputCurrentSantri()">
+            Catat Mengaji
           </button>
+          <button type="button" class="btn-secondary" id="btnToggleEditProfil" onclick="toggleEditProfil()">
+            Edit Profil
+          </button>
+        </div>
+
+        <div class="edit-profil-card" id="editProfilPanel">
+          <div class="form-section-head" style="margin-bottom:12px">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+            </svg>
+            Edit Profil Santri
+          </div>
+
+          <div class="edit-photo-row">
+            <div class="edit-photo-preview" id="editFotoPreview"></div>
+            <div style="flex:1;min-width:0">
+              <div class="edit-photo-actions">
+                <label for="edit_foto_file" class="btn-mini" style="margin:0;cursor:pointer;display:inline-flex;align-items:center">
+                  Pilih Foto
+                </label>
+                <input type="file" id="edit_foto_file" accept="image/*" style="display:none" onchange="handleEditFotoFile(event)">
+                <button type="button" class="btn-mini danger" id="btnClearFoto" onclick="clearEditFoto()">Hapus Foto</button>
+              </div>
+              <div id="editFotoHint" style="font-size:11px;color:var(--text-muted);margin-top:6px">
+                Unggah foto dari galeri atau tempel URL foto di bawah.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="edit_foto_url">URL Foto (Opsional)</label>
+            <input type="text" id="edit_foto_url" placeholder="https://..." oninput="handleEditFotoUrlInput(this.value)">
+          </div>
+
+          <div class="form-group">
+            <label for="edit_nama">Nama Santri</label>
+            <input type="text" id="edit_nama" placeholder="Nama lengkap santri..." oninput="clearFieldError('edit_nama')">
+            <div class="field-error-msg" id="err_edit_nama">Nama santri tidak boleh kosong.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="edit_kelas">Kelas / Jenjang</label>
+            <input type="text" id="edit_kelas" placeholder="misal: TK, SD, SMP">
+            <div class="kelas-quick-row">
+              <button type="button" class="btn-mini" onclick="setEditKelas('TK')">TK</button>
+              <button type="button" class="btn-mini" onclick="setEditKelas('SD')">SD</button>
+              <button type="button" class="btn-mini" onclick="setEditKelas('SMP')">SMP</button>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:8px;margin-top:14px">
+            <button type="button" class="btn-secondary" style="flex:1" onclick="toggleEditProfil(false)">Batal</button>
+            <button type="button" class="btn-primary" style="flex:2;min-height:44px;font-size:14px" onclick="submitEditProfil()">Simpan Perubahan</button>
+          </div>
         </div>
 
         <div class="log-section-title">
@@ -2736,15 +2850,27 @@
       });
 
       syncQueue.forEach(item => {
-        if (item.status === 'failed') return; // Failed deterministic items don't alter balance
         const sid = String(item.payload?.id || '');
         const target = map.get(sid);
         if (!target) return;
 
+        if (item.action === 'updateSantri') {
+          target._pendingCount += 1;
+          if (item.payload.nama !== undefined) target.nama = item.payload.nama;
+          if (item.payload.kelas !== undefined) target.kelas = item.payload.kelas;
+          if (item.payload.foto !== undefined) target.foto = item.payload.foto;
+          return;
+        }
+
+        if (item.status === 'failed') return; // Failed deterministic items don't alter balance
+
         target._pendingCount += 1;
-        if (item.action === 'saveLog' && item.payload.tambah_bintang === '1') {
-          target.saldo += 1;
-          target.total += 1;
+        if (item.action === 'saveLog') {
+          const pts = Number(item.payload.tambah_bintang) || 0;
+          if (pts > 0) {
+            target.saldo += pts;
+            target.total += pts;
+          }
         } else if (item.action === 'redeemHadiah') {
           const pts = Number(item.payload.poin) || 0;
           target.saldo = Math.max(0, target.saldo - pts);
@@ -2803,11 +2929,14 @@
       updateSaldoDisplay();
       updateSyncUI();
 
-      // If Santri Detail Modal is open, keep numbers fresh
+      // If Santri Detail Modal is open, keep profile & numbers fresh
       if (currentSantri && document.getElementById('modalOverlay').classList.contains('open')) {
         const fresh = allSantri.find(x => String(x.id) === String(currentSantri.id));
         if (fresh) {
           currentSantri = fresh;
+          document.getElementById('modalName').textContent = fresh.nama;
+          document.getElementById('modalSub').textContent = `${fresh.kelas || 'TPA'} · ID ${fresh.id}`;
+          renderModalPhoto(fresh);
           document.getElementById('modalSaldo').textContent = fresh.saldo;
           document.getElementById('modalTotal').textContent = fresh.total;
           renderModalStarDots(fresh.saldo);
@@ -2886,17 +3015,34 @@
       document.getElementById('headerDate').textContent = d.toLocaleDateString('id-ID', opts);
     }
 
-    // ── API Calls (GET with timeout) ──
+    // ── API Calls (GET default, POST text/plain for large payloads like base64 photos) ──
     async function apiCall(action, data = {}, timeoutMs = 22000) {
-      const params = new URLSearchParams({ action, ...data });
       const controller = new AbortController();
       const timer = setTimeout(() => controller.abort(), timeoutMs);
       try {
-        const res = await fetch(CONFIG.APPS_SCRIPT_URL + '?' + params.toString(), {
-          method: 'GET',
-          redirect: 'follow',
-          signal: controller.signal
-        });
+        const usePost = action === 'updateSantri' && (
+          String(data.foto || '').startsWith('data:') ||
+          JSON.stringify(data).length > 1200
+        );
+
+        let res;
+        if (usePost) {
+          res = await fetch(CONFIG.APPS_SCRIPT_URL, {
+            method: 'POST',
+            redirect: 'follow',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({ action, ...data }),
+            signal: controller.signal
+          });
+        } else {
+          const params = new URLSearchParams({ action, ...data });
+          res = await fetch(CONFIG.APPS_SCRIPT_URL + '?' + params.toString(), {
+            method: 'GET',
+            redirect: 'follow',
+            signal: controller.signal
+          });
+        }
+
         if (!res.ok) throw new Error('HTTP ' + res.status);
         return await res.json();
       } finally {
@@ -2938,6 +3084,28 @@
         return item;
       }
 
+      // Coalesce consecutive unsynced profile edits for the same santri
+      if (action === 'updateSantri') {
+        const existing = syncQueue.find(
+          i => i.action === 'updateSantri' &&
+               (i.status === 'pending' || i.status === 'failed') &&
+               String(i.payload?.id) === String(payload.id)
+        );
+        if (existing) {
+          existing.payload = payload;
+          existing.meta = meta;
+          existing.createdAt = item.createdAt;
+          existing.status = 'pending';
+          existing.retryCount = 0;
+          existing.nextRetryAt = 0;
+          existing.lastError = '';
+          saveQueue();
+          refreshAllViews();
+          scheduleBackgroundSync(60);
+          return existing;
+        }
+      }
+
       syncQueue.push(item);
       saveQueue();
       refreshAllViews();
@@ -2949,10 +3117,17 @@
       const sid = String(item.payload.id);
       const santri = serverSantri.find(s => String(s.id) === sid);
 
-      if (item.action === 'saveLog') {
-        if (santri && item.payload.tambah_bintang === '1') {
-          santri.saldo = (Number(santri.saldo) || 0) + 1;
-          santri.total = (Number(santri.total) || 0) + 1;
+      if (item.action === 'updateSantri') {
+        if (santri) {
+          if (item.payload.nama !== undefined) santri.nama = item.payload.nama;
+          if (item.payload.kelas !== undefined) santri.kelas = item.payload.kelas;
+          if (item.payload.foto !== undefined) santri.foto = item.payload.foto;
+        }
+      } else if (item.action === 'saveLog') {
+        const pts = Number(item.payload.tambah_bintang) || 0;
+        if (santri && pts > 0) {
+          santri.saldo = (Number(santri.saldo) || 0) + pts;
+          santri.total = (Number(santri.total) || 0) + pts;
         }
         // Update today count snapshot if same day
         const today = getJakartaDateISO();
@@ -3033,14 +3208,25 @@
               saveQueue();
               refreshAllViews();
             } else {
-              // Deterministic server rejection (e.g., Saldo tidak cukup)
+              // Deterministic server rejection (e.g., Saldo tidak cukup / Unknown action)
               item.status = 'failed';
-              item.lastError = (res && res.error) ? res.error : 'Ditolak oleh server Google Sheets.';
+              const rawErr = (res && res.error) ? String(res.error) : 'Ditolak oleh server Google Sheets.';
+              item.lastError = rawErr.includes('Unknown action')
+                ? 'Apps Script server belum memiliki fungsi updateSantri. Deploy ulang tpa-apps-script.js lalu tekan Coba Lagi.'
+                : rawErr;
               saveQueue();
               refreshAllViews();
               showToast('Sinkronisasi perlu perhatian: ' + item.lastError, 'warn');
             }
           } catch (err) {
+            if (item.action === 'updateSantri' && err instanceof SyntaxError) {
+              item.status = 'failed';
+              item.lastError = 'Apps Script server belum mendukung POST updateSantri. Deploy ulang tpa-apps-script.js lalu tekan Coba Lagi.';
+              saveQueue();
+              refreshAllViews();
+              showToast('Apps Script perlu dideploy ulang untuk sinkronisasi profil.', 'warn');
+              continue;
+            }
             // Network or timeout error — keep safely in queue for retry
             item.status = 'pending';
             item.retryCount = (item.retryCount || 0) + 1;
@@ -3190,10 +3376,14 @@
           : (isFailed ? 'Gagal' : 'Menunggu');
         const title = item.action === 'saveLog'
           ? `Catatan: ${item.meta?.santriNama || item.payload?.nama || item.payload?.id}`
-          : `Hadiah: ${item.meta?.santriNama || item.payload?.nama || item.payload?.id}`;
+          : (item.action === 'updateSantri'
+            ? `Edit Profil: ${item.payload?.nama || item.meta?.santriNama || item.payload?.id}`
+            : `Hadiah: ${item.meta?.santriNama || item.payload?.nama || item.payload?.id}`);
         const sub = item.action === 'saveLog'
           ? `${item.meta?.detail || item.payload?.kategori} · Nilai ${item.payload?.nilai}`
-          : `${item.payload?.hadiah} (${item.payload?.poin} bintang)`;
+          : (item.action === 'updateSantri'
+            ? `Kelas ${item.payload?.kelas || 'TPA'}${item.payload?.foto ? ' · Dengan foto profil' : ''}`
+            : `${item.payload?.hadiah} (${item.payload?.poin} bintang)`);
         const timeStr = new Date(item.createdAt).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
 
         return `
@@ -3527,12 +3717,10 @@
       setTimeout(() => { container.scrollLeft = container.scrollWidth; }, 50);
     }
 
-    // ── Santri Detail Modal ──
-    function openModal(id) {
-      const s = allSantri.find(x => String(x.id) === String(id));
-      if (!s) return;
-      currentSantri = s;
+    // ── Santri Detail Modal & Edit Profil ──
+    let editFotoValue = '';
 
+    function renderModalPhoto(s) {
       const photoEl = document.getElementById('modalPhoto');
       const initials = getInitials(s.nama);
       if (s.foto) {
@@ -3551,6 +3739,14 @@
       } else {
         photoEl.textContent = initials;
       }
+    }
+
+    function openModal(id) {
+      const s = allSantri.find(x => String(x.id) === String(id));
+      if (!s) return;
+      currentSantri = s;
+
+      renderModalPhoto(s);
 
       document.getElementById('modalName').textContent = s.nama;
       document.getElementById('modalSub').textContent = `${s.kelas || 'TPA'} · ID ${s.id}`;
@@ -3559,11 +3755,161 @@
       renderModalStarDots(s.saldo);
 
       document.getElementById('modalQuickActions').classList.toggle('show', guruLoggedIn);
+      toggleEditProfil(false);
 
       document.getElementById('modalOverlay').classList.add('open');
       document.body.style.overflow = 'hidden';
 
       loadLog(s.id);
+    }
+
+    function toggleEditProfil(forceState) {
+      const panel = document.getElementById('editProfilPanel');
+      const btn = document.getElementById('btnToggleEditProfil');
+      const shouldOpen = typeof forceState === 'boolean' ? forceState : !panel.classList.contains('open');
+
+      if (shouldOpen && currentSantri) {
+        document.getElementById('edit_nama').value = currentSantri.nama || '';
+        document.getElementById('edit_kelas').value = currentSantri.kelas || '';
+        editFotoValue = currentSantri.foto || '';
+        const isDataUri = editFotoValue.startsWith('data:');
+        document.getElementById('edit_foto_url').value = isDataUri ? '' : editFotoValue;
+        document.getElementById('editFotoHint').textContent = isDataUri
+          ? 'Foto terunggah dari perangkat siap disimpan.'
+          : 'Unggah foto dari galeri atau tempel URL foto di bawah.';
+        document.getElementById('edit_foto_file').value = '';
+        clearFieldError('edit_nama');
+        renderEditPhotoPreview();
+        panel.classList.add('open');
+        if (btn) btn.textContent = 'Tutup Edit';
+      } else {
+        panel.classList.remove('open');
+        if (btn) btn.textContent = 'Edit Profil';
+      }
+    }
+
+    function renderEditPhotoPreview() {
+      const preview = document.getElementById('editFotoPreview');
+      const clearBtn = document.getElementById('btnClearFoto');
+      const nama = document.getElementById('edit_nama').value || currentSantri?.nama || '';
+      const initials = getInitials(nama);
+      clearBtn.disabled = !editFotoValue;
+
+      if (editFotoValue) {
+        preview.innerHTML = '';
+        const img = document.createElement('img');
+        img.src = editFotoValue;
+        img.alt = nama;
+        if (editFotoValue.includes('dicebear.com')) {
+          img.style.objectFit = 'contain';
+          img.style.padding = '5px';
+          img.style.background = 'var(--bg-canvas)';
+        }
+        img.onerror = () => { preview.textContent = initials; };
+        preview.appendChild(img);
+      } else {
+        preview.textContent = initials;
+      }
+    }
+
+    function handleEditFotoUrlInput(val) {
+      editFotoValue = val.trim();
+      document.getElementById('editFotoHint').textContent = editFotoValue
+        ? 'Menggunakan URL foto.'
+        : 'Unggah foto dari galeri atau tempel URL foto di bawah.';
+      renderEditPhotoPreview();
+    }
+
+    function clearEditFoto() {
+      editFotoValue = '';
+      document.getElementById('edit_foto_url').value = '';
+      document.getElementById('edit_foto_file').value = '';
+      document.getElementById('editFotoHint').textContent = 'Foto dihapus (akan menggunakan inisial nama).';
+      renderEditPhotoPreview();
+    }
+
+    function setEditKelas(val) {
+      document.getElementById('edit_kelas').value = val;
+    }
+
+    function handleEditFotoFile(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      if (!file.type.startsWith('image/')) {
+        showToast('Pilih file gambar (JPG, PNG, WebP).', 'error');
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = e => {
+        const img = new Image();
+        img.onload = () => {
+          const size = 144;
+          const canvas = document.createElement('canvas');
+          canvas.width = size;
+          canvas.height = size;
+          const ctx = canvas.getContext('2d');
+
+          // Center-crop square
+          const minSide = Math.min(img.width, img.height);
+          const sx = (img.width - minSide) / 2;
+          const sy = (img.height - minSide) / 2;
+          ctx.drawImage(img, sx, sy, minSide, minSide, 0, 0, size, size);
+
+          let dataUrl = canvas.toDataURL('image/jpeg', 0.72);
+          if (dataUrl.length > 35000) {
+            dataUrl = canvas.toDataURL('image/jpeg', 0.48);
+          }
+          if (dataUrl.length > 46000) {
+            showToast('Ukuran foto terlalu besar untuk Google Sheets. Gunakan foto lain atau URL.', 'error');
+            return;
+          }
+
+          editFotoValue = dataUrl;
+          document.getElementById('edit_foto_url').value = '';
+          document.getElementById('editFotoHint').textContent = 'Foto diperkecil otomatis dan siap disimpan.';
+          renderEditPhotoPreview();
+        };
+        img.onerror = () => showToast('Gagal membaca gambar yang dipilih.', 'error');
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function submitEditProfil() {
+      if (!currentSantri) return;
+      const nama = document.getElementById('edit_nama').value.trim();
+      const kelas = document.getElementById('edit_kelas').value.trim();
+      const foto = editFotoValue.trim();
+
+      if (!nama) {
+        document.getElementById('err_edit_nama').classList.add('show');
+        showToast('Nama santri tidak boleh kosong.', 'error');
+        return;
+      }
+
+      const payload = {
+        id: String(currentSantri.id),
+        nama,
+        kelas,
+        foto
+      };
+
+      const meta = {
+        santriId: String(currentSantri.id),
+        santriNama: nama
+      };
+
+      enqueueMutation('updateSantri', payload, meta);
+      toggleEditProfil(false);
+
+      if (!isConfigured) {
+        showToast('Profil diperbarui di perangkat (mode demo).', 'success');
+      } else if (!navigator.onLine) {
+        showToast('Profil disimpan lokal. Sinkron saat online.', 'warn');
+      } else {
+        showToast('Profil diperbarui lokal • Menyinkronkan...', 'success');
+      }
     }
 
     function renderModalStarDots(saldo) {
@@ -3595,6 +3941,7 @@
 
     function closeModal(e) {
       if (e && e.target !== document.getElementById('modalOverlay')) return;
+      toggleEditProfil(false);
       document.getElementById('modalOverlay').classList.remove('open');
       document.body.style.overflow = '';
     }
@@ -3786,9 +4133,21 @@
       saveInputDraft();
     }
 
+    function getBintangReward(nilai) {
+      if (nilai === 'A++') return 2;
+      if (nilai === 'A+') return 1;
+      return 0;
+    }
+
     function checkReward() {
       const val = document.getElementById('f_nilai').value;
-      document.getElementById('rewardIndicator').classList.toggle('show', val === 'A+' || val === 'A++');
+      const pts = getBintangReward(val);
+      const el = document.getElementById('rewardIndicator');
+      const textEl = document.getElementById('rewardIndicatorText');
+      if (textEl && pts > 0) {
+        textEl.innerHTML = `Santri akan menerima <strong>+${pts} Bintang</strong> secara langsung.`;
+      }
+      el.classList.toggle('show', pts > 0);
     }
 
     function clearFieldError(name) {
@@ -3859,7 +4218,7 @@
         ayat_sampai: document.getElementById('f_ayat_sampai').value,
         nilai,
         keterangan,
-        tambah_bintang: (nilai === 'A+' || nilai === 'A++') ? '1' : '0',
+        tambah_bintang: String(getBintangReward(nilai)),
       };
 
       const meta = {
