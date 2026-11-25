@@ -5885,12 +5885,110 @@
       }
     }
 
+    let currentSantriLogs = [];
+    let currentSantriLogsId = '';
+
+    function normalizeSurahKey(str) {
+      return String(str || '')
+        .toLowerCase()
+        .replace(/^\d+\.\s*/, '')
+        .replace(/['’`\-\s]/g, '');
+    }
+
+    function findSurahOption(rawName) {
+      const target = normalizeSurahKey(rawName);
+      if (!target) return null;
+      return SURAH_LIST.find(s => normalizeSurahKey(s.v) === target || normalizeSurahKey(s.l) === target) || null;
+    }
+
+    function parseEndingNumber(raw) {
+      const nums = String(raw || '').match(/\d+/g);
+      if (!nums || !nums.length) return null;
+      const val = parseInt(nums[nums.length - 1], 10);
+      return Number.isFinite(val) ? val : null;
+    }
+
+    function getLatestReadingLogForSantri(santriId) {
+      const sid = String(santriId);
+      const pendingLocal = getPendingLogsForSantri(sid);
+      let logs = [];
+
+      if (currentSantriLogsId === sid && Array.isArray(currentSantriLogs) && currentSantriLogs.length) {
+        logs = currentSantriLogs;
+      } else {
+        const cached = readJsonStorage(STORAGE_KEYS.LOG_PREFIX + sid, null);
+        if (Array.isArray(cached) && cached.length) {
+          logs = [...pendingLocal, ...cached];
+        } else if (!isConfigured) {
+          logs = [...pendingLocal, ...SAMPLE_LOG];
+        } else {
+          logs = pendingLocal;
+        }
+      }
+
+      return logs.find(l => l && ['Al-Quran', 'Iqra', 'Tilawati'].includes(l.kategori)) || null;
+    }
+
     function quickInputCurrentSantri() {
       if (!currentSantri) return;
       const santri = currentSantri;
+      const lastLog = getLatestReadingLogForSantri(santri.id);
+
       closeModal();
       showPage('input');
+      resetForm();
       chooseSelectOption('santri', String(santri.id), santri.nama);
+
+      if (!lastLog) return;
+
+      if (lastLog.kategori === 'Al-Quran') {
+        selectKategori('Al-Quran');
+
+        let surahRaw = String(lastLog.surah || '').trim();
+        let ayatRaw = lastLog.ayat_sampai || lastLog.ayat_dari || '';
+
+        if ((!surahRaw || !ayatRaw) && lastLog.detail) {
+          const detailStr = String(lastLog.detail).trim();
+          const match = detailStr.match(/^(.*?)\s+ayat\s+(.+)$/i);
+          if (match) {
+            if (!surahRaw) surahRaw = match[1].trim();
+            if (!ayatRaw) ayatRaw = match[2].trim();
+          } else if (!surahRaw) {
+            surahRaw = detailStr;
+          }
+        }
+
+        const matchedSurah = findSurahOption(surahRaw);
+        if (matchedSurah) {
+          chooseSelectOption('surah', matchedSurah.v, matchedSurah.l);
+        } else if (surahRaw) {
+          document.getElementById('f_surah').value = surahRaw;
+          document.getElementById('f_surah_display').value = surahRaw;
+          SELECT_DATA.surah.selected = { v: surahRaw, l: surahRaw };
+        }
+
+        const lastAyat = parseEndingNumber(ayatRaw);
+        document.getElementById('f_ayat_dari').value = lastAyat !== null ? String(lastAyat + 1) : '';
+        document.getElementById('f_ayat_sampai').value = '';
+        saveInputDraft();
+      } else if (lastLog.kategori === 'Iqra' || lastLog.kategori === 'Tilawati') {
+        selectKategori(lastLog.kategori);
+
+        let levelRaw = String(lastLog.level || '').trim();
+        let halRaw = String(lastLog.halaman || '').trim();
+        if ((!levelRaw || !halRaw) && lastLog.detail) {
+          const match = String(lastLog.detail).match(/(?:Iqra|Tilawati)\s*(\d+)?\s*(?:Hal\.?\s*(\d+))?/i);
+          if (match) {
+            if (!levelRaw && match[1]) levelRaw = match[1];
+            if (!halRaw && match[2]) halRaw = match[2];
+          }
+        }
+
+        if (levelRaw) document.getElementById('f_level').value = levelRaw;
+        const lastHal = parseEndingNumber(halRaw);
+        document.getElementById('f_halaman').value = lastHal !== null ? String(lastHal + 1) : '';
+        saveInputDraft();
+      }
     }
 
     function closeModal(e) {
@@ -5903,18 +6001,23 @@
     async function loadLog(santriId) {
       const cacheKey = STORAGE_KEYS.LOG_PREFIX + santriId;
       const pendingLocal = getPendingLogsForSantri(santriId);
+      currentSantriLogsId = String(santriId);
+      currentSantriLogs = [];
 
       if (!isConfigured) {
         const stored = readJsonStorage(cacheKey, SAMPLE_LOG);
-        renderLog([...pendingLocal, ...stored]);
+        currentSantriLogs = [...pendingLocal, ...stored];
+        renderLog(currentSantriLogs);
         return;
       }
 
       const cachedLog = readJsonStorage(cacheKey, null);
       if (Array.isArray(cachedLog)) {
-        renderLog([...pendingLocal, ...cachedLog], navigator.onLine);
+        currentSantriLogs = [...pendingLocal, ...cachedLog];
+        renderLog(currentSantriLogs, navigator.onLine);
       } else if (pendingLocal.length) {
-        renderLog(pendingLocal, navigator.onLine);
+        currentSantriLogs = pendingLocal;
+        renderLog(currentSantriLogs, navigator.onLine);
       } else {
         document.getElementById('modalLog').innerHTML =
           '<div class="loading-wrap"><div class="spinner"></div><div class="empty-state-sub">Memuat riwayat...</div></div>';
@@ -5928,7 +6031,8 @@
           writeJsonStorage(cacheKey, data.log);
           if (currentSantri && String(currentSantri.id) === String(santriId)) {
             const latestPending = getPendingLogsForSantri(santriId);
-            renderLog([...latestPending, ...data.log], false);
+            currentSantriLogs = [...latestPending, ...data.log];
+            renderLog(currentSantriLogs, false);
           }
         }
       } catch (e) {
