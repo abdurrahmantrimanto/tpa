@@ -4873,7 +4873,7 @@
       populateSantriDropdowns();
       updateSaldoDisplay();
       updateSyncUI();
-      if (typeof refreshGameView === 'function') {
+      if (typeof gameModuleInitialized !== 'undefined' && gameModuleInitialized && typeof refreshGameView === 'function') {
         refreshGameView();
       }
 
@@ -4911,7 +4911,6 @@
       initSearchableSelects();
       restoreInputDraft();
       updateSyncUI();
-      initGameModule();
 
       if (isConfigured) {
         // Trigger background sync first if there are queued items, then refresh server snapshot
@@ -5431,8 +5430,8 @@
       if (name !== 'game' && typeof stopArcadeGameLoop === 'function') {
         stopArcadeGameLoop();
       }
-      if (name === 'game' && typeof refreshGameView === 'function') {
-        refreshGameView();
+      if (name === 'game' && typeof initGameModule === 'function') {
+        initGameModule();
       }
     }
 
@@ -6369,8 +6368,14 @@
     let gameTimerInterval = null;
     let gameTimerRemaining = 20;
     let gameTimerRunning = false;
+    let gameModuleInitialized = false;
 
     function initGameModule() {
+      if (gameModuleInitialized) {
+        refreshGameView();
+        return;
+      }
+      gameModuleInitialized = true;
       gameSoundMuted = localStorage.getItem(STORAGE_KEYS.GAME_SOUND_MUTED) === '1';
       updateGameSoundButtonUI();
 
